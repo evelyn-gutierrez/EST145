@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 8 Exploración básica | A Minimal Book Example</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 8 Exploración básica | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 8 Exploración básica | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Yihui Xie" />
+
+
+<meta name="date" content="2021-05-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="lectura.html"/>
+<link rel="next" href="análisis-univariado.html"/>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>3</b> Literature</a></li>
+<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="7" data-path="lectura.html"><a href="lectura.html"><i class="fa fa-check"></i><b>7</b> Lectura de datos.</a></li>
+<li class="chapter" data-level="8" data-path="exploración-básica.html"><a href="exploración-básica.html"><i class="fa fa-check"></i><b>8</b> Exploración básica</a></li>
+<li class="chapter" data-level="9" data-path="análisis-univariado.html"><a href="análisis-univariado.html"><i class="fa fa-check"></i><b>9</b> Análisis univariado</a><ul>
+<li class="chapter" data-level="9.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#medidas-de-resumen."><i class="fa fa-check"></i><b>9.1</b> Medidas de resumen.</a><ul>
+<li class="chapter" data-level="9.1.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#medidas-de-tendencia-central."><i class="fa fa-check"></i><b>9.1.1</b> Medidas de tendencia central.</a></li>
+<li class="chapter" data-level="9.1.2" data-path="análisis-univariado.html"><a href="análisis-univariado.html#medidas-de-posición."><i class="fa fa-check"></i><b>9.1.2</b> Medidas de posición.</a></li>
+<li class="chapter" data-level="9.1.3" data-path="análisis-univariado.html"><a href="análisis-univariado.html#medidas-de-dispersión."><i class="fa fa-check"></i><b>9.1.3</b> Medidas de dispersión.</a></li>
+<li class="chapter" data-level="9.1.4" data-path="análisis-univariado.html"><a href="análisis-univariado.html#medidas-de-asimetría."><i class="fa fa-check"></i><b>9.1.4</b> Medidas de asimetría.</a></li>
+<li class="chapter" data-level="9.1.5" data-path="análisis-univariado.html"><a href="análisis-univariado.html#utilitarios-en-r"><i class="fa fa-check"></i><b>9.1.5</b> Utilitarios en R</a></li>
+<li class="chapter" data-level="9.1.6" data-path="análisis-univariado.html"><a href="análisis-univariado.html#observaciones-sobre-la-media-y-mediana."><i class="fa fa-check"></i><b>9.1.6</b> Observaciones sobre la media y mediana.</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="análisis-univariado.html"><a href="análisis-univariado.html#gráficos"><i class="fa fa-check"></i><b>9.2</b> Gráficos</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#histogram"><i class="fa fa-check"></i><b>9.2.1</b> Histogramas</a></li>
+<li class="chapter" data-level="9.2.2" data-path="análisis-univariado.html"><a href="análisis-univariado.html#gráficos-de-densidad."><i class="fa fa-check"></i><b>9.2.2</b> Gráficos de densidad.</a></li>
+<li class="chapter" data-level="9.2.3" data-path="análisis-univariado.html"><a href="análisis-univariado.html#función-de-distribución."><i class="fa fa-check"></i><b>9.2.3</b> Función de distribución.</a></li>
+<li class="chapter" data-level="9.2.4" data-path="análisis-univariado.html"><a href="análisis-univariado.html#boxplot"><i class="fa fa-check"></i><b>9.2.4</b> Gráficos de caja</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>10</b> Ejercicio</a></li>
+<li class="chapter" data-level="11" data-path="lectura-de-datos-.html"><a href="lectura-de-datos-.html"><i class="fa fa-check"></i><b>11</b> Lectura de datos.</a><ul>
+<li class="chapter" data-level="11.1" data-path="lectura-de-datos-.html"><a href="lectura-de-datos-.html#variable-sexo"><i class="fa fa-check"></i><b>11.1</b> Variable: Sexo</a></li>
+<li class="chapter" data-level="11.2" data-path="lectura-de-datos-.html"><a href="lectura-de-datos-.html#variable-contratos"><i class="fa fa-check"></i><b>11.2</b> Variable: Contratos</a></li>
+<li class="chapter" data-level="11.3" data-path="lectura-de-datos-.html"><a href="lectura-de-datos-.html#opción-2-gráficos-en-1"><i class="fa fa-check"></i><b>11.3</b> Opción: 2 gráficos en 1</a></li>
+<li class="chapter" data-level="11.4" data-path="lectura-de-datos-.html"><a href="lectura-de-datos-.html#exploración"><i class="fa fa-check"></i><b>11.4</b> Exploración</a></li>
+<li class="chapter" data-level="11.5" data-path="lectura-de-datos-.html"><a href="lectura-de-datos-.html#pruebas-de-hipótesis."><i class="fa fa-check"></i><b>11.5</b> Pruebas de hipótesis.</a></li>
+<li class="chapter" data-level="11.6" data-path="lectura-de-datos-.html"><a href="lectura-de-datos-.html#medidas-de-asociación."><i class="fa fa-check"></i><b>11.6</b> Medidas de asociación.</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="lectura-de-datos-1.html"><a href="lectura-de-datos-1.html"><i class="fa fa-check"></i><b>12</b> Lectura de datos.</a><ul>
+<li class="chapter" data-level="12.1" data-path="lectura-de-datos-1.html"><a href="lectura-de-datos-1.html#variable-sexo-1"><i class="fa fa-check"></i><b>12.1</b> Variable: Sexo</a></li>
+<li class="chapter" data-level="12.2" data-path="lectura-de-datos-1.html"><a href="lectura-de-datos-1.html#variable-edad"><i class="fa fa-check"></i><b>12.2</b> Variable: Edad</a></li>
+<li class="chapter" data-level="12.3" data-path="lectura-de-datos-1.html"><a href="lectura-de-datos-1.html#exploración-1"><i class="fa fa-check"></i><b>12.3</b> Exploración</a></li>
+<li class="chapter" data-level="12.4" data-path="lectura-de-datos-1.html"><a href="lectura-de-datos-1.html#prueba-de-hipótesis."><i class="fa fa-check"></i><b>12.4</b> Prueba de hipótesis.</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="librerías.html"><a href="librerías.html"><i class="fa fa-check"></i><b>13</b> Librerías</a><ul>
+<li class="chapter" data-level="13.1" data-path="librerías.html"><a href="librerías.html#lectura-de-datos"><i class="fa fa-check"></i><b>13.1</b> Lectura de datos</a></li>
+<li class="chapter" data-level="13.2" data-path="librerías.html"><a href="librerías.html#exploración-bivariada"><i class="fa fa-check"></i><b>13.2</b> Exploración bivariada</a></li>
+<li class="chapter" data-level="13.3" data-path="librerías.html"><a href="librerías.html#modelos"><i class="fa fa-check"></i><b>13.3</b> Modelos</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="librerías.html"><a href="librerías.html#evaluación-de-supuestos"><i class="fa fa-check"></i><b>13.3.1</b> Evaluación de supuestos</a></li>
+<li class="chapter" data-level="13.3.2" data-path="librerías.html"><a href="librerías.html#modelo-1-bmi-del-padre"><i class="fa fa-check"></i><b>13.3.2</b> Modelo 1: BMI del padre</a></li>
+<li class="chapter" data-level="13.3.3" data-path="librerías.html"><a href="librerías.html#modelo-2-bmi-de-la-madre"><i class="fa fa-check"></i><b>13.3.3</b> Modelo 2: BMI de la madre</a></li>
+<li class="chapter" data-level="13.3.4" data-path="librerías.html"><a href="librerías.html#modelo-3-ambos-bmi"><i class="fa fa-check"></i><b>13.3.4</b> Modelo 3: Ambos BMI</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="librerías.html"><a href="librerías.html#uso-de-la-transformación"><i class="fa fa-check"></i><b>13.4</b> Uso de la transformación</a><ul>
+<li class="chapter" data-level="13.4.1" data-path="librerías.html"><a href="librerías.html#ajuste-de-modelos"><i class="fa fa-check"></i><b>13.4.1</b> Ajuste de modelos</a></li>
+<li class="chapter" data-level="13.4.2" data-path="librerías.html"><a href="librerías.html#evaluación"><i class="fa fa-check"></i><b>13.4.2</b> Evaluación</a></li>
+<li class="chapter" data-level="13.4.3" data-path="librerías.html"><a href="librerías.html#ejercicio"><i class="fa fa-check"></i><b>13.4.3</b> <strong>Ejercicio</strong>:</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="librerías.html"><a href="librerías.html#cargar-datos"><i class="fa fa-check"></i><b>13.5</b> Cargar datos</a></li>
+<li class="chapter" data-level="13.6" data-path="librerías.html"><a href="librerías.html#exploración-bivariada-1"><i class="fa fa-check"></i><b>13.6</b> Exploración bivariada</a></li>
+<li class="chapter" data-level="13.7" data-path="librerías.html"><a href="librerías.html#modelo-estadístico"><i class="fa fa-check"></i><b>13.7</b> Modelo estadístico</a><ul>
+<li class="chapter" data-level="13.7.1" data-path="librerías.html"><a href="librerías.html#modelo-1-con-el-diámetro"><i class="fa fa-check"></i><b>13.7.1</b> Modelo 1: Con el diámetro</a></li>
+<li class="chapter" data-level="13.7.2" data-path="librerías.html"><a href="librerías.html#modelo-2-con-la-altura"><i class="fa fa-check"></i><b>13.7.2</b> Modelo 2: Con la altura:</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exploración-básica" class="section level1">
+<h1><span class="header-section-number">Chapter 8</span> Exploración básica</h1>
+<p>En esta primera parte, realizamos una exploración inicial del dataset. Con el comando <code>head</code> observamos las primeras 6 filas para conocer inicialmente el dataset. Otra opcion dar click al dataset “datos” en la ventana de environment. Verá que aparece una nueva ventana con el dataset.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">head</span>(datos[,<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]) <span class="co"># Observar los primeros 6 </span></a></code></pre></div>
+<pre><code>## # A tibble: 6 x 10
+##      ID USUARIOID CCDD  DEPARTAMENTO CCPP  PROVINCIA CCDI  DISTRITO cccp 
+##   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;    &lt;chr&gt;
+## 1     1 EVAL3     01    AMAZONAS     01    CHACHAPO~ 01    CHACHAP~ 0001 
+## 2     1 EVAL3     01    AMAZONAS     01    CHACHAPO~ 01    CHACHAP~ 0001 
+## 3     1 EVAL3     01    AMAZONAS     01    CHACHAPO~ 01    CHACHAP~ 0001 
+## 4     1 EVAL3     01    AMAZONAS     01    CHACHAPO~ 01    CHACHAP~ 0001 
+## 5     1 EVAL3     01    AMAZONAS     01    CHACHAPO~ 01    CHACHAP~ 0001 
+## 6     1 EVAL3     01    AMAZONAS     01    CHACHAPO~ 01    CHACHAP~ 0001 
+## # ... with 1 more variable: nombreCP &lt;chr&gt;</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># View(datos)</span></a></code></pre></div>
+<p>Utilizamos el siguiente código para observar la lista completa de preguntas utilizadas al recolectar estos datos.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">etiquetas_todos &lt;-<span class="st"> </span><span class="kw">sapply</span>(datos, attr,<span class="st">&quot;label&quot;</span>)</a>
+<a class="sourceLine" id="cb8-2" title="2">DT<span class="op">::</span><span class="kw">datatable</span>(<span class="kw">data.frame</span>(etiquetas_todos))</a></code></pre></div>
+<div id="htmlwidget-e37e8303545dde8e45c5" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e37e8303545dde8e45c5">{"x":{"filter":"none","data":[["ID","USUARIOID","CCDD","DEPARTAMENTO","CCPP","PROVINCIA","CCDI","DISTRITO","cccp","nombreCP","zona1","manzana1","CONGLOMERADO","REGION","dominiog","nombre","COD_RENAES","CATEGORIA","INSTITUCION","C2DIAFINAL","C2MESFINAL","C2ANIOFINAL","C2RESULTFINAL","C2RESULTFINALO","PACIENTE_ID","PACIENTE_ORDEN","C1CONSULTORIO","C1CONSULTORIO_O","C1TURNO","C1DIA_RESULTADO","C1MES_RESULTADO","C1ANIO_RESULTADO","C1_RESULTADO","C1_RESULTADO_O","C1SEX","C1EDAD","C2P1","C2P2DIA","C2P2MES","C2P2ANIO","C2P2EDAD","C2P3CCDD","C2P3DEPARTAMENTO","C2P3CCPP","C2P3PROVINCIA","C2P3CCDI","C2P3DISTRITO","C2P4","C2P5","C2P6","C2P6O","C2P7","C2P7O","C2P8","C2P9","C2P10","C2OBS_VI","C2P11","C2P11O","C2P12","C2P13","C2P13O","C2P14","C2P14O","C2_OMI_CAP8","C2P15","C2P16","C2P17","C2P17CCDD","C2P17DEPARTAMENTO","C2P17CCPAIS","C2P17PAIS","C2P18","C2P19","C2P19O","C2P20","C2P20O","C2P21","C2P22A","C2P22M","C2P23","C2P24","C2P25","C2P26","C2P27","C2P28","C2P29","C2P30_1","C2P30_2","C2P30_3","C2P30_4","C2P30_5","C2P30_6","C2P30_7","C2P30_8","C2P30_9","C2P30_10","C2P30_11","C2P30_12","C2P30_13","C2P30_14","C2P30_15","C2P30_16","C2P31_1","C2P31_2","C2P31_3","C2P31_4","C2P31_5","C2P31_6","C2P32","C2P33","C2P34_1","C2P34_2","C2P34_3","C2P34_4","C2P34_5","C2P34_6","C2P34_7","C2P34_8","C2P34_9","C2P34_10","C2P34_11","C2P34_11O","C2P34_12","C2P35_1","C2P35_2","C2P35_3","C2P35_4","C2P35_5","C2P35_6","C2P35_7","C2P35_8","C2P35_9","C2P35_10","C2P35_11","C2P35_12","C2P35_12O","C2P35_13","C2P36_1","C2P36_2","C2P36_3","C2P36_4","C2P36_5","C2P36_6","C2P36_7","C2P36_8","C2P37","C2P38_1","C2P38_2","C2P38_3","C2P38_4","C2P38_5","C2P38_6","C2P38_7","C2P38_8","C2P38_8O","C2P39_1","C2P39_2","C2P39_3","C2P39_4","C2P39_5","C2P39_6","C2P39_7","C2P39_8","C2P39_8O","C2P40","C2P41_1","C2P41_2","C2P41_3","C2P41_4","C2P41_5","C2P41_6","C2P41_7","C2P41_8","C2P41_8O","C2P41_9","C2P42","C2P42O","C2P43","C2P44","C2P45","C2P46","C2P47","C2P48","C2P49","C2P50_1","C2P50_2","C2P50_3","C2P50_4","C2P50_5","C2P50_6","C2P51_1","C2P51_2","C2P51_3","C2P51_4","C2P51_5","C2P51_6","C2P51_7","C2P51_8","C2P51_8O","C2P52","C2P52O","C2P53_1","C2P53_2","C2P53_3","C2P53_4","C2P53_5","C2P53_6","C2P53_7","C2P53_8","C2P53_9","C2P53_10","C2P53_11","C2P53_12","C2P53_13","C2P53_14","C2P53_15","C2P53_16","C2P53_17","C2P53_18","C2P53_18O","C2P54","C2P55","C2P56","C2P56O","C2P57","C2P57O","C2P58_1","C2P58_2","C2P58_3","C2P58_4","C2P58_5","C2P58_6","C2P59","C2P60","C2P61","C2P61O","C2P62","C2P63","C2P64","C2P65_1","C2P65_2","C2P65_3","C2P65_4","C2P65_5","C2P65_6","C2P65_7","C2P65_7O","C2P66_1","C2P66_2","C2P66_3","C2P66_4","C2P66_5","C2P66_6","C2P66_7","C2P66_7O","C2P67_1","C2P67_2","C2P67_3","C2P67_4","C2P67_5","C2P67_6","C2P67_7","C2P67_8","C2P67_9","C2P67_10","C2P67_11","C2P67_12","C2P67_13","C2P67_14"],["IDENTIFICACION INFORMATICA","IDENTIFICACION INFORMATICA","CODIGO DE DEPARTAMENTO","NOMBRE DE DEPARTAMENTO","CODIGO DE PROVINCIA","NOMBRE DE PROVINCIA","CODIGO DE DISTRITO","NOMBRE DE DISTRITO","CODIGO DE CENTRO POBLADO","NOMBRE DE CENTRO POBLADO","ZONA","MANZANA","NUMERO DE CONGLOMERADO","REGION NATURAL","DOMINIO GEOGRAFICO","Nombre oficial del establecimiento de salud","Código RENAES del establecimiento de salud","CATEGORIA","Institución","DIA DE RESULTADO FINAL DE LA ENCUESTA","MES DE RESULTADO FINAL DE LA ENCUESTA","AÑO DE RESULTADO FINAL DE LA ENCUESTA","RESULTADO FINAL DE LA ENCUESTA","RESULTADO FINAL ESPECIFIQUE","IDENTIFICACION INFORMATICA","ORDEN DE PACIENTE","SERVICIOS","SERVICIOS - Otro Especifique","TURNO","DIA DE RESULTADO FINAL DE LA ENCUESTA_USUARIO","MES DE RESULTADO FINAL DE LA ENCUESTA_USUARIO","AÑO DE RESULTADO FINAL DE LA ENCUESTA_USUARIO","RESULTADO FINAL DE LA ENCUESTA_USUARIO","RESULTADO FINAL- OTRO_USUARIO (Especifique)","RESULTADO_SEXO","RESULTADO_EDAD","¿CUÁL ES SU PROFESIÓN?","¿CUÁL ES SU FECHA DE NACIMIENTO Y QUÉ EDAD TIENE EN AÑOS CUMPLIDOS? - Día","¿CUÁL ES SU FECHA DE NACIMIENTO Y QUÉ EDAD TIENE EN AÑOS CUMPLIDOS? - Mes","¿CUÁL ES SU FECHA DE NACIMIENTO Y QUÉ EDAD TIENE EN AÑOS CUMPLIDOS? EDAD - Año","¿CUÁL ES SU FECHA DE NACIMIENTO Y QUÉ EDAD TIENE EN AÑOS CUMPLIDOS? - Edad","¿EN QUÉ DEPARTAMENTO, PROVINCIA Y DISTRITO VIVE UD.? - Codigo de Departamento","¿EN QUÉ DEPARTAMENTO, PROVINCIA Y DISTRITO VIVE UD.? - Nombre de Departamento","¿EN QUÉ DEPARTAMENTO, PROVINCIA Y DISTRITO VIVE UD.? - Codigo de Provincia","¿EN QUÉ DEPARTAMENTO, PROVINCIA Y DISTRITO VIVE UD.? - Nombre de Provincia","¿EN QUÉ DEPARTAMENTO, PROVINCIA Y DISTRITO VIVE UD.? - Codigo de Distrito","¿EN QUÉ DEPARTAMENTO, PROVINCIA Y DISTRITO VIVE UD.? - Nombre de Distrito","SEXO","¿CUÁL ES SU ESTADO CIVIL O CONYUGAL?","LA VIVIENDA QUE OCUPA SU HOGAR ES:","LA VIVIENDA QUE OCUPA SU HOGAR ES: ESPECIFIQUE","¿QUÉ TIPO DE CONTRATO TIENE CON ESTE ESTABLECIMIENTO DE SALUD?","¿QUÉ TIPO DE CONTRATO TIENE CON ESTE ESTABLECIMIENTO DE SALUD? ESPECIFIQUE","ACTUALMENTE, ¿UD. VIVE CON SU FAMILIA?","¿CUÁNTAS PERSONAS DEPENDEN ECONÓMICAMENTE DE UD.?","ACTUALMENTE, ¿UD. HA TENIDO QUE DEJAR A SU FAMILIA POR EL TRABAJO?","OBSERVACIONES DE CAPITULO","¿EN QUÉ UNIVERSIDAD ESTUDIÓ SU CARRERA?","¿EN QUÉ UNIVERSIDAD ESTUDIÓ SU CARRERA? ESPECIFIQUE","¿EN QUE AÑO OBTUVO SU TÍTULO UNIVERSITARIO?","¿TIENE ALGUNA ESPECIALIDAD?","¿TIENE ALGUNA ESPECIALIDAD?¿Cuál es? ESPECIFIQUE","¿EN QUÉ REGIÓN REALIZÓ SU ESPECIALIDAD?","¿EN QUÉ REGIÓN REALIZÓ SU ESPECIALIDAD? ESPECIFIQUE","INDICADOR DE OMISION DE CAPITULO VIII","¿UD. TIENE PLANES DE MIGRAR A OTRO LUGAR?","¿DENTRO DE CUANTO TIEMPO MIGRARÍA?","¿A QUE DEPARTAMENTO DEL PERÚ O PAÍS TIENE PLANIFICADO MIGRAR?","¿A QUE DEPARTAMENTO DEL PERU O PAIS TIENE PLANIFICADO MIGRAR / Código de Departamento","¿A QUE DEPARTAMENTO DEL PERU O PAIS TIENE PLANIFICADO MIGRAR / Nombre de Departamento","¿A QUE DEPARTAMENTO DEL PERU O PAIS TIENE PLANIFICADO MIGRAR / Código de País","¿A QUE DEPARTAMENTO DEL PERU O PAIS TIENE PLANIFICADO MIGRAR / Nombre de País","ACTUALMENTE, ¿SE ENCUENTRA REALIZANDO ALGÚN TRÁMITE PARA VIAJAR AL EXTRANJERO?","¿QUÉ MOTIVO INFLUYE MÁS EN SU DESEO DE MIGRAR?","¿QUÉ MOTIVOS INFLUYEN MÁS EN SU DESEO DE MIGRAR? ESPECIFIQUE","¿QUÉ PERSONA INFLUYE MÁS EN SUS DESEOS O PLANES DE MIGRAR?","¿QUÉ PERSONA INFLUYE MÁS EN SUS DESEOS O PLANES DE MIGRAR? ESPECIFIQUE","¿CUÁNTOS AÑOS VIENE TRABAJANDO EN EL SECTOR SALUD, YA SEA PÚBLICO O PRIVADO?","¿CUÁNTO TIEMPO LABORA EN ESTE ESTABLECIMIENTO DE SALUD? AÑOS","¿CUÁNTO TIEMPO LABORA EN ESTE ESTABLECIMIENTO DE SALUD? MESES","SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿ES DE TIPO:","¿REALIZA LABOR ASISTENCIAL EN OTRA INSTITUCIÓN?","¿REALIZA LABOR NO ASISTENCIAL PÚBLICA O PRIVADA (ADMINISTRATIVA, COMERCIO, GERENCIA, ETC.) EN OTRO ESTABLECIMIENTO DE SALUD?","¿REALIZA LABOR DOCENTE REMUNERADA?","EN PROMEDIO, ¿CUÁNTAS HORAS TRABAJA A LA SEMANA EN TODAS SUS ACTIVIDADES REMUNERADAS?","CONSIDERANDO TODAS SUS ACTIVIDADES REMUNERADAS, ¿CUÁL ES SU NIVEL DE INGRESO MENSUAL?","DE MANERA GENERAL EN ESTE ESTABLECIMIENTO, EN RELACIÓN A SU TRABAJO, ¿CÓMO CALIFICARIA SU NIVEL DE SATISFACCIÓN?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: Posibilidades de promoción o ascenso?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: Orden de los servicios y organización laboral?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A:  La valoración de su trabajo?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: El tipo de labor que realiza?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: La carga laboral que realiza?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: Posición en su institución y participación en las decisiones de gestión de su servicio?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: Honorarios o sueldos recibidos?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: Horario o jornada de trabajo?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: La relación con sus compañeros de trabajo?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: Oportunidades de capacitación/actualización?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: La infraestructura e instalaciones de servicios (agua, desagüe, luz, oxigeno, etc.)?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: El Instrumental y equipamiento para atender a los pacientes?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: La relación con sus jefes o superiores?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: Las condiciones de higiene y bioseguridad?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: El llenado de registro, partes, órdenes o formatos?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN EN CUANTO A: El respeto y consideración de sus pacientes?","EN RELACIÓN A SU ACTIVIDAD PROFESIONAL EN GENERAL, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: La relación médico paciente durante la consulta?","EN RELACIÓN A SU ACTIVIDAD PROFESIONAL EN GENERAL, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Su expectativa en satisfacer las necesidades de sus pacientes?","EN RELACIÓN A SU ACTIVIDAD PROFESIONAL EN GENERAL, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Su disponibilidad para realizar ejercicio profesional asistencial privado?","EN RELACIÓN A SU ACTIVIDAD PROFESIONAL EN GENERAL, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Los logros obtenidos en su carrera?","EN RELACIÓN A SU ACTIVIDAD PROFESIONAL EN GENERAL, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Impacto en su vida personal o familiar por la carga laboral asociada a su profesión?","EN RELACIÓN A SU ACTIVIDAD PROFESIONAL EN GENERAL, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Los riesgos asociados a su actividad profesional?","DESDE QUE UD. EMPEZÓ A TRABAJAR AQUÍ, ¿HA PENSADO EN ALGÚN MOMENTO EN CAMBIAR DE EMPLEO?","¿PIENSA O TIENE PLANIFICADO DEJAR DE TRABAJAR EN ESTE ESTABLECIMIENTO?","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Mejora de Sueldo","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Mejora de horario","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Mejora del trato y clima laboral (entre compañeros, jefes)","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Mejora del ambiente físico de trabajo","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Mayor estabilidad laboral","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Percepción de deshonestidad y corrupción en la gestión de la institución","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Cambio de actividad","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Mayores oportunidades de estudios y capacitación","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Mayores facilidades para su vida familiar","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Mejores condiciones de seguridad e higiene","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? Otro","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? ESPECIFIQUE","¿QUÉ INFLUIRÍA MÁS PARA CAMBIAR DE TRABAJO? NO SABE/NORECUERDA","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Disminuir los trámites administrativos","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Incrementar el número de médicos","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Incrementar el número de profesionales asistenciales no medicos(enfermeras,obstetras,etc)","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Ampliar los consultorios e infraestructura de consulta ambulatoria","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Ampliar el número de camas y ambientes de hospitalización","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Mejorar el servicio de archivo y gestión de historias clínicas","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Mejorar el equipo e instrumental para procedimientos o cirugías","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Mejorar el abastecimiento de medicamentos e insumos médicos","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Mejorar la calidad de los insumos médicos","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Mayor capacitación al personal asistencial","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Mayor capacitación al personal administrativo","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? Otro","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? ESPECIFIQUE","BASADO EN SU EXPERIENCIA EN ESTE ESTABLECIMIENTO, PARA ATENDER MEJOR A SUS PACIENTES, ¿QUE CAMBIOS RECOMENDARÍA? NO SABE/NO RECUERDA","EN RELACIÓN AL EQUIPO DE GESTIÓN DE SU ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Manejo de presupuesto?","EN RELACIÓN AL EQUIPO DE GESTIÓN DE SU ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Gestión de medicamentos - farmacias?","EN RELACIÓN AL EQUIPO DE GESTIÓN DE SU ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Organización de los servicios?","EN RELACIÓN AL EQUIPO DE GESTIÓN DE SU ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Gestión de los recursos humanos?","EN RELACIÓN AL EQUIPO DE GESTIÓN DE SU ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Programación de turnos?","EN RELACIÓN AL EQUIPO DE GESTIÓN DE SU ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Atención al usuario?","EN RELACIÓN AL EQUIPO DE GESTIÓN DE SU ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Prevención de infecciones intrahospitalarias / eventos adversos?","EN RELACIÓN AL EQUIPO DE GESTIÓN DE SU ESTABLECIMIENTO, ¿CÓMO CALIFICARÍA SU NIVEL DE SATISFACCIÓN, RESPECTO A: Capacidad de gestión / trabajo?","DESDE EL AÑO 2014 A LA FECHA, CONSIDERA UD. QUE LA ATENCIÓN DE SALUD EN EL PAÍS:","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA MEJORADO? Atenciones son más oportunas, menos trámites","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA MEJORADO? Mejor cobertura de salud, cubre todos los diagnósticos","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA MEJORADO? Mejor cobertura de salud, que cubre todos los procedimientos y exámenes auxiliares","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA MEJORADO? Mejor cobertura de salud, cubre todos los medicamentos","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA MEJORADO? Mayor presupuesto para las atenciones","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA MEJORADO? Personal más capacitado","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA MEJORADO? Mejores sistemas informáticos","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA MEJORADO? Otro","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA MEJORADO? ESPECIFIQUE","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA EMPEORADO? Mayor cantidad de trámites administrativos","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA EMPEORADO? Menor cobertura de salud que no cubre la consulta","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA EMPEORADO? Menor cobertura de salud, no cubre todos los procedimientos ni exámenes auxiliares","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA EMPEORADO? Desabastecimiento de medicamentos","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA EMPEORADO? Menor presupuesto para las atenciones","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA EMPEORADO? Mayor número de reclamos","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA EMPEORADO? Los reembolsos demoran","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA EMPEORADO? Otro","¿POR QUÉ CREE UD. QUE LA ATENCIÓN DE SALUD HA EMPEORADO? ESPECIFIQUE","¿UD. DIRÍA QUE EL IMPACTO DEL ASEGURAMIENTO EN SALUD SOBRE EL SISTEMA DE SALUD HA SIDO:","¿QUÉ SEGURO/S DE SALUD TIENE UD.? Seguro Integral de Salud (SIS)","¿QUÉ SEGURO/S DE SALUD TIENE UD.? EsSalud - Seguro Social (ex-IPSS)","¿QUÉ SEGURO/S DE SALUD TIENE UD.? Seguro de la Entidad Prestadora de Salud (EPS)","¿QUÉ SEGURO/S DE SALUD TIENE UD.? Seguro de Salud de Aseguradoras privadas","¿QUÉ SEGURO/S DE SALUD TIENE UD.? Seguro de salud de las Clínicas","¿QUÉ SEGURO/S DE SALUD TIENE UD.? Sanidad de las FF.AA y Policiales","¿QUÉ SEGURO/S DE SALUD TIENE UD.? Seguro del CMP (SEMEFA)","¿QUÉ SEGURO/S DE SALUD TIENE UD.? Otro","¿QUÉ SEGURO/S DE SALUD TIENE UD.? ESPECIFIQUE","¿QUÉ SEGURO/S DE SALUD TIENE UD.? NO TENGO NINGÚN SEGURO","DESDE SU PERCEPCIÓN, ¿CUÁL CREE UD. QUE ES EL PRINCIPAL PROBLEMA PARA LA ATENCIÓN DE UN ASEGURADO EN ESTE ESTABLECIMIENTO DE SALUD?","DESDE SU PERCEPCIÓN, ¿CUÁL CREE UD. QUE ES EL PRINCIPAL PROBLEMA PARA LA ATENCIÓN DE UN ASEGURADO EN ESTE ESTABLECIMIENTO DE SALUD? ESPECIFIQUE","EN LOS ÚLTIMOS 12 MESES DEL…AL..., ¿CUÁNTOS ACCIDENTES TUVO EN ESTE TRABAJO? (Golpe, caída, herida, pinchazo, quemaduras, etc.)","¿UD. TIENE O HA TENIDO ALGUNA ENFERMEDAD QUE HA SIDO PROVOCADA Y/O AGRAVADA POR EL TRABAJO?","¿SABE UD. SI ESTA INSTITUCIÓN LO HA ASEGURADO EN CASO DE ACCIDENTES Y ENFERMEDADES DEL TRABAJO (Seguro Complementario de Trabajo de Riesgo-SCTR)?","¿PADECE UD. ALGUNA ENFERMEDAD CRÓNICA?","EN SU TRABAJO ACTUAL, ¿QUÉ TAN PROBABLE CREE UD. QUE ES SUFRIR UNA ENFERMEDAD PROFESIONAL POR LA ACTIVIDAD QUE REALIZA?","EN LA ACTUALIDAD, ¿FUMA USTED TABACO DIARIAMENTE, ALGUNOS DÍAS O NO FUMA EN ABSOLUTO?","EN EL PASADO, ¿HA FUMADO TABACO DIARIAMENTE,ALGUNOS DÍAS O NO HA FUMADO TABACO EN ABSOLUTO?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO DE SALUD Y LOS RIESGOS LABORALES O BIOLÓGICOS, INDIQUE LA FRECUENCIA CON QUE SUCEDE LO SIGUIENTE: ¿Ud. toma medidas de prevención o protección de riesgo laboral?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO DE SALUD Y LOS RIESGOS LABORALES O BIOLÓGICOS, INDIQUE LA FRECUENCIA CON QUE SUCEDE LO SIGUIENTE: ¿Su institución le informa sobre los riesgos de accidentarse o enfermarse por su trabajo?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO DE SALUD Y LOS RIESGOS LABORALES O BIOLÓGICOS, INDIQUE LA FRECUENCIA CON QUE SUCEDE LO SIGUIENTE: ¿Su institución lo ha capacitado en la prevención de riesgos laborales o de bioseguridad?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO DE SALUD Y LOS RIESGOS LABORALES O BIOLÓGICOS, INDIQUE LA FRECUENCIA CON QUE SUCEDE LO SIGUIENTE: ¿Su institución lo provee de medidas o equipos de protección?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO DE SALUD Y LOS RIESGOS LABORALES O BIOLÓGICOS, INDIQUE LA FRECUENCIA CON QUE SUCEDE LO SIGUIENTE: ¿Exposición a personas con enfermedades muy contagiosas?","RESPECTO A SU TRABAJO EN ESTE ESTABLECIMIENTO DE SALUD Y LOS RIESGOS LABORALES O BIOLÓGICOS, INDIQUE LA FRECUENCIA CON QUE SUCEDE LO SIGUIENTE: ¿Exposición o contacto con sustancias que puedan afectar su salud?","EN CASO DE OCURRIR PROBLEMAS CON LA ATENCIÓN DE SALUD, ¿QUÉ ENTIDAD/ES CREE UD. PUEDE/N SOLUCIONAR UN RECLAMO? Establecimiento de salud","EN CASO DE OCURRIR PROBLEMAS CON LA ATENCIÓN DE SALUD, ¿QUÉ ENTIDAD/ES CREE UD. PUEDE/N SOLUCIONAR UN RECLAMO? Superintendencia de Salud (SUNASA)","EN CASO DE OCURRIR PROBLEMAS CON LA ATENCIÓN DE SALUD, ¿QUÉ ENTIDAD/ES CREE UD. PUEDE/N SOLUCIONAR UN RECLAMO? Aseguradoras o IAFAS","EN CASO DE OCURRIR PROBLEMAS CON LA ATENCIÓN DE SALUD, ¿QUÉ ENTIDAD/ES CREE UD. PUEDE/N SOLUCIONAR UN RECLAMO? Defensoría del Asegurado","EN CASO DE OCURRIR PROBLEMAS CON LA ATENCIÓN DE SALUD, ¿QUÉ ENTIDAD/ES CREE UD. PUEDE/N SOLUCIONAR UN RECLAMO? Defensoría de la Salud","EN CASO DE OCURRIR PROBLEMAS CON LA ATENCIÓN DE SALUD, ¿QUÉ ENTIDAD/ES CREE UD. PUEDE/N SOLUCIONAR UN RECLAMO? Defensoría del Pueblo","EN CASO DE OCURRIR PROBLEMAS CON LA ATENCIÓN DE SALUD, ¿QUÉ ENTIDAD/ES CREE UD. PUEDE/N SOLUCIONAR UN RECLAMO? INDECOPI","EN CASO DE OCURRIR PROBLEMAS CON LA ATENCIÓN DE SALUD, ¿QUÉ ENTIDAD/ES CREE UD. PUEDE/N SOLUCIONAR UN RECLAMO? Otro","EN CASO DE OCURRIR PROBLEMAS CON LA ATENCIÓN DE SALUD, ¿QUÉ ENTIDAD/ES CREE UD. PUEDE/N SOLUCIONAR UN RECLAMO? ESPECIFIQUE","CUANDO OCURRE UN PROBLEMA CON LA ATENCIÓN EN SALUD EN ESTE ESTABLECIMIENTO, ¿EL RECLAMO SE DERIVA A:","¿CUÁNDO OCURRE UN PROBLEMA POR LA ATENCIÓN EN SALUD EN ESTE ESTABLECIMIENTO, EL RECLAMO SE DERIVA A: ESPECIFIQUE","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Farmacia","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Laboratorio","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Centro obstétrico","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Unidad/oficina de seguros","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Emergencia","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Sistema de referencia y contrareferencias","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Radiología - imágenes","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Consulta externa","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Unidad de cuidados intensivos","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Ambulancias","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Área de atención de reclamos","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Admisión/acreditación","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Archivo","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Caja","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Personal de seguridad","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Hospitalización","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Centro quirúrgico","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Otro","¿CUÁLES SON LAS PRINCIPALES ÁREAS CON MAYORES RECLAMOS EN SU ESTABLECIMIENTO DE SALUD? Especifique","¿HA ESCUCHADO O LEÍDO SOBRE LA REFORMA DE SALUD?","¿ CUAL CREE USTED QUE SERÁ EL IMPACTO DE LA REFORMA DE SALUD EN EL SISTEMA DE SALUD EN EL PERÚ?","¿POR QUÈ CREE USTED QUE SERÀ FAVORABLE?","¿POR QUÈ CREE USTED QUE SERÀ FAVORABLE?: ESPECIFIQUE","¿POR QUÈ CREE USTED QUE SERÀ DESFAVORABLE?","¿POR QUÈ CREE USTED QUE SERÀ DESFAVORABLE?: ESPECIFIQUE","RESPECTO A LOS SIGUIENTES AGENTES, ¿CUÁL CREE QUE SERÁ EL IMPACTO DE LA REFORMA PLANTEADA POR EL MINSA, EN: Los establecimientos de salud?","RESPECTO A LOS SIGUIENTES AGENTES, ¿CUÁL CREE QUE SERÁ EL IMPACTO DE LA REFORMA PLANTEADA POR EL MINSA, EN: El personal asistencial?","RESPECTO A LOS SIGUIENTES AGENTES, ¿CUÁL CREE QUE SERÁ EL IMPACTO DE LA REFORMA PLANTEADA POR EL MINSA, EN: El personal administrativo?","RESPECTO A LOS SIGUIENTES AGENTES, ¿CUÁL CREE QUE SERÁ EL IMPACTO DE LA REFORMA PLANTEADA POR EL MINSA, EN: La poblaciòn?","RESPECTO A LOS SIGUIENTES AGENTES, ¿CUÁL CREE QUE SERÁ EL IMPACTO DE LA REFORMA PLANTEADA POR EL MINSA, EN: Los empresarios privados?","RESPECTO A LOS SIGUIENTES AGENTES, ¿CUÁL CREE QUE SERÁ EL IMPACTO DE LA REFORMA PLANTEADA POR EL MINSA, EN: Las aseguradoras?","BASADO EN SU EXPERIENCIA, ¿CUÁL HA SIDO EL IMPACTO DE LAS POLITICAS DE SALUD IMPLEMENTADAS DESDE EL 2009?","CON RESPECTO A LAS ASOCIACIONES PÚBLICO PRIVADAS EN SALUD ¿COONCE UD:","PARA UD. ¿QUÉ SON LAS ASOCIACIONES PÚBLICO PRIVADAS?","PARA UD. ¿QUÉ SON LAS ASOCIACIONES PÚBLICO PRIVADAS? Especifique","RESPECTO A LAS ASOCIACIONES PÚBLICO PRIVADAS, ¿UD. DIRÍA QUE EL IMPACTO SOBRE EL SISTEMA DE SALUD SERÁ:","EN SU OPINIÒN, CONTAR CON UN SEGURO DE SALUD,¿CREE USTED QUE ES:","¿EN QUÉ MEDIDA TIENE CONOCIMIENTO SOBRE LA SUPERINTENDENCIA NACIONAL DE SALUD:","¿CUÁLES CREE UD QUE SON LAS FUNCIONES DE LA SUPERINTENDENCIA NACIONAL DE SALUD? Proteger sus derechos de salud","¿CUÁLES CREE UD QUE SON LAS FUNCIONES DE LA SUPERINTENDENCIA NACIONAL DE SALUD? Supervisar los establecimientos de salud","¿CUÁLES CREE UD QUE SON LAS FUNCIONES DE LA SUPERINTENDENCIA NACIONAL DE SALUD? Supervisar a los seguros de salud","¿CUÁLES CREE UD QUE SON LAS FUNCIONES DE LA SUPERINTENDENCIA NACIONAL DE SALUD? Velar por que usted acceda a más servicios de salud","¿CUÁLES CREE UD QUE SON LAS FUNCIONES DE LA SUPERINTENDENCIA NACIONAL DE SALUD? Velar por que usted sea atendido con respeto y sin discriminación","¿CUÁLES CREE UD QUE SON LAS FUNCIONES DE LA SUPERINTENDENCIA NACIONAL DE SALUD? Atender y resolver sus reclamos y quejas","¿CUÁLES CREE UD QUE SON LAS FUNCIONES DE LA SUPERINTENDENCIA NACIONAL DE SALUD? Otro","¿CUÁLES CREE UD QUE SON LAS FUNCIONES DE LA SUPERINTENDENCIA NACIONAL DE SALUD? Especifique","¿EN QUÉ TEMAS LE GUSTARÍA QUE LA SUPERINTENDENCIA NACIONAL DE SALUD LE BRINDE CAPACITACIÓN? Sobre derechos","¿EN QUÉ TEMAS LE GUSTARÍA QUE LA SUPERINTENDENCIA NACIONAL DE SALUD LE BRINDE CAPACITACIÓN? Sobre acreditación de calidad","¿EN QUÉ TEMAS LE GUSTARÍA QUE LA SUPERINTENDENCIA NACIONAL DE SALUD LE BRINDE CAPACITACIÓN? Sobre modelo de supervisión de IPRESS","¿EN QUÉ TEMAS LE GUSTARÍA QUE LA SUPERINTENDENCIA NACIONAL DE SALUD LE BRINDE CAPACITACIÓN? Sobre cobertura de seguros de salud","¿EN QUÉ TEMAS LE GUSTARÍA QUE LA SUPERINTENDENCIA NACIONAL DE SALUD LE BRINDE CAPACITACIÓN? Sobre la reforma en salud","¿EN QUÉ TEMAS LE GUSTARÍA QUE LA SUPERINTENDENCIA NACIONAL DE SALUD LE BRINDE CAPACITACIÓN? Sobre funciones de SUSALUD","¿EN QUÉ TEMAS LE GUSTARÍA QUE LA SUPERINTENDENCIA NACIONAL DE SALUD LE BRINDE CAPACITACIÓN? Otro","¿EN QUÉ TEMAS LE GUSTARÍA QUE LA SUPERINTENDENCIA NACIONAL DE SALUD LE BRINDE CAPACITACIÓN? Especifique","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia ha estado afectado por algo que ha ocurrido inesperadamente?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia se ha sentido incapaz de controlar las cosas importantes en su vida?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia se ha sentido nervioso o estresado?","SOBRE EL ESTRÈS En el último mes, ¿Con que frecuencia ha manejado con éxito los pequeños problemas irritantes de la vida?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia ha sentido que ha afrontado efectivamente los cambios importantes que han estado ocurriendo en su vida?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia ha estado seguro sobre su capacidad para manejar sus problemas personales?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia ha sentido que las cosas le va bien?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia ha sentido que no podia afrontar todas las cosas que tenia que hacer?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia ha podido controlar las dificultades de su vida?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia se ha sentido que tenia todo bajo control?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia ha estado enfadado porque las cosas que le han ocurrido estaban fuera de su control?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia ha pensado sobre las cosas que le quedan por hacer?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia ha podido controlar la forma de pasar el tiempo?","SOBRE EL ESTRÈS En el último mes, ¿Con qué frecuencia ha sentido que las dificultades se acumulan tanto que no puede superarlas?"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>etiquetas_todos<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+<p>Puede observar que existe un buscador en esta tabla. Este buscador ayudará a buscar las variables que necesitemos.</p>
+<p>Ahora, exploramos las variables de interés: profesión y edad.</p>
+<p>Utilizamos la función attr con el argumento “label” para observar la variable C2P1 asociada a la profesión.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">attr</span>(datos<span class="op">$</span>C2P1,<span class="st">&quot;label&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;¿CUÁL ES SU PROFESIÓN?&quot;</code></pre>
+<p>Los códigos y etiquetas de las posibles respuestas para esta variable los observamos a continuación.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">attr</span>(datos<span class="op">$</span>C2P1,<span class="st">&quot;labels&quot;</span>)</a></code></pre></div>
+<pre><code>##      Médico Enfermero/a 
+##           1           2</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">attr</span>(datos<span class="op">$</span>C2P1,<span class="st">&quot;label&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;¿CUÁL ES SU PROFESIÓN?&quot;</code></pre>
+<p>De estos resultados, se observa que la profesión enfermero esta asociada al código 2 mientras que la profesión de médico al código 1.</p>
+<p>Utilizamos esta información para filtrar los datos correspondientes a los médicos (código 1).</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1">data_medicos  =<span class="st"> </span>datos[datos<span class="op">$</span>C2P1<span class="op">==</span><span class="dv">1</span>,]</a>
+<a class="sourceLine" id="cb15-2" title="2"><span class="kw">dim</span>(data_medicos)</a></code></pre></div>
+<pre><code>## [1] 2219  270</code></pre>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="lectura.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análisis-univariado.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["EstadisticaR.pdf", "EstadisticaR.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

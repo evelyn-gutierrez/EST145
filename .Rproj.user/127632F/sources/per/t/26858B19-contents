@@ -1,0 +1,163 @@
+
+## Variables cuantitativas.
+
+
+* Librerías
+
+Revisamos si tenemos todas la librerías necesarias con estos comandos en la consola:
+
+```{r}
+library(performance)
+library(skimr)
+library(dplyr)
+```
+
+
+En caso de no tenerlos instalados, utilizamos estas líneas de código en la consola:
+
+```{r eval=FALSE, include=TRUE}
+install.packages("performance", dependencies=TRUE)
+install.packages("see", dependencies=TRUE)
+install.packages("skimr", dependencies=TRUE)
+install.packages("dplyr", dependencies=TRUE)
+```
+
+
+### Caso 1: BMI
+
+En este caso, utilizaremos los datos acerca de indice de masa corporal índice de masa corporal (IMC)^[https://onlinelibrary.wiley.com/doi/full/10.1111/tmi.13052].
+
+$IMC = {Peso(kg)}/{Talla(m)^2}$
+
+Este indicador se usa para medir obesidad en las personas.  Carrillo et.al (2018) analizaron datos de un grupo familias en el norte el Perú para analizar si hay relación entre el IMC de los padres y el IMC de los hijos.
+
+El dataset que utilizaremos es un subconjunto de los datos del estudio. 
+
+#### Lectura de datos
+ 
+```{r carga_datos}
+databmi = read.csv("https://egutierreza.netlify.app/uploads/databmi.csv")
+names(databmi)
+```
+
+Observemos que los datos que tenemos son el IMC (BMI en inglés) y edad de una persona y sus padres.
+
+Comenzamos realizando una exploración de cada variable con el siguiente comando.
+
+```{r eval=FALSE, include=TRUE}
+library(skimr)
+skim(databmi)
+``` 
+Ejercicio: 
+
+* ¿Qué conclusiones obtiene a partir de el análisis univariado a cada variable del dataset? Interpretar las medidas de tendencia central y desviación para cada variable.
+
+
+#### Exploración bivariada
+
+Para realizar una exploración entre variables cuantitativas, veremos los gráficos de dispersión y las correlaciones entre todos los pares de variables:
+
+```{r}
+# Gráficos de disepersión
+pairs(databmi)
+```
+
+```{r}
+# Matrix de correlaciones
+cor(databmi)
+```
+
+Interpretación:
+
+* Se observa correlación moderada alta entre las variables de edades de los padres e hijo.
+* Las variables de bmi del padre y madre tienen correlación baja con el bmi del hijo, 0.23 y 0.25 respectivamente.
+
+
+En específico, observamos la relación entre el IMC de una persona y su padre:
+ 
+```{r explora_bivar}
+plot(databmi$bmi.papa,databmi$bmi,
+     xlab="Indice de masa corporal (padre)",
+     ylab="Indice de masa corporal (hijo)",
+     main="Diagrama de dispersión")
+abline(c(18,0.1),lty=2, col="blue")
+abline(c(22,0.3),lty=3, col="green")
+abline(c(20,0.12),lty=4, col="orange")
+```
+
+Observemos que se han graficado 3 posibles líneas que pasan entre los puntos del gráfico de dispersión. 
+
+Estas líneas representan los posibles modelos que podemos usar para este conjunto de datos.
+
+¿Cuál de estos modelos es el mejor?
+El modelo con el que se obtenga la menor suma de cuadrados de los errores.
+
+<!--$$ $\sum{i=1}^{n}{\_i^2} = \sum_{i=1}^{n}(Y_i-\hat{Y})^2} $$-->
+
+
+### Caso 2: Arboles
+
+#### Cargar datos
+
+En esta data, tenemos los siguiente datos de arboles: 
+
+
+* Diámetro: pulgadas
+* Altura en pies.
+* Volumen en pies cúbicos.
+
+```{r}
+library(dplyr)
+data_arboles <- trees
+names(data_arboles) <- c("diametro","altura","volumen")
+head(data_arboles)
+```
+
+
+Realizamos un análisis exploratorio univariado para cada variable.
+
+
+```{r eval=FALSE, warning=FALSE, include=TRUE}
+library(skimr)
+skim(data_arboles)
+```
+
+
+
+#### Exploración bivariada
+
+Ahora, exploramos las relaciones entre pares de variables.
+
+```{r}
+# Matriz de correlaciones:
+cor(data_arboles)
+# Gráfico de dispersión para pares de variables.
+pairs(data_arboles)
+```
+
+¿Qué tipo de relaciones observamos entre las variables?
+¿Entre qué variables encontramos alta correlación?
+
+ - Observamos relaciones lineales positivas entre las variables. 
+
+
+Otra forma de ver un gráfico de dispersión:
+
+```{r}
+library(ggplot2)
+ggplot(data = data_arboles, mapping = aes(x = diametro, y = volumen)) +
+geom_point(color = "firebrick", size = 2) +
+labs(title = "Diagrama de dispersión", x = "Diámetro", y = "Volumen") +
+theme_bw() +
+theme(plot.title = element_text(hjust = 0.5))
+```
+
+
+Correlación: 
+
+```{r}
+cor(data_arboles$diametro,data_arboles$volumen)
+```
+
+¿Existe una alta correlación entre estas variables? 
+

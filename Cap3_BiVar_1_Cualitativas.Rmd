@@ -1,0 +1,314 @@
+# Análisis bivariado
+
+## Dos variables cualitativas
+
+Antes de iniciar, nos aseguramos de haber instalado las librerías necesarias.
+```{r check, eval=FALSE, include=TRUE}
+library(haven)
+library(vcd)
+library(DT)
+library(DescTools)
+```
+
+
+En caso de no tenerlas, instalamos las librerías copiando y pegando el siguiente codigo en la consola. 
+
+```{r instalación, eval=FALSE, include=TRUE}
+install.packages("tidyverse")
+install.packages("vcd")
+install.packages("DescTools")
+install.packages("DT")
+```
+
+Luego podemos comenzar con el análisis de datos. Para ello, crear un nuevo script con el nombre de analisisBiva. Copiar y ejecutar cada uno de los códigos en R detallados más adelante. 
+
+### Lectura de datos.
+
+Leemos los datos desde SPSS con la librería haven y utilizando el enlace hacia los datos:
+
+```{r lectura}
+library(haven)
+enlace <- "http://portal.susalud.gob.pe/wp-content/uploads/archivo/base-de-datos/2015/CUESTIONARIO%2002%20-%20CAPITULOS.sav"
+datossalud = read_sav(enlace)
+```
+
+
+### Exploración básica.
+
+Exploramos variables que interesan en el análisis.
+
+
+Variable **C2P1**: profesión
+```{r}
+head(datossalud$C2P1)
+```
+
+
+Variable **C2P4**: sexo.
+
+```{r}
+head(datossalud$C2P4)
+```
+
+Variable **C2P7**: Tipo de contrato.
+```{r}
+head(datossalud$C2P7)
+```
+
+
+Observamos el dataset solo con las variables de interés:
+
+<!-- Para ello, debemos instalar la librería DT una sola vez, escribiendo lo siguiente en la consola: 
+
+```{r eval=FALSE, include=TRUE}
+install.packages("DT")
+```
+-->
+
+Seleccionamos los datos de los médicos con el siguiente código:
+
+```{r}
+datostemp <- datossalud[,c("C2P1","C2P4","C2P7")]
+names(datostemp) = c("profesion","sexo","contrato")
+datos <- datostemp[datostemp$profesion==1,]
+```
+
+Y finalmente observamos los datos:
+```{r}
+head(datos)
+```
+
+
+### Análisis univariado.
+
+Ahora, realizamos el análisis de cada variable: C2P4(Sexo) y C2P7(Contrato). Observamos la tabla de frecuencias, proporciones, y gráfico de barras para cada variable:
+
+#### Variable: Sexo
+
+```{r}
+#contrato
+head(datos$sexo)
+# tabla de frecuencias
+tabla_sexo  = table(datos$sexo)
+tabla_sexo
+```
+
+```{r, out.width='50%', fig.show='hold'}
+# tabla de frecuencias con proporciones
+prop.table(tabla_sexo)*100
+```
+
+De esta tabla, se observa que hay `r round(mean(datos$sexo==1),3)*100`% de médicos y solo `r round(mean(datos$sexo==2),3)*100`% de médicas. Podemos añadir, finalmente, un gráfico, para observar estas diferencias rápidamente.
+
+```{r, out.width='50%'}
+barplot(tabla_sexo,
+           main="Sexo")
+```
+
+
+
+#### Variable: Contratos
+
+```{r, out.width='50%', fig.show='hold'}
+# muestra de datos
+head(datos$contrato)
+# Tabla de frecuencias
+tabla_contrato = table(datos$contrato)
+tabla_contrato
+# tabla de frecuencias con proporciones.
+prop.table(tabla_contrato)*100
+# gráfico de barras
+barplot(tabla_contrato,
+           main="Contrato")
+```
+
+
+
+#### Opción: 2 gráficos en 1
+
+```{r}
+forma_grafico <- par(mfrow=c(1,2))
+barplot(100*prop.table(tabla_sexo),
+        ylim=c(0,100),
+        names.arg = c("Hombre","Mujer"),
+        ylab="Porcentaje")
+barplot(100*prop.table(tabla_contrato),
+        ylim=c(0,100),col=1:6,
+        ylab="Porcentaje",xaxt="n")
+legend(1,100,legend=c("Recibos","CAS","Plazo fijo","Nombrado","Plazo Indeterminado","Otros"),
+       col=1:6,bty="n",pch=15)
+```
+
+
+¿Qué observo en estos resultados? (Obtener conclusiones a partir de las tablas de proporciones)
+
+\newpage
+
+### Análisis bivariado  
+#### Exploración
+
+Ahora, realizaremos un análisis bivariado utilizando tablas de contingencia:
+
+```{r}
+tabla_conti <- table(datos$sexo,datos$contrato)
+tabla_conti
+```
+
+Interpretación:
+
+* 128 médicos y 30 médicas tienen contrato por locación de servicio.
+* 172 médicos y 107 médicas tienen contrato CAS.
+
+Ejercicio: Interpretar para las demás categorías de contrato.
+
+
+Ahora, utilizaremos la función prop.table para obtener la tabla en proporciones; 
+y adicionamos el parámetro margin a la función. 
+
+* `margin=1` significa que los porcentajes estan calculados sobre la base de los totales por filas. (Los porcentajes por cada fila suman 100%)
+* `margin=2` significa que los porcentajes estan calculados sobre la base de los totales por columnas. (Los porcentajes por cada columna suman 100%)
+
+
+```{r}
+tabla1 <- prop.table(tabla_conti, margin=1)  #
+round(tabla1,2)
+```
+
+Interpretación:
+
+* Observamos que 41% de los médicos tienen contrato "Nombrado o permanente" mientras que solo el 35% de las médicas tienen contrato "Nombrado o permanente".
+* Asimismo, se observa que el 10% de los médicos tienen contrato "CAS" y un mayor porcentaje, 19%, de médicas tienen contrato "CAS".
+
+
+Ejercicio: Interpretar resultados para el porcentaje de contratos de plazo indeterminado entre hombres y mujeres.
+
+
+```{r}
+tabla2 <- prop.table(tabla_conti, margin=2)  #
+round(tabla2,2)
+```
+
+Para la interpretación comparamos la distribución condicional a cada tipo de contrato con la distribución marginal del sexo. 
+
+Interpretación:
+
+En general, se observo que los médicos representan el `r round(mean(datos$sexo==1),3)*100`% del total y las médicas solo el `r round(mean(datos$sexo==2),3)*100`%. En algunos tipos de contratos, se observan diferencias con respecto a esta distribución, especialmente en CAS (2), Contrato a plazo fijo (3), y Locación de servicios(1)
+
+* Para de los contratos de tipo CAS (Código 2), 62% son asignadas a los médicos y 38% a las médicas. Es decir, una menor proporción, comparada con el total, es asignada a los médicos.
+* Para los contratos de locación de servicio (código 1), 81% son para los médicos y solo 19% para las médicas. Una mayor proporción, comparada con el total, es asignada a los médicos.
+ 
+
+
+Otra forma de analizar y mostrar la relación entre las variables es con gráficos:
+
+* Gráficos de barras.
+
+```{r}
+barplot(prop.table(tabla_conti,1),
+        beside = T,
+        ylim = c(0,1), 
+        col=c("darkblue","skyblue"),
+        ylab = "Proporcion")
+
+legend( 9, 0.9,
+       legend=c("Hombre","Mujer"),
+       col=c("darkblue","skyblue"),
+       bty="n",
+       pch=15)
+
+legend(2,1,
+       legend=c("1: Recibos",
+                "2: CAS",
+                "3: Plazo fijo",
+                "4: Nombrado",
+                "5: Plazo Indeterminado",
+                "6: Otros"),
+       bty="n")
+```
+
+
+O este otro gráfico de barras acumulado:
+
+```{r}
+library(vcd)
+
+mosaicplot(table(datos$contrato,datos$sexo),
+           main="",
+          color = c("darkblue","skyblue"),
+          xlab = "Contratos", # label for x-axis
+          ylab = "Sexo" # label for y-axis
+          )
+
+#abline(h=mean(datos$sexo==2))
+abline(h=0.253, col=2)
+
+```
+
+
+¿Qué conclusiones obtiene a partir de este análisis? ¿Hay relación entre el sexo y el tipo de contrato?
+
+
+#### Pruebas de hipótesis.
+
+Evaluamos si existe o no asociación entre el sexo y los tipos de contrato de manera objetiva utilizando una prueba de hipótesis.
+
+1. Definimos las hipótesis:
+
+* $H_O$: Hay independencia entre el sexo y el tipo de contrato.
+* $H_1$: No hay independencia entre el sexo y el tipo de contrato. (Existe asociación entre la variable sexo y el tipo de contrato)
+
+2. Definimos la significancia: $5$%
+
+3. Elegimos la prueba de hipótesis: Chi-cuadrado para la independencia.
+
+4. Calculamos el estadístico de prueba y p-valor en R: 
+
+```{r}
+chisq.test(datos$sexo, datos$contrato)
+```
+
+¿A qué conclusión llegamos con esta prueba?
+
+* Decisión: Rechazar Ho
+* Conclusión: Con una significancia del 5%, se puede afimar que existe asociación entre la variable sexo y el tipo de contrato
+
+ 
+
+#### Medidas de asociación.
+
+Ahora, continuamos analizando la relación entre las variables sexo y tipos de contrato. Esta vez analizamos el grado de asociación entre las variables utilizando para ello dos medidas de asociación muy conocidas.
+
+
+Para los calculos en R, necesitaremos la librería DescTools.
+
+```{r}
+library(DescTools)
+
+ContCoef(datos$sexo, datos$contrato)
+
+CramerV(datos$sexo, datos$contrato)
+
+```
+
+
+¿Qué grado de relación existe entre estas dos variables?
+
+Recordar lo siguiente :
+
+* Más de 0.5  Alta asociación.
+* 0.3 a 0.5		Asociación moderada.
+* 0.1 a 0.3		Baja asociación.
+* 0 a 0.1		  Muy baja (si existiese).
+
+
+### Ejercicio
+
+
+1. Crear un nuevo script, copiar el código y realizar las modificaciones correspondientes para realizar un análisis de la asociación entre el sexo y el tipo de contrato esta vez para los enfermeros.
+
+2. Crear un reporte con sus resultados, interpretaciones y conclusiones.
+  - ¿Existe evidencia entre una relación entre el sexo y el tipo de contrato en el grupo de enfermeros? 
+  - (**Opcional**) Si es así, ¿Cuál es el grado de asociación entre el sexo y tipo de contrato?
+  - (**Opcional**) ¿Hay una alta asociación entre estas variables?
+
+

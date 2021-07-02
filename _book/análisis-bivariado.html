@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Análisis bivariado | A Minimal Book Example</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Análisis bivariado | A Minimal Book Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Análisis bivariado | A Minimal Book Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Yihui Xie" />
+
+
+<meta name="date" content="2021-05-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="análisis-univariado.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="análisis-univariado.html"><a href="análisis-univariado.html"><i class="fa fa-check"></i><b>2</b> Análisis univariado</a><ul>
+<li class="chapter" data-level="2.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#variables-cuantitativas"><i class="fa fa-check"></i><b>2.1</b> Variables cuantitativas</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#lectura"><i class="fa fa-check"></i><b>2.1.1</b> Lectura de datos.</a></li>
+<li class="chapter" data-level="2.1.2" data-path="análisis-univariado.html"><a href="análisis-univariado.html#exploración-básica"><i class="fa fa-check"></i><b>2.1.2</b> Exploración básica</a></li>
+<li class="chapter" data-level="2.1.3" data-path="análisis-univariado.html"><a href="análisis-univariado.html#análisis-univariado-1"><i class="fa fa-check"></i><b>2.1.3</b> Análisis univariado</a></li>
+<li class="chapter" data-level="2.1.4" data-path="análisis-univariado.html"><a href="análisis-univariado.html#ejercicios"><i class="fa fa-check"></i><b>2.1.4</b> Ejercicio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html"><i class="fa fa-check"></i><b>3</b> Análisis bivariado</a><ul>
+<li class="chapter" data-level="3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#dos-variables-cualitativas"><i class="fa fa-check"></i><b>3.1</b> Dos variables cualitativas</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos."><i class="fa fa-check"></i><b>3.1.1</b> Lectura de datos.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica."><i class="fa fa-check"></i><b>3.1.2</b> Exploración básica.</a></li>
+<li class="chapter" data-level="3.1.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado."><i class="fa fa-check"></i><b>3.1.3</b> Análisis univariado.</a></li>
+<li class="chapter" data-level="3.1.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado-1"><i class="fa fa-check"></i><b>3.1.4</b> Análisis bivariado</a></li>
+<li class="chapter" data-level="3.1.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio"><i class="fa fa-check"></i><b>3.1.5</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#una-variable-cualitativa-y-otra-cuantitativa"><i class="fa fa-check"></i><b>3.2</b> Una variable cualitativa y otra cuantitativa</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos.-1"><i class="fa fa-check"></i><b>3.2.1</b> Lectura de datos.</a></li>
+<li class="chapter" data-level="3.2.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica.-1"><i class="fa fa-check"></i><b>3.2.2</b> Exploración básica.</a></li>
+<li class="chapter" data-level="3.2.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado.-1"><i class="fa fa-check"></i><b>3.2.3</b> Análisis univariado.</a></li>
+<li class="chapter" data-level="3.2.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado."><i class="fa fa-check"></i><b>3.2.4</b> Análisis bivariado.</a></li>
+<li class="chapter" data-level="3.2.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio-1"><i class="fa fa-check"></i><b>3.2.5</b> Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#variables-cuantitativas."><i class="fa fa-check"></i><b>3.3</b> Variables cuantitativas.</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-1-bmi"><i class="fa fa-check"></i><b>3.3.1</b> Caso 1: BMI</a></li>
+<li class="chapter" data-level="3.3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-2-arboles"><i class="fa fa-check"></i><b>3.3.2</b> Caso 2: Arboles</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="análisis-bivariado" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Análisis bivariado</h1>
+<div id="dos-variables-cualitativas" class="section level2">
+<h2><span class="header-section-number">3.1</span> Dos variables cualitativas</h2>
+<p>Antes de iniciar, nos aseguramos de haber instalado las librerías necesarias.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(haven)</a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">library</span>(vcd)</a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">library</span>(DT)</a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">library</span>(DescTools)</a></code></pre></div>
+<p>En caso de no tenerlas, instalamos las librerías copiando y pegando el siguiente codigo en la consola.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="kw">install.packages</span>(<span class="st">&quot;vcd&quot;</span>)</a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="kw">install.packages</span>(<span class="st">&quot;DescTools&quot;</span>)</a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="kw">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</a></code></pre></div>
+<p>Luego podemos comenzar con el análisis de datos. Para ello, crear un nuevo script con el nombre de analisisBiva. Copiar y ejecutar cada uno de los códigos en R detallados más adelante.</p>
+<div id="lectura-de-datos." class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Lectura de datos.</h3>
+<p>Leemos los datos desde SPSS con la librería haven y utilizando el enlace hacia los datos:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">library</span>(haven)</a></code></pre></div>
+<pre><code>## Warning: package &#39;haven&#39; was built under R version 4.0.5</code></pre>
+<pre><code>## Registered S3 methods overwritten by &#39;tibble&#39;:
+##   method     from  
+##   format.tbl pillar
+##   print.tbl  pillar</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">enlace &lt;-<span class="st"> &quot;http://portal.susalud.gob.pe/wp-content/uploads/archivo/base-de-datos/2015/CUESTIONARIO%2002%20-%20CAPITULOS.sav&quot;</span></a>
+<a class="sourceLine" id="cb6-2" title="2">datossalud =<span class="st"> </span><span class="kw">read_sav</span>(enlace)</a></code></pre></div>
+</div>
+<div id="exploración-básica." class="section level3">
+<h3><span class="header-section-number">3.1.2</span> Exploración básica.</h3>
+<p>Exploramos variables que interesan en el análisis.</p>
+<p>Variable <strong>C2P1</strong>: profesión</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">head</span>(datossalud<span class="op">$</span>C2P1)</a></code></pre></div>
+<pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: ¿CUÁL ES SU PROFESIÓN?
+## [1] 2 2 2 2 2 1
+## 
+## Labels:
+##  value       label
+##      1      Médico
+##      2 Enfermero/a</code></pre>
+<p>Variable <strong>C2P4</strong>: sexo.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">head</span>(datossalud<span class="op">$</span>C2P4)</a></code></pre></div>
+<pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: SEXO
+## [1] 2 2 2 2 2 1
+## 
+## Labels:
+##  value  label
+##      1 Hombre
+##      2  Mujer</code></pre>
+<p>Variable <strong>C2P7</strong>: Tipo de contrato.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">head</span>(datossalud<span class="op">$</span>C2P7)</a></code></pre></div>
+<pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: ¿QUÉ TIPO DE CONTRATO TIENE CON ESTE ESTABLECIMIENTO DE SALUD?
+## [1] 5 5 2 2 5 5
+## 
+## Labels:
+##  value                                            label
+##      1 Locaciòn de servicios (Honorarios profesionales)
+##      2       Contrato Administrativo de Servicios (CAS)
+##      3       Contrato a plazo fijo (sujeto a modalidad)
+##      4                             Nombrado, permanente
+##      5       Plazo indeterminado o indefinido (D.S.728)
+##      6                                             Otro</code></pre>
+<p>Observamos el dataset solo con las variables de interés:</p>
+<!-- Para ello, debemos instalar la librería DT una sola vez, escribiendo lo siguiente en la consola: 
+
+
+```r
+install.packages("DT")
+```
+-->
+<p>Seleccionamos los datos de los médicos con el siguiente código:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">datostemp &lt;-<span class="st"> </span>datossalud[,<span class="kw">c</span>(<span class="st">&quot;C2P1&quot;</span>,<span class="st">&quot;C2P4&quot;</span>,<span class="st">&quot;C2P7&quot;</span>)]</a>
+<a class="sourceLine" id="cb13-2" title="2"><span class="kw">names</span>(datostemp) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;profesion&quot;</span>,<span class="st">&quot;sexo&quot;</span>,<span class="st">&quot;contrato&quot;</span>)</a>
+<a class="sourceLine" id="cb13-3" title="3">datos &lt;-<span class="st"> </span>datostemp[datostemp<span class="op">$</span>profesion<span class="op">==</span><span class="dv">1</span>,]</a></code></pre></div>
+<p>Y finalmente observamos los datos:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">head</span>(datos)</a></code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##    profesion       sexo                                       contrato
+##    &lt;dbl+lbl&gt;  &lt;dbl+lbl&gt;                                      &lt;dbl+lbl&gt;
+## 1 1 [Médico] 1 [Hombre] 5 [Plazo indeterminado o indefinido (D.S.728)]
+## 2 1 [Médico] 1 [Hombre] 5 [Plazo indeterminado o indefinido (D.S.728)]
+## 3 1 [Médico] 2 [Mujer]  2 [Contrato Administrativo de Servicios (CAS)]
+## 4 1 [Médico] 1 [Hombre] 5 [Plazo indeterminado o indefinido (D.S.728)]
+## 5 1 [Médico] 1 [Hombre] 3 [Contrato a plazo fijo (sujeto a modalidad)]
+## 6 1 [Médico] 1 [Hombre] 5 [Plazo indeterminado o indefinido (D.S.728)]</code></pre>
+</div>
+<div id="análisis-univariado." class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Análisis univariado.</h3>
+<p>Ahora, realizamos el análisis de cada variable: C2P4(Sexo) y C2P7(Contrato). Observamos la tabla de frecuencias, proporciones, y gráfico de barras para cada variable:</p>
+<div id="variable-sexo" class="section level4">
+<h4><span class="header-section-number">3.1.3.1</span> Variable: Sexo</h4>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="co">#contrato</span></a>
+<a class="sourceLine" id="cb16-2" title="2"><span class="kw">head</span>(datos<span class="op">$</span>sexo)</a></code></pre></div>
+<pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: SEXO
+## [1] 1 1 2 1 1 1
+## 
+## Labels:
+##  value  label
+##      1 Hombre
+##      2  Mujer</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="co"># tabla de frecuencias</span></a>
+<a class="sourceLine" id="cb18-2" title="2">tabla_sexo  =<span class="st"> </span><span class="kw">table</span>(datos<span class="op">$</span>sexo)</a>
+<a class="sourceLine" id="cb18-3" title="3">tabla_sexo</a></code></pre></div>
+<pre><code>## 
+##    1    2 
+## 1657  562</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="co"># tabla de frecuencias con proporciones</span></a>
+<a class="sourceLine" id="cb20-2" title="2"><span class="kw">prop.table</span>(tabla_sexo)<span class="op">*</span><span class="dv">100</span></a></code></pre></div>
+<pre><code>## 
+##        1        2 
+## 74.67328 25.32672</code></pre>
+<p>De esta tabla, se observa que hay 74.7% de médicos y solo 25.3% de médicas. Podemos añadir, finalmente, un gráfico, para observar estas diferencias rápidamente.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">barplot</span>(tabla_sexo,</a>
+<a class="sourceLine" id="cb22-2" title="2">           <span class="dt">main=</span><span class="st">&quot;Sexo&quot;</span>)</a></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-9-1.png" width="50%" /></p>
+</div>
+<div id="variable-contratos" class="section level4">
+<h4><span class="header-section-number">3.1.3.2</span> Variable: Contratos</h4>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="co"># muestra de datos</span></a>
+<a class="sourceLine" id="cb23-2" title="2"><span class="kw">head</span>(datos<span class="op">$</span>contrato)</a></code></pre></div>
+<pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: ¿QUÉ TIPO DE CONTRATO TIENE CON ESTE ESTABLECIMIENTO DE SALUD?
+## [1] 5 5 2 5 3 5
+## 
+## Labels:
+##  value                                            label
+##      1 Locaciòn de servicios (Honorarios profesionales)
+##      2       Contrato Administrativo de Servicios (CAS)
+##      3       Contrato a plazo fijo (sujeto a modalidad)
+##      4                             Nombrado, permanente
+##      5       Plazo indeterminado o indefinido (D.S.728)
+##      6                                             Otro</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="co"># Tabla de frecuencias</span></a>
+<a class="sourceLine" id="cb25-2" title="2">tabla_contrato =<span class="st"> </span><span class="kw">table</span>(datos<span class="op">$</span>contrato)</a>
+<a class="sourceLine" id="cb25-3" title="3">tabla_contrato</a></code></pre></div>
+<pre><code>## 
+##   1   2   3   4   5   6 
+## 158 279 138 881 707  56</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="co"># tabla de frecuencias con proporciones.</span></a>
+<a class="sourceLine" id="cb27-2" title="2"><span class="kw">prop.table</span>(tabla_contrato)<span class="op">*</span><span class="dv">100</span></a></code></pre></div>
+<pre><code>## 
+##         1         2         3         4         5         6 
+##  7.120324 12.573231  6.219018 39.702569 31.861199  2.523659</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="co"># gráfico de barras</span></a>
+<a class="sourceLine" id="cb29-2" title="2"><span class="kw">barplot</span>(tabla_contrato,</a>
+<a class="sourceLine" id="cb29-3" title="3">           <span class="dt">main=</span><span class="st">&quot;Contrato&quot;</span>)</a></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-10-1.png" width="50%" /></p>
+</div>
+<div id="opción-2-gráficos-en-1" class="section level4">
+<h4><span class="header-section-number">3.1.3.3</span> Opción: 2 gráficos en 1</h4>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1">forma_grafico &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb30-2" title="2"><span class="kw">barplot</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(tabla_sexo),</a>
+<a class="sourceLine" id="cb30-3" title="3">        <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">100</span>),</a>
+<a class="sourceLine" id="cb30-4" title="4">        <span class="dt">names.arg =</span> <span class="kw">c</span>(<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>),</a>
+<a class="sourceLine" id="cb30-5" title="5">        <span class="dt">ylab=</span><span class="st">&quot;Porcentaje&quot;</span>)</a>
+<a class="sourceLine" id="cb30-6" title="6"><span class="kw">barplot</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(tabla_contrato),</a>
+<a class="sourceLine" id="cb30-7" title="7">        <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">100</span>),<span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">6</span>,</a>
+<a class="sourceLine" id="cb30-8" title="8">        <span class="dt">ylab=</span><span class="st">&quot;Porcentaje&quot;</span>,<span class="dt">xaxt=</span><span class="st">&quot;n&quot;</span>)</a>
+<a class="sourceLine" id="cb30-9" title="9"><span class="kw">legend</span>(<span class="dv">1</span>,<span class="dv">100</span>,<span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Recibos&quot;</span>,<span class="st">&quot;CAS&quot;</span>,<span class="st">&quot;Plazo fijo&quot;</span>,<span class="st">&quot;Nombrado&quot;</span>,<span class="st">&quot;Plazo Indeterminado&quot;</span>,<span class="st">&quot;Otros&quot;</span>),</a>
+<a class="sourceLine" id="cb30-10" title="10">       <span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">6</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>,<span class="dt">pch=</span><span class="dv">15</span>)</a></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>¿Qué observo en estos resultados? (Obtener conclusiones a partir de las tablas de proporciones)</p>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div id="análisis-bivariado-1" class="section level3">
+<h3><span class="header-section-number">3.1.4</span> Análisis bivariado</h3>
+<div id="exploración" class="section level4">
+<h4><span class="header-section-number">3.1.4.1</span> Exploración</h4>
+<p>Ahora, realizaremos un análisis bivariado utilizando tablas de contingencia:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">tabla_conti &lt;-<span class="st"> </span><span class="kw">table</span>(datos<span class="op">$</span>sexo,datos<span class="op">$</span>contrato)</a>
+<a class="sourceLine" id="cb31-2" title="2">tabla_conti</a></code></pre></div>
+<pre><code>##    
+##       1   2   3   4   5   6
+##   1 128 172  85 684 547  41
+##   2  30 107  53 197 160  15</code></pre>
+<p>Interpretación:</p>
+<ul>
+<li>128 médicos y 30 médicas tienen contrato por locación de servicio.</li>
+<li>172 médicos y 107 médicas tienen contrato CAS.</li>
+</ul>
+<p>Ejercicio: Interpretar para las demás categorías de contrato.</p>
+<p>Ahora, utilizaremos la función prop.table para obtener la tabla en proporciones;
+y adicionamos el parámetro margin a la función.</p>
+<ul>
+<li><code>margin=1</code> significa que los porcentajes estan calculados sobre la base de los totales por filas. (Los porcentajes por cada fila suman 100%)</li>
+<li><code>margin=2</code> significa que los porcentajes estan calculados sobre la base de los totales por columnas. (Los porcentajes por cada columna suman 100%)</li>
+</ul>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">tabla1 &lt;-<span class="st"> </span><span class="kw">prop.table</span>(tabla_conti, <span class="dt">margin=</span><span class="dv">1</span>)  <span class="co">#</span></a>
+<a class="sourceLine" id="cb33-2" title="2"><span class="kw">round</span>(tabla1,<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>##    
+##        1    2    3    4    5    6
+##   1 0.08 0.10 0.05 0.41 0.33 0.02
+##   2 0.05 0.19 0.09 0.35 0.28 0.03</code></pre>
+<p>Interpretación:</p>
+<ul>
+<li>Observamos que 41% de los médicos tienen contrato “Nombrado o permanente” mientras que solo el 35% de las médicas tienen contrato “Nombrado o permanente”.</li>
+<li>Asimismo, se observa que el 10% de los médicos tienen contrato “CAS” y un mayor porcentaje, 19%, de médicas tienen contrato “CAS”.</li>
+</ul>
+<p>Ejercicio: Interpretar resultados para el porcentaje de contratos de plazo indeterminado entre hombres y mujeres.</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">tabla2 &lt;-<span class="st"> </span><span class="kw">prop.table</span>(tabla_conti, <span class="dt">margin=</span><span class="dv">2</span>)  <span class="co">#</span></a>
+<a class="sourceLine" id="cb35-2" title="2"><span class="kw">round</span>(tabla2,<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>##    
+##        1    2    3    4    5    6
+##   1 0.81 0.62 0.62 0.78 0.77 0.73
+##   2 0.19 0.38 0.38 0.22 0.23 0.27</code></pre>
+<p>Para la interpretación comparamos la distribución condicional a cada tipo de contrato con la distribución marginal del sexo.</p>
+<p>Interpretación:</p>
+<p>En general, se observo que los médicos representan el 74.7% del total y las médicas solo el 25.3%. En algunos tipos de contratos, se observan diferencias con respecto a esta distribución, especialmente en CAS (2), Contrato a plazo fijo (3), y Locación de servicios(1)</p>
+<ul>
+<li>Para de los contratos de tipo CAS (Código 2), 62% son asignadas a los médicos y 38% a las médicas. Es decir, una menor proporción, comparada con el total, es asignada a los médicos.</li>
+<li>Para los contratos de locación de servicio (código 1), 81% son para los médicos y solo 19% para las médicas. Una mayor proporción, comparada con el total, es asignada a los médicos.</li>
+</ul>
+<p>Otra forma de analizar y mostrar la relación entre las variables es con gráficos:</p>
+<ul>
+<li>Gráficos de barras.</li>
+</ul>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(tabla_conti,<span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb37-2" title="2">        <span class="dt">beside =</span> T,</a>
+<a class="sourceLine" id="cb37-3" title="3">        <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), </a>
+<a class="sourceLine" id="cb37-4" title="4">        <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;skyblue&quot;</span>),</a>
+<a class="sourceLine" id="cb37-5" title="5">        <span class="dt">ylab =</span> <span class="st">&quot;Proporcion&quot;</span>)</a>
+<a class="sourceLine" id="cb37-6" title="6"></a>
+<a class="sourceLine" id="cb37-7" title="7"><span class="kw">legend</span>( <span class="dv">9</span>, <span class="fl">0.9</span>,</a>
+<a class="sourceLine" id="cb37-8" title="8">       <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>),</a>
+<a class="sourceLine" id="cb37-9" title="9">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;skyblue&quot;</span>),</a>
+<a class="sourceLine" id="cb37-10" title="10">       <span class="dt">bty=</span><span class="st">&quot;n&quot;</span>,</a>
+<a class="sourceLine" id="cb37-11" title="11">       <span class="dt">pch=</span><span class="dv">15</span>)</a>
+<a class="sourceLine" id="cb37-12" title="12"></a>
+<a class="sourceLine" id="cb37-13" title="13"><span class="kw">legend</span>(<span class="dv">2</span>,<span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb37-14" title="14">       <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;1: Recibos&quot;</span>,</a>
+<a class="sourceLine" id="cb37-15" title="15">                <span class="st">&quot;2: CAS&quot;</span>,</a>
+<a class="sourceLine" id="cb37-16" title="16">                <span class="st">&quot;3: Plazo fijo&quot;</span>,</a>
+<a class="sourceLine" id="cb37-17" title="17">                <span class="st">&quot;4: Nombrado&quot;</span>,</a>
+<a class="sourceLine" id="cb37-18" title="18">                <span class="st">&quot;5: Plazo Indeterminado&quot;</span>,</a>
+<a class="sourceLine" id="cb37-19" title="19">                <span class="st">&quot;6: Otros&quot;</span>),</a>
+<a class="sourceLine" id="cb37-20" title="20">       <span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</a></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>O este otro gráfico de barras acumulado:</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">library</span>(vcd)</a></code></pre></div>
+<pre><code>## Warning: package &#39;vcd&#39; was built under R version 4.0.4</code></pre>
+<pre><code>## Loading required package: grid</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">mosaicplot</span>(<span class="kw">table</span>(datos<span class="op">$</span>contrato,datos<span class="op">$</span>sexo),</a>
+<a class="sourceLine" id="cb41-2" title="2">           <span class="dt">main=</span><span class="st">&quot;&quot;</span>,</a>
+<a class="sourceLine" id="cb41-3" title="3">          <span class="dt">color =</span> <span class="kw">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;skyblue&quot;</span>),</a>
+<a class="sourceLine" id="cb41-4" title="4">          <span class="dt">xlab =</span> <span class="st">&quot;Contratos&quot;</span>, <span class="co"># label for x-axis</span></a>
+<a class="sourceLine" id="cb41-5" title="5">          <span class="dt">ylab =</span> <span class="st">&quot;Sexo&quot;</span> <span class="co"># label for y-axis</span></a>
+<a class="sourceLine" id="cb41-6" title="6">          )</a>
+<a class="sourceLine" id="cb41-7" title="7"></a>
+<a class="sourceLine" id="cb41-8" title="8"><span class="co">#abline(h=mean(datos$sexo==2))</span></a>
+<a class="sourceLine" id="cb41-9" title="9"><span class="kw">abline</span>(<span class="dt">h=</span><span class="fl">0.253</span>, <span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>¿Qué conclusiones obtiene a partir de este análisis? ¿Hay relación entre el sexo y el tipo de contrato?</p>
+</div>
+<div id="pruebas-de-hipótesis." class="section level4">
+<h4><span class="header-section-number">3.1.4.2</span> Pruebas de hipótesis.</h4>
+<p>Evaluamos si existe o no asociación entre el sexo y los tipos de contrato de manera objetiva utilizando una prueba de hipótesis.</p>
+<ol style="list-style-type: decimal">
+<li>Definimos las hipótesis:</li>
+</ol>
+<ul>
+<li><span class="math inline">\(H_O\)</span>: Hay independencia entre el sexo y el tipo de contrato.</li>
+<li><span class="math inline">\(H_1\)</span>: No hay independencia entre el sexo y el tipo de contrato. (Existe asociación entre la variable sexo y el tipo de contrato)</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Definimos la significancia: <span class="math inline">\(5\)</span>%</p></li>
+<li><p>Elegimos la prueba de hipótesis: Chi-cuadrado para la independencia.</p></li>
+<li><p>Calculamos el estadístico de prueba y p-valor en R:</p></li>
+</ol>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1"><span class="kw">chisq.test</span>(datos<span class="op">$</span>sexo, datos<span class="op">$</span>contrato)</a></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test
+## 
+## data:  datos$sexo and datos$contrato
+## X-squared = 47.742, df = 5, p-value = 4.009e-09</code></pre>
+<p>¿A qué conclusión llegamos con esta prueba?</p>
+<ul>
+<li>Decisión: Rechazar Ho</li>
+<li>Conclusión: Con una significancia del 5%, se puede afimar que existe asociación entre la variable sexo y el tipo de contrato</li>
+</ul>
+</div>
+<div id="medidas-de-asociación." class="section level4">
+<h4><span class="header-section-number">3.1.4.3</span> Medidas de asociación.</h4>
+<p>Ahora, continuamos analizando la relación entre las variables sexo y tipos de contrato. Esta vez analizamos el grado de asociación entre las variables utilizando para ello dos medidas de asociación muy conocidas.</p>
+<p>Para los calculos en R, necesitaremos la librería DescTools.</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1"><span class="kw">library</span>(DescTools)</a></code></pre></div>
+<pre><code>## Warning: package &#39;DescTools&#39; was built under R version 4.0.5</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">ContCoef</span>(datos<span class="op">$</span>sexo, datos<span class="op">$</span>contrato)</a></code></pre></div>
+<pre><code>## [1] 0.1451281</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="kw">CramerV</span>(datos<span class="op">$</span>sexo, datos<span class="op">$</span>contrato)</a></code></pre></div>
+<pre><code>## [1] 0.146681</code></pre>
+<p>¿Qué grado de relación existe entre estas dos variables?</p>
+<p>Recordar lo siguiente :</p>
+<ul>
+<li>Más de 0.5 Alta asociación.</li>
+<li>0.3 a 0.5 Asociación moderada.</li>
+<li>0.1 a 0.3 Baja asociación.</li>
+<li>0 a 0.1 Muy baja (si existiese).</li>
+</ul>
+</div>
+</div>
+<div id="ejercicio" class="section level3">
+<h3><span class="header-section-number">3.1.5</span> Ejercicio</h3>
+<ol style="list-style-type: decimal">
+<li><p>Crear un nuevo script, copiar el código y realizar las modificaciones correspondientes para realizar un análisis de la asociación entre el sexo y el tipo de contrato esta vez para los enfermeros.</p></li>
+<li>Crear un reporte con sus resultados, interpretaciones y conclusiones.</li>
+</ol>
+<ul>
+<li>¿Existe evidencia entre una relación entre el sexo y el tipo de contrato en el grupo de enfermeros?</li>
+<li>(<strong>Opcional</strong>) Si es así, ¿Cuál es el grado de asociación entre el sexo y tipo de contrato?</li>
+<li>(<strong>Opcional</strong>) ¿Hay una alta asociación entre estas variables?</li>
+</ul>
+
+</div>
+</div>
+<div id="una-variable-cualitativa-y-otra-cuantitativa" class="section level2">
+<h2><span class="header-section-number">3.2</span> Una variable cualitativa y otra cuantitativa</h2>
+<div id="lectura-de-datos.-1" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Lectura de datos.</h3>
+</div>
+<div id="exploración-básica.-1" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Exploración básica.</h3>
+</div>
+<div id="análisis-univariado.-1" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Análisis univariado.</h3>
+<div id="variable-sexo-1" class="section level4">
+<h4><span class="header-section-number">3.2.3.1</span> Variable: Sexo</h4>
+</div>
+<div id="variable-edad" class="section level4">
+<h4><span class="header-section-number">3.2.3.2</span> Variable: Edad</h4>
+</div>
+</div>
+<div id="análisis-bivariado." class="section level3">
+<h3><span class="header-section-number">3.2.4</span> Análisis bivariado.</h3>
+<div id="exploración-1" class="section level4">
+<h4><span class="header-section-number">3.2.4.1</span> Exploración</h4>
+</div>
+</div>
+<div id="ejercicio-1" class="section level3">
+<h3><span class="header-section-number">3.2.5</span> Ejercicio</h3>
+
+</div>
+</div>
+<div id="variables-cuantitativas." class="section level2">
+<h2><span class="header-section-number">3.3</span> Variables cuantitativas.</h2>
+<div id="caso-1-bmi" class="section level3">
+<h3><span class="header-section-number">3.3.1</span> Caso 1: BMI</h3>
+<div id="lectura-de-datos" class="section level4">
+<h4><span class="header-section-number">3.3.1.1</span> Lectura de datos</h4>
+</div>
+<div id="exploración-bivariada" class="section level4">
+<h4><span class="header-section-number">3.3.1.2</span> Exploración bivariada</h4>
+</div>
+</div>
+<div id="caso-2-arboles" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Caso 2: Arboles</h3>
+<div id="cargar-datos" class="section level4">
+<h4><span class="header-section-number">3.3.2.1</span> Cargar datos</h4>
+</div>
+<div id="exploración-bivariada-1" class="section level4">
+<h4><span class="header-section-number">3.3.2.2</span> Exploración bivariada</h4>
+
+</div>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="análisis-univariado.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["EstadisticaR.pdf", "EstadisticaR.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,227 @@
+
+## Una variable cualitativa y otra cuantitativa
+
+
+Antes de iniciar, nos aseguramos de haber instalado las librerías necesarias.
+```{r Revisar_librerias}
+library(haven)
+library(summarytools)
+
+```
+
+En caso de no tenerlas, instalamos las librerías copiando y pegando el siguiente codigo en la consola. 
+
+```{r instalación, eval=FALSE, include=TRUE}
+install.packages("tidyverse")
+install.packages("summarytools")
+```
+
+
+Luego podemos comenzar con el análisis de datos. Para ello, crear un nuevo script y guardarlo con el nombre de analisisBivar. A continuación, copiar y ejecutar cada uno de los códigos detallados más adelante. 
+
+### Lectura de datos.
+
+Leemos los datos desde SPSS con la librería haven y utilizando el enlace hacia los datos:
+
+```{r lectura, cache=FALSE}
+library(haven)
+enlace<-"http://portal.susalud.gob.pe/wp-content/uploads/archivo/base-de-datos/2015/CUESTIONARIO%2002%20-%20CAPITULOS.sav"
+datossalud = read_sav(enlace)
+```
+
+
+### Exploración básica.
+ 
+Exploramos variables que interesan en el análisis.
+La función attr muestra detalles de las variables.
+
+
+Observaremos la variable **C2P1**: profesión
+```{r}
+head(datossalud$C2P1)
+```
+
+Variable **C2P4**: sexo.
+```{r}
+head(datossalud$C2P4)
+```
+
+Variable **C2P2EDAD**: Tipo de contrato.
+```{r}
+head(datossalud$C2P2EDAD)
+```
+
+
+Seleccionamos el dataset solo con las variables de interés:
+
+<!-- Para ello, debemos instalar la librería DT una sola vez, escribiendo lo siguiente en la consola: 
+
+```{r eval=FALSE, include=TRUE}
+install.packages("DT")
+```
+-->
+
+Seleccionamos los datos de los médicos y además solo las variables de interés con el siguiente código:
+
+```{r}
+datostemp <- datossalud[,c("C2P1","C2P4","C2P2EDAD")]
+names(datostemp) = c("profesion","sexo","edad")
+datos <- datostemp[datostemp$profesion==1,]
+```
+
+Y finalmente observamos los datos:
+```{r}
+head(datos)
+```
+
+
+### Análisis univariado.
+
+Realizamos el análisis individual de las variables de interés: Sexo y Edad.
+
+#### Variable: Sexo
+Para la variable sexo realizamos una tabla de frecuencias y observamos los resultados.
+
+```{r analisis1_sexo}
+tabla_sexo  = table(datos$sexo)
+tabla_sexo
+prop.table(tabla_sexo)
+summarytools::freq(as.factor(datos$sexo))
+```
+
+Interpretación:
+
+* Observamos `r round(mean(datos$sexo==2),3)*100`% de mujeres y `r round(mean(datos$sexo==1),3)*100`% de hombres entre los médicos.
+
+#### Variable: Edad
+
+La variable cuantitativa edad la analizamos utilizando medidas de posición central, dispersión y además un gráfico (histograma o gráficos de cajas).
+
+* Medidas de resumen básicas:
+
+```{r analisis1_edad}
+summary(datos$edad)
+sd(datos$edad)
+```
+
+* Coeficiente de variación:
+
+```{r}
+# Coeficiente de variación.
+cv = sd(datos$edad)/mean(datos$edad)
+```
+
+* Asimetría de fisher para la edad: 
+```{r analisis2_edad}
+Fisher.asi = function(x) mean((x - mean(x,na.rm=T))^3,na.rm=T)/sd(x,na.rm=T)^3
+Fisher.asi(datos$edad)
+```
+ 
+Esta vez, utilizaremos un histograma para observar la distribución de la edad de los médicos.
+```{r histograma_edad}
+library(summarytools)
+histo<- hist(datos$edad, 
+            main="Histograma de las edades", 
+            color='yellow')
+cortes <- histo$breaks # Cortes para la variable a partir del histograma
+var_cat <- cut(datos$edad,cortes) # categorizada
+freq(var_cat) # Tabla de frecuencias
+```
+
+### Análisis bivariado.
+ 
+
+#### Exploración
+
+
+Comenzamos observando las diferencias entre los dos grupos: hombres y mujeres. Los gráficos más utilizados son gráficos de cajas (boxplots) o histogramas para observar estas diferencias.
+
+* Comenzamos comparando las ditribuciones con histogramas:
+
+```{r}
+config_grafico <- par(mfrow=c(1,2))
+hist(datos$edad[datos$sexo==1],
+     prob=T,xlab="Edad (años)",ylab="Densidad",
+     main="Hombres",xlim=c(20,90),ylim=c(0,0.04))
+hist(datos$edad[datos$sexo==2],
+     prob=T,xlab="Edad (años)",ylab="Densidad",
+     main="Mujeres",xlim=c(20,90))
+
+```
+
+* Una mejor visualización de estas diferencias puede realizarse con un gráfico de cajas o boxplot: 
+
+```{r, out.width='70%'}
+boxplot(edad~sexo,
+        datos,
+        xlab="Sexo",
+        ylab="Edad (anos)", 
+        xaxt="n")
+axis(1, at=1:2,
+     labels=c("Hombre","Mujer"))
+```
+  
+
+¿Qué observo en estos resultados? ¿Es sencillo comparar la tendencia central, dispersión y asimetría a partir de este gráfico? ¿Podemos responder las siguientes preguntas?
+
+* ¿Quién tiene mayor edad en general?
+* ¿Quién tiene mayor dispersión en sus datos?
+
+Para una comparación cuantitativa adicional a los gráficos, veremos los resultados de las medidas de resumen por cada grupo:
+ 
+```{r}
+by(datos$edad,datos$sexo,summary)
+```
+
+```{r}
+by(datos$edad,datos$sexo,IQR)
+```
+ 
+```{r}
+by(datos$edad,datos$sexo,Fisher.asi) 
+```
+
+Interpretación:
+
+* Las médicas son, en general, más jóvenes que los médicos La mediana de las edades para las mujeres ($Me_{M}=$ `r median(datos$edad[datos$sexo==2])`) es menor a la de los médicos ($Me_{H}=$ `r median(datos$edad[datos$sexo==1])`).
+
+* Se observa una ligera diferencia en la dispersión de las edades de los hombres($RIC_{M}=$ `r IQR(datos$edad[datos$sexo==1])`) y médicas ($RIC_{M}=$ `r IQR(datos$edad[datos$sexo==2])`).  
+
+* Hay mayor asimetría con cola a la derecha para las edades de las médicas (($CA_{F_M}=$ `r round(Fisher.asi(datos$edad[datos$sexo==1]),2)`) que para los médicos($CA_{F_H}=$ `r round(Fisher.asi(datos$edad[datos$sexo==2]),2)`). 
+
+* Conclusión: se evidencia asociación entre el sexo y la edad de los médicos. 
+
+
+Otros gráficos que se pueden observar para realizar esta comparación son los siguientes:
+
+* Comparación con gráficos de densidad.
+
+```{r fx_densidad_por_grupos}
+plot(density(datos$edad[datos$sexo==1]),
+     xlab="Edad",ylab="Densidad",main="",ylim=c(0,0.05))
+lines(density(datos$edad[datos$sexo==2]),col=2)
+legend(60,0.05,legend=c("Hombres","Mujeres"),
+       col=1:2,lty=1,bty="n")
+```
+
+* Comparación de las funciones de distribución de los grupos.
+
+```{r Fx_dist_acumulada}
+plot(ecdf(datos$edad[datos$sexo==1]),
+     main="")
+lines(ecdf(datos$edad[datos$sexo==2]),
+      col=2)
+```
+ 
+
+### Ejercicio
+
+1. Crear un nuevo script y modificar los códigos para realizar un análisis de la asociación entre el sexo y las edades de los **enfermeros(as)**. Escoger un gráfico para la comparación de los grupos e interpretar las médidas de resumen comparando por sexo. 
+
+2. Crear un reporte con sus resultados y conclusiones. Sus conclusiones deben responder a las siguientes preguntas:
+  - ¿Son diferentes las edades entre los enfermeros y enferemeras? (Observar y comparar boxplots, histogramas o densidades)
+  - ¿Qué grupo tiene mayor edad? (Comparar medidas de posición central)
+  - ¿Qué grupo tiene mayor dispersión de edades? (Comparar medidas de dispersión)
+  - ¿Quién tiene mayor asimetría y hacia que lado? (Comparar coeficiente de asimetría de Fisher)
+  - ¿Existe evidencia entre una relación entre el sexo y la edad en el grupo de enfermeros? (**Opcional**: Realizar prueba de hipótesis y concluir)
+

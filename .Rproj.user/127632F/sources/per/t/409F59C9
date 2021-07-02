@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1620671503142.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "848208439",
+    "id" : "409F59C9",
+    "lastKnownWriteTime" : 1620671511,
+    "last_content_update" : 1620671511578,
+    "path" : "G:/Mon Drive/6. Trabajos/2021/Education/Books/EstadisticaR/Cap3_BiVar_2_Cuali-Cuanti.Rmd",
+    "project_path" : "Cap3_BiVar_2_Cuali-Cuanti.Rmd",
+    "properties" : {
+        "cursorPosition" : "3,0",
+        "docOutlineVisible" : "1",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
