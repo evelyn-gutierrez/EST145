@@ -1,5 +1,5 @@
 
-# Modelos de probabilidad notables. {-}
+# Modelos de probabilidad notables
 
 Muchas variables aleatorias provienen de experimentos similares. Identificarlos nos ahorrará tiempo en determinar las funciones de probabilidades, y sus parámetros cada vez que trabajemos con ellas.
 
@@ -25,9 +25,6 @@ Una probabilidad está asociada a cada uno de los dos resultados posibles:
 $$P(E)=p$$
 * A la probabilidad de fracaso también se le conoce como $q$:
 $$P(F)=1-p=q$$
-
-
-\newpage
 
 ## Distribución Bernoulli
 
@@ -260,7 +257,7 @@ Varios valores de $p$ pueden ser congruentes con los datos observados. Más adel
 El experimento hipergeométrico consiste en extraer al azar y sin sustitución **n** elementos de un conjunto de **N** elementos, **M_1** de los cuales son etiquetados como **"éxitos"** y **M_2=N-M_1** son **"fracasos"**.
 
 ```{r echo=FALSE, out.width='50%', fig.align='center'}
-knitr::include_graphics("img/exp_hipergeom.png")
+knitr::include_graphics("img_MDis/exp_hipergeom.png")
 ```
 
 

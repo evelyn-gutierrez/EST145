@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 6 Modelos Notables para v.a. continuas | Estadística</title>
-  <meta name="description" content="Capítulo 6 Modelos Notables para v.a. continuas | Estadística con aplicaciones utilizando R" />
+  <title>Capítulo 5 Modelos Notables para v.a. continuas | Estadística</title>
+  <meta name="description" content="Capítulo 5 Modelos Notables para v.a. continuas | Estadística con aplicaciones utilizando R" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 6 Modelos Notables para v.a. continuas | Estadística" />
+  <meta property="og:title" content="Capítulo 5 Modelos Notables para v.a. continuas | Estadística" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Capítulo 6 Modelos Notables para v.a. continuas | Estadística con aplicaciones utilizando R" />
+  <meta property="og:description" content="Capítulo 5 Modelos Notables para v.a. continuas | Estadística con aplicaciones utilizando R" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 6 Modelos Notables para v.a. continuas | Estadística" />
+  <meta name="twitter:title" content="Capítulo 5 Modelos Notables para v.a. continuas | Estadística" />
   
-  <meta name="twitter:description" content="Capítulo 6 Modelos Notables para v.a. continuas | Estadística con aplicaciones utilizando R" />
+  <meta name="twitter:description" content="Capítulo 5 Modelos Notables para v.a. continuas | Estadística con aplicaciones utilizando R" />
   
 
 <meta name="author" content="Evelyn Gutierrez" />
@@ -34,7 +34,7 @@
 <link rel="prev" href="modelos-de-probabilidad-notables-.html"/>
 <link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -53,6 +53,14 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -138,42 +146,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
-<li class="chapter" data-level="2" data-path="análisis-univariado.html"><a href="análisis-univariado.html"><i class="fa fa-check"></i><b>2</b> Análisis univariado</a></li>
-<li class="chapter" data-level="3" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html"><i class="fa fa-check"></i><b>3</b> Materiales adicionales:</a>
+<li class="chapter" data-level="2" data-path="análisis-univariado.html"><a href="análisis-univariado.html"><i class="fa fa-check"></i><b>2</b> Análisis univariado</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html#caso-encuesta-a-médicos-y-enfermeros."><i class="fa fa-check"></i><b>3.1</b> Caso: Encuesta a médicos y enfermeros.</a>
+<li class="chapter" data-level="2.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#caso-encuesta-a-médicos-y-enfermeros."><i class="fa fa-check"></i><b>2.1</b> Caso: Encuesta a médicos y enfermeros.</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html#lectura"><i class="fa fa-check"></i><b>3.1.1</b> Lectura de datos.</a></li>
-<li class="chapter" data-level="3.1.2" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html#exploración-básica"><i class="fa fa-check"></i><b>3.1.2</b> Exploración básica</a></li>
-<li class="chapter" data-level="3.1.3" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html#análisis-univariado-1"><i class="fa fa-check"></i><b>3.1.3</b> Análisis univariado</a></li>
-<li class="chapter" data-level="3.1.4" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html#ejercicios"><i class="fa fa-check"></i><b>3.1.4</b> Ejercicio</a></li>
+<li class="chapter" data-level="2.1.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#lectura"><i class="fa fa-check"></i><b>2.1.1</b> Lectura de datos.</a></li>
+<li class="chapter" data-level="2.1.2" data-path="análisis-univariado.html"><a href="análisis-univariado.html#exploración-básica"><i class="fa fa-check"></i><b>2.1.2</b> Exploración básica</a></li>
+<li class="chapter" data-level="2.1.3" data-path="análisis-univariado.html"><a href="análisis-univariado.html#análisis-univariado-1"><i class="fa fa-check"></i><b>2.1.3</b> Análisis univariado</a></li>
+<li class="chapter" data-level="2.1.4" data-path="análisis-univariado.html"><a href="análisis-univariado.html#ejercicios"><i class="fa fa-check"></i><b>2.1.4</b> Ejercicio</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html"><i class="fa fa-check"></i><b>4</b> Análisis bivariado</a>
+<li class="chapter" data-level="3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html"><i class="fa fa-check"></i><b>3</b> Análisis bivariado</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#dos-variables-cualitativas"><i class="fa fa-check"></i><b>4.1</b> Dos variables cualitativas</a>
+<li class="chapter" data-level="3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#dos-variables-cualitativas"><i class="fa fa-check"></i><b>3.1</b> Dos variables cualitativas</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos."><i class="fa fa-check"></i><b>4.1.1</b> Lectura de datos.</a></li>
-<li class="chapter" data-level="4.1.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica."><i class="fa fa-check"></i><b>4.1.2</b> Exploración básica.</a></li>
-<li class="chapter" data-level="4.1.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado."><i class="fa fa-check"></i><b>4.1.3</b> Análisis univariado.</a></li>
-<li class="chapter" data-level="4.1.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado-1"><i class="fa fa-check"></i><b>4.1.4</b> Análisis bivariado</a></li>
-<li class="chapter" data-level="4.1.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio"><i class="fa fa-check"></i><b>4.1.5</b> Ejercicio</a></li>
+<li class="chapter" data-level="3.1.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos."><i class="fa fa-check"></i><b>3.1.1</b> Lectura de datos.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica."><i class="fa fa-check"></i><b>3.1.2</b> Exploración básica.</a></li>
+<li class="chapter" data-level="3.1.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado."><i class="fa fa-check"></i><b>3.1.3</b> Análisis univariado.</a></li>
+<li class="chapter" data-level="3.1.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado-1"><i class="fa fa-check"></i><b>3.1.4</b> Análisis bivariado</a></li>
+<li class="chapter" data-level="3.1.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio"><i class="fa fa-check"></i><b>3.1.5</b> Ejercicio</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#una-variable-cualitativa-y-otra-cuantitativa"><i class="fa fa-check"></i><b>4.2</b> Una variable cualitativa y otra cuantitativa</a>
+<li class="chapter" data-level="3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#una-variable-cualitativa-y-otra-cuantitativa"><i class="fa fa-check"></i><b>3.2</b> Una variable cualitativa y otra cuantitativa</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos.-1"><i class="fa fa-check"></i><b>4.2.1</b> Lectura de datos.</a></li>
-<li class="chapter" data-level="4.2.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica.-1"><i class="fa fa-check"></i><b>4.2.2</b> Exploración básica.</a></li>
-<li class="chapter" data-level="4.2.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado.-1"><i class="fa fa-check"></i><b>4.2.3</b> Análisis univariado.</a></li>
-<li class="chapter" data-level="4.2.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado."><i class="fa fa-check"></i><b>4.2.4</b> Análisis bivariado.</a></li>
-<li class="chapter" data-level="4.2.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio-1"><i class="fa fa-check"></i><b>4.2.5</b> Ejercicio</a></li>
+<li class="chapter" data-level="3.2.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos.-1"><i class="fa fa-check"></i><b>3.2.1</b> Lectura de datos.</a></li>
+<li class="chapter" data-level="3.2.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica.-1"><i class="fa fa-check"></i><b>3.2.2</b> Exploración básica.</a></li>
+<li class="chapter" data-level="3.2.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado.-1"><i class="fa fa-check"></i><b>3.2.3</b> Análisis univariado.</a></li>
+<li class="chapter" data-level="3.2.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado."><i class="fa fa-check"></i><b>3.2.4</b> Análisis bivariado.</a></li>
+<li class="chapter" data-level="3.2.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio-1"><i class="fa fa-check"></i><b>3.2.5</b> Ejercicio</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#variables-cuantitativas."><i class="fa fa-check"></i><b>4.3</b> Variables cuantitativas.</a>
+<li class="chapter" data-level="3.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#variables-cuantitativas."><i class="fa fa-check"></i><b>3.3</b> Variables cuantitativas.</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-1-bmi"><i class="fa fa-check"></i><b>4.3.1</b> Caso 1: BMI</a></li>
-<li class="chapter" data-level="4.3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-2-arboles"><i class="fa fa-check"></i><b>4.3.2</b> Caso 2: Arboles</a></li>
+<li class="chapter" data-level="3.3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-1-bmi"><i class="fa fa-check"></i><b>3.3.1</b> Caso 1: BMI</a></li>
+<li class="chapter" data-level="3.3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-2-arboles"><i class="fa fa-check"></i><b>3.3.2</b> Caso 2: Arboles</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html"><i class="fa fa-check"></i><b>5</b> Variables aleatorias</a>
+<li class="chapter" data-level="4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html"><i class="fa fa-check"></i><b>4</b> Variables aleatorias</a>
 <ul>
 <li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#ejemplo-lanzamiento-de-moneda"><i class="fa fa-check"></i>Ejemplo: Lanzamiento de moneda</a></li>
 <li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#tipos-de-variables-aleatorias"><i class="fa fa-check"></i>Tipos de variables aleatorias</a>
@@ -181,80 +188,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-discretas"><i class="fa fa-check"></i>Variables aleatorias discretas</a></li>
 <li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-continuas"><i class="fa fa-check"></i>Variables aleatorias continuas</a></li>
 </ul></li>
-<li class="chapter" data-level="5.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-distribución-de-probabilidad-fx"><i class="fa fa-check"></i><b>5.1</b> Función de distribución de probabilidad f(X)</a></li>
-<li class="chapter" data-level="5.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-probabilidad-acumulada-fx"><i class="fa fa-check"></i><b>5.2</b> Función de probabilidad acumulada F(X)</a>
+<li class="chapter" data-level="4.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-discretas-1"><i class="fa fa-check"></i><b>4.1</b> Variables Aleatorias Discretas</a>
 <ul>
-<li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#ejemplo-lanzamiento-de-moneda-continuación"><i class="fa fa-check"></i>Ejemplo: Lanzamiento de moneda (continuación)</a></li>
-</ul></li>
-<li class="chapter" data-level="5.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-cuantil-qp"><i class="fa fa-check"></i><b>5.3</b> Función Cuantil <span class="math inline">\(Q(p)\)</span></a>
-<ul>
-<li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#cuartiles-y-mediana"><i class="fa fa-check"></i>Cuartiles y Mediana:</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza"><i class="fa fa-check"></i><b>5.4</b> Esperanza</a></li>
-<li class="chapter" data-level="5.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#media-y-varianza."><i class="fa fa-check"></i><b>5.5</b> Media y varianza.</a></li>
-<li class="chapter" data-level="5.6" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades"><i class="fa fa-check"></i><b>5.6</b> Propiedades</a>
-<ul>
-<li class="chapter" data-level="5.6.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza-1"><i class="fa fa-check"></i><b>5.6.1</b> Esperanza</a></li>
-<li class="chapter" data-level="5.6.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#varianza"><i class="fa fa-check"></i><b>5.6.2</b> Varianza:</a></li>
-</ul></li>
+<li class="chapter" data-level="4.1.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-distribución-de-probabilidad-fx"><i class="fa fa-check"></i><b>4.1.1</b> Función de distribución de probabilidad f(X)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-probabilidad-acumulada-fx"><i class="fa fa-check"></i><b>4.1.2</b> Función de probabilidad acumulada F(X)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-cuantil-qp"><i class="fa fa-check"></i><b>4.1.3</b> Función Cuantil <span class="math inline">\(Q(p)\)</span></a></li>
+<li class="chapter" data-level="4.1.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza"><i class="fa fa-check"></i><b>4.1.4</b> Esperanza</a></li>
+<li class="chapter" data-level="4.1.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#media-y-varianza."><i class="fa fa-check"></i><b>4.1.5</b> Media y varianza.</a></li>
+<li class="chapter" data-level="4.1.6" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades"><i class="fa fa-check"></i><b>4.1.6</b> Propiedades</a></li>
 <li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#ejercicio-2"><i class="fa fa-check"></i>Ejercicio</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-continuas-1"><i class="fa fa-check"></i><b>4.2</b> Variables Aleatorias Continuas</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-densidad-fx"><i class="fa fa-check"></i><b>4.2.1</b> Función de densidad – f(x)</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html"><i class="fa fa-check"></i>Modelos de probabilidad notables.</a>
 <ul>
 <li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#experimento-bernoulli"><i class="fa fa-check"></i>Experimento Bernoulli</a></li>
-<li class="chapter" data-level="5.7" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#media-y-varianza"><i class="fa fa-check"></i><b>5.7</b> Media y varianza</a></li>
-<li class="chapter" data-level="5.8" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#media-y-varianza-1"><i class="fa fa-check"></i><b>5.8</b> Media y varianza</a></li>
-<li class="chapter" data-level="5.9" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente"><i class="fa fa-check"></i><b>5.9</b> Gráficamente</a></li>
-<li class="chapter" data-level="5.10" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones"><i class="fa fa-check"></i><b>5.10</b> Aplicaciones</a>
+<li class="chapter" data-level="4.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-bernoulli"><i class="fa fa-check"></i><b>4.3</b> Distribución Bernoulli</a>
 <ul>
-<li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#uso-de-r"><i class="fa fa-check"></i>Uso de R</a></li>
-<li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#caso-consumo-de-frutas"><i class="fa fa-check"></i>Caso: Consumo de frutas</a></li>
-<li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#caso-aprobación-presidencial."><i class="fa fa-check"></i>Caso: Aprobación presidencial.</a></li>
+<li class="chapter" data-level="4.3.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#media-y-varianza"><i class="fa fa-check"></i><b>4.3.1</b> Media y varianza</a></li>
 </ul></li>
-<li class="chapter" data-level="5.11" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#esperanza-y-varianza"><i class="fa fa-check"></i><b>5.11</b> Esperanza y varianza</a></li>
-<li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aproximación-binomial"><i class="fa fa-check"></i>Aproximación Binomial</a></li>
-<li class="chapter" data-level="5.12" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente-1"><i class="fa fa-check"></i><b>5.12</b> Gráficamente</a></li>
-<li class="chapter" data-level="5.13" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones-1"><i class="fa fa-check"></i><b>5.13</b> Aplicaciones</a>
+<li class="chapter" data-level="4.4" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-binomial"><i class="fa fa-check"></i><b>4.4</b> Distribución Binomial</a>
 <ul>
-<li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#uso-en-r"><i class="fa fa-check"></i>Uso en R</a></li>
-<li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#alumnos-desaprobados"><i class="fa fa-check"></i>Alumnos desaprobados</a></li>
+<li class="chapter" data-level="4.4.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#media-y-varianza-1"><i class="fa fa-check"></i><b>4.4.1</b> Media y varianza</a></li>
+<li class="chapter" data-level="4.4.2" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente"><i class="fa fa-check"></i><b>4.4.2</b> Gráficamente</a></li>
+<li class="chapter" data-level="4.4.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones"><i class="fa fa-check"></i><b>4.4.3</b> Aplicaciones</a></li>
 </ul></li>
-<li class="chapter" data-level="5.14" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#esperanza-y-varianza-1"><i class="fa fa-check"></i><b>5.14</b> Esperanza y varianza</a>
+<li class="chapter" data-level="4.5" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-hipergeométrica"><i class="fa fa-check"></i><b>4.5</b> Distribución Hipergeométrica</a>
 <ul>
-<li class="chapter" data-level="5.14.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#proceso-de-poisson"><i class="fa fa-check"></i><b>5.14.1</b> Proceso de Poisson</a></li>
+<li class="chapter" data-level="4.5.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#esperanza-y-varianza"><i class="fa fa-check"></i><b>4.5.1</b> Esperanza y varianza</a></li>
+<li class="chapter" data-level="4.5.2" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente-1"><i class="fa fa-check"></i><b>4.5.2</b> Gráficamente</a></li>
+<li class="chapter" data-level="4.5.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones-1"><i class="fa fa-check"></i><b>4.5.3</b> Aplicaciones</a></li>
 </ul></li>
-<li class="chapter" data-level="5.15" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente-distribución-poisson"><i class="fa fa-check"></i><b>5.15</b> Gráficamente: Distribución Poisson</a></li>
-<li class="chapter" data-level="5.16" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones-2"><i class="fa fa-check"></i><b>5.16</b> Aplicaciones</a>
+<li class="chapter" data-level="4.6" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-poisson"><i class="fa fa-check"></i><b>4.6</b> Distribución Poisson</a>
 <ul>
-<li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#usando-r"><i class="fa fa-check"></i>Usando R</a></li>
-<li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#caso-número-de-dependientes"><i class="fa fa-check"></i>Caso: Número de dependientes</a></li>
-<li class="chapter" data-level="5.16.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#medición-de-la-radiactividad."><i class="fa fa-check"></i><b>5.16.1</b> Medición de la radiactividad.</a></li>
+<li class="chapter" data-level="4.6.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#esperanza-y-varianza-1"><i class="fa fa-check"></i><b>4.6.1</b> Esperanza y varianza</a></li>
+<li class="chapter" data-level="4.6.2" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente-distribución-poisson"><i class="fa fa-check"></i><b>4.6.2</b> Gráficamente: Distribución Poisson</a></li>
+<li class="chapter" data-level="4.6.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones-2"><i class="fa fa-check"></i><b>4.6.3</b> Aplicaciones</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html"><i class="fa fa-check"></i><b>6</b> Modelos Notables para v.a. continuas</a>
+<li class="chapter" data-level="5" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html"><i class="fa fa-check"></i><b>5</b> Modelos Notables para v.a. continuas</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-exponencial"><i class="fa fa-check"></i><b>6.1</b> Modelo: Exponencial</a>
+<li class="chapter" data-level="5.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-exponencial"><i class="fa fa-check"></i><b>5.1</b> Modelo: Exponencial</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f"><i class="fa fa-check"></i><b>6.1.1</b> Función de densidad f</a></li>
-<li class="chapter" data-level="6.1.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-acumulada-f"><i class="fa fa-check"></i><b>6.1.2</b> Función acumulada F</a></li>
-<li class="chapter" data-level="6.1.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#gráficamente-2"><i class="fa fa-check"></i><b>6.1.3</b> Gráficamente</a></li>
-<li class="chapter" data-level="6.1.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#esperanza-y-varianza."><i class="fa fa-check"></i><b>6.1.4</b> Esperanza y varianza.</a></li>
-<li class="chapter" data-level="6.1.5" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#nota-otros-parametros."><i class="fa fa-check"></i><b>6.1.5</b> Nota: Otros parametros.</a></li>
-<li class="chapter" data-level="6.1.6" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>6.1.6</b> Ejercicios:</a></li>
+<li class="chapter" data-level="5.1.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f"><i class="fa fa-check"></i><b>5.1.1</b> Función de densidad f</a></li>
+<li class="chapter" data-level="5.1.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-acumulada-f"><i class="fa fa-check"></i><b>5.1.2</b> Función acumulada F</a></li>
+<li class="chapter" data-level="5.1.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#gráficamente-2"><i class="fa fa-check"></i><b>5.1.3</b> Gráficamente</a></li>
+<li class="chapter" data-level="5.1.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#esperanza-y-varianza."><i class="fa fa-check"></i><b>5.1.4</b> Esperanza y varianza.</a></li>
+<li class="chapter" data-level="5.1.5" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#nota-otros-parametros."><i class="fa fa-check"></i><b>5.1.5</b> Nota: Otros parametros.</a></li>
+<li class="chapter" data-level="5.1.6" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>5.1.6</b> Ejercicios:</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-gamma"><i class="fa fa-check"></i><b>6.2</b> Modelo: Gamma</a>
+<li class="chapter" data-level="5.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-gamma"><i class="fa fa-check"></i><b>5.2</b> Modelo: Gamma</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f-1"><i class="fa fa-check"></i><b>6.2.1</b> Función de densidad f</a></li>
-<li class="chapter" data-level="6.2.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#graficamente"><i class="fa fa-check"></i><b>6.2.2</b> Graficamente</a></li>
-<li class="chapter" data-level="6.2.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#esperanza-y-varianza-2"><i class="fa fa-check"></i><b>6.2.3</b> Esperanza y varianza</a></li>
-<li class="chapter" data-level="6.2.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-2"><i class="fa fa-check"></i><b>6.2.4</b> Ejercicios</a></li>
+<li class="chapter" data-level="5.2.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f-1"><i class="fa fa-check"></i><b>5.2.1</b> Función de densidad f</a></li>
+<li class="chapter" data-level="5.2.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#graficamente"><i class="fa fa-check"></i><b>5.2.2</b> Graficamente</a></li>
+<li class="chapter" data-level="5.2.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#esperanza-y-varianza-2"><i class="fa fa-check"></i><b>5.2.3</b> Esperanza y varianza</a></li>
+<li class="chapter" data-level="5.2.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-2"><i class="fa fa-check"></i><b>5.2.4</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-weibull"><i class="fa fa-check"></i><b>6.3</b> Modelo: Weibull</a>
+<li class="chapter" data-level="5.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-weibull"><i class="fa fa-check"></i><b>5.3</b> Modelo: Weibull</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f-2"><i class="fa fa-check"></i><b>6.3.1</b> Función de densidad f</a></li>
-<li class="chapter" data-level="6.3.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-acumulada-f-1"><i class="fa fa-check"></i><b>6.3.2</b> Función acumulada F</a></li>
-<li class="chapter" data-level="6.3.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-3"><i class="fa fa-check"></i><b>6.3.3</b> Ejercicios</a></li>
-<li class="chapter" data-level="6.3.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#calculos-en-r"><i class="fa fa-check"></i><b>6.3.4</b> Calculos en R</a></li>
+<li class="chapter" data-level="5.3.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f-2"><i class="fa fa-check"></i><b>5.3.1</b> Función de densidad f</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-acumulada-f-1"><i class="fa fa-check"></i><b>5.3.2</b> Función acumulada F</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-3"><i class="fa fa-check"></i><b>5.3.3</b> Ejercicios</a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#calculos-en-r"><i class="fa fa-check"></i><b>5.3.4</b> Calculos en R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -278,12 +276,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="modelos-notables-para-v.a.-continuas" class="section level1" number="6">
-<h1><span class="header-section-number">Capítulo 6</span> Modelos Notables para v.a. continuas</h1>
-<div id="modelo-exponencial" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Modelo: Exponencial</h2>
-<div id="función-de-densidad-f" class="section level3" number="6.1.1">
-<h3><span class="header-section-number">6.1.1</span> Función de densidad f</h3>
+<div id="modelos-notables-para-v.a.-continuas" class="section level1" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> Modelos Notables para v.a. continuas</h1>
+<div id="modelo-exponencial" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Modelo: Exponencial</h2>
+<div id="función-de-densidad-f" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Función de densidad f</h3>
 <ul>
 <li><p>Sea <span class="math inline">\(X\)</span> una variable aleatoria (v.a.) continua</p></li>
 <li><p>Decimos que <span class="math inline">\(X\)</span> sigue un modelo exponencial y se denota por
@@ -297,8 +295,8 @@ densidad es <span class="math display">\[f(x) =
 \right.\]</span> donde <span class="math inline">\(\lambda&gt;0\)</span> se le llama el parámetro de escala.</p></li>
 </ul>
 </div>
-<div id="función-acumulada-f" class="section level3" number="6.1.2">
-<h3><span class="header-section-number">6.1.2</span> Función acumulada F</h3>
+<div id="función-acumulada-f" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Función acumulada F</h3>
 <ul>
 <li>La función de distribución acumulada es <span class="math display">\[F(x) = 
 \left \{
@@ -309,15 +307,15 @@ densidad es <span class="math display">\[f(x) =
 \right.\]</span></li>
 </ul>
 </div>
-<div id="gráficamente-2" class="section level3" number="6.1.3">
-<h3><span class="header-section-number">6.1.3</span> Gráficamente</h3>
+<div id="gráficamente-2" class="section level3" number="5.1.3">
+<h3><span class="header-section-number">5.1.3</span> Gráficamente</h3>
 <div class="figure">
 <img src="img_MCont/Figure1.PNG" width="500" alt="" />
 <p class="caption">Modelo Exponencial</p>
 </div>
 </div>
-<div id="esperanza-y-varianza." class="section level3" number="6.1.4">
-<h3><span class="header-section-number">6.1.4</span> Esperanza y varianza.</h3>
+<div id="esperanza-y-varianza." class="section level3" number="5.1.4">
+<h3><span class="header-section-number">5.1.4</span> Esperanza y varianza.</h3>
 <ul>
 <li>La esperanza y varianza son</li>
 </ul>
@@ -332,8 +330,8 @@ densidad es <span class="math display">\[f(x) =
 <span class="math display">\[q_p = -\frac{1}{\lambda} \log_e{(1-p)}\]</span></p></li>
 </ul>
 </div>
-<div id="nota-otros-parametros." class="section level3" number="6.1.5">
-<h3><span class="header-section-number">6.1.5</span> Nota: Otros parametros.</h3>
+<div id="nota-otros-parametros." class="section level3" number="5.1.5">
+<h3><span class="header-section-number">5.1.5</span> Nota: Otros parametros.</h3>
 <ul>
 <li><p>Otra parametrización es en función de su valor esperado
 <span class="math display">\[X \sim Exponencial(\beta) \ , \ \beta &gt;0\]</span></p></li>
@@ -354,55 +352,55 @@ densidad es <span class="math display">\[f(x) =
   Var[X] &amp;=&amp; \beta^2
   \nonumber \end{aligned}\]</span></p>
 </div>
-<div id="ejercicios-1" class="section level3" number="6.1.6">
-<h3><span class="header-section-number">6.1.6</span> Ejercicios:</h3>
-<div id="cálculos-en-r" class="section level4" number="6.1.6.1">
-<h4><span class="header-section-number">6.1.6.1</span> Cálculos en R</h4>
+<div id="ejercicios-1" class="section level3" number="5.1.6">
+<h3><span class="header-section-number">5.1.6</span> Ejercicios:</h3>
+<div id="cálculos-en-r" class="section level4" number="5.1.6.1">
+<h4><span class="header-section-number">5.1.6.1</span> Cálculos en R</h4>
 <p>Supongamos que <span class="math inline">\(X \sim Exponencial(\lambda=2)\)</span>:</p>
 <ul>
 <li>Calcular <span class="math inline">\(P(X\leq 1)\)</span></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="modelos-notables-para-v-a-continuas.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pexp</span>(<span class="dv">1</span>,<span class="at">rate=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="modelos-notables-para-v-a-continuas.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pexp</span>(<span class="dv">1</span>,<span class="at">rate=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.8646647</code></pre>
 <ul>
 <li>Calcular <span class="math inline">\(P(X &gt; 4) = 1- P(X \leq 4)\)</span></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="modelos-notables-para-v-a-continuas.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pexp</span>(<span class="dv">4</span>,<span class="at">rate=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="modelos-notables-para-v-a-continuas.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pexp</span>(<span class="dv">4</span>,<span class="at">rate=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0003354626</code></pre>
 <ul>
 <li><span class="math inline">\(P(1 \leq X \leq 10) = F(10) - F(1)\)</span></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="modelos-notables-para-v-a-continuas.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pexp</span>(<span class="dv">10</span>,<span class="at">rate=</span><span class="dv">2</span>) <span class="sc">-</span>  <span class="fu">pexp</span>(<span class="dv">1</span>,<span class="at">rate=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="modelos-notables-para-v-a-continuas.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pexp</span>(<span class="dv">10</span>,<span class="at">rate=</span><span class="dv">2</span>) <span class="sc">-</span>  <span class="fu">pexp</span>(<span class="dv">1</span>,<span class="at">rate=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1353353</code></pre>
 <ul>
 <li>El percentil 90. Es decir <span class="math inline">\(P(X \leq q_{0.9}) = 0.9\)</span></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="modelos-notables-para-v-a-continuas.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qexp</span>(<span class="fl">0.9</span>,<span class="at">rate=</span><span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="modelos-notables-para-v-a-continuas.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qexp</span>(<span class="fl">0.9</span>,<span class="at">rate=</span><span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 1.151293</code></pre>
 </div>
-<div id="caso-tiempo-de-atención" class="section level4" number="6.1.6.2">
-<h4><span class="header-section-number">6.1.6.2</span> Caso: Tiempo de atención</h4>
+<div id="caso-tiempo-de-atención" class="section level4" number="5.1.6.2">
+<h4><span class="header-section-number">5.1.6.2</span> Caso: Tiempo de atención</h4>
 <ul>
 <li>Consideremos la Encuesta de satisfacción en salud (del año 2015).</li>
 <li>En esta encuesta se obtuvo la duración de la atención de pacientes.</li>
 <li>En R, podemos obtener los datos y ver sus medidas de resumen:</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="modelos-notables-para-v-a-continuas.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb9-2"><a href="modelos-notables-para-v-a-continuas.html#cb9-2" aria-hidden="true" tabindex="-1"></a>enlace<span class="ot">=</span><span class="st">&quot;http://portal.susalud.gob.pe/wp-content/uploads/archivo/base-de-datos/2015/CUESTIONARIO%2001%20-%20CAPITULOS.sav&quot;</span></span>
-<span id="cb9-3"><a href="modelos-notables-para-v-a-continuas.html#cb9-3" aria-hidden="true" tabindex="-1"></a>salud.paciente <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(enlace)</span>
-<span id="cb9-4"><a href="modelos-notables-para-v-a-continuas.html#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="modelos-notables-para-v-a-continuas.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos de pacientes: </span></span>
-<span id="cb9-6"><a href="modelos-notables-para-v-a-continuas.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(salud.paciente<span class="sc">$</span>C1P14,<span class="st">&quot;label&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="modelos-notables-para-v-a-continuas.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb230-2"><a href="modelos-notables-para-v-a-continuas.html#cb230-2" aria-hidden="true" tabindex="-1"></a>enlace<span class="ot">=</span><span class="st">&quot;http://portal.susalud.gob.pe/wp-content/uploads/archivo/base-de-datos/2015/CUESTIONARIO%2001%20-%20CAPITULOS.sav&quot;</span></span>
+<span id="cb230-3"><a href="modelos-notables-para-v-a-continuas.html#cb230-3" aria-hidden="true" tabindex="-1"></a>salud.paciente <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(enlace)</span>
+<span id="cb230-4"><a href="modelos-notables-para-v-a-continuas.html#cb230-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb230-5"><a href="modelos-notables-para-v-a-continuas.html#cb230-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos de pacientes: </span></span>
+<span id="cb230-6"><a href="modelos-notables-para-v-a-continuas.html#cb230-6" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(salud.paciente<span class="sc">$</span>C1P14,<span class="st">&quot;label&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;¿CUÁNTO TIEMPO TRANSCURRIÓ, DESDE QUE UD. INGRESÓ HASTA QUE SALIÓ DEL CONSULTORIO MÉDICO? (En minutos)&quot;</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="modelos-notables-para-v-a-continuas.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(salud.paciente<span class="sc">$</span>C1P14)</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="modelos-notables-para-v-a-continuas.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(salud.paciente<span class="sc">$</span>C1P14)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA&#39;s 
 ##    1.00   10.00   10.00   11.13   15.00   90.00      28</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="modelos-notables-para-v-a-continuas.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Varianza y desviación estandard</span></span>
-<span id="cb13-2"><a href="modelos-notables-para-v-a-continuas.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(salud.paciente<span class="sc">$</span>C1P14,<span class="at">na.rm =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="modelos-notables-para-v-a-continuas.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Varianza y desviación estandard</span></span>
+<span id="cb234-2"><a href="modelos-notables-para-v-a-continuas.html#cb234-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(salud.paciente<span class="sc">$</span>C1P14,<span class="at">na.rm =</span> T)</span></code></pre></div>
 <pre><code>## [1] 11.13173</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="modelos-notables-para-v-a-continuas.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(salud.paciente<span class="sc">$</span>C1P14,<span class="at">na.rm =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="modelos-notables-para-v-a-continuas.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(salud.paciente<span class="sc">$</span>C1P14,<span class="at">na.rm =</span> T)</span></code></pre></div>
 <pre><code>## [1] 21.91953</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="modelos-notables-para-v-a-continuas.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(salud.paciente<span class="sc">$</span>C1P14,<span class="at">na.rm =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="modelos-notables-para-v-a-continuas.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(salud.paciente<span class="sc">$</span>C1P14,<span class="at">na.rm =</span> T)</span></code></pre></div>
 <pre><code>## [1] 4.68183</code></pre>
 <ul>
 <li>La media y desviación éstandar de la duración de la atención son 11.13
@@ -471,10 +469,10 @@ y 4.7 minutos, respectivamente.</li>
 </div>
 </div>
 </div>
-<div id="modelo-gamma" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Modelo: Gamma</h2>
-<div id="función-de-densidad-f-1" class="section level3" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> Función de densidad f</h3>
+<div id="modelo-gamma" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Modelo: Gamma</h2>
+<div id="función-de-densidad-f-1" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Función de densidad f</h3>
 <ul>
 <li><p>Decimos que una variable continua <span class="math inline">\(X\)</span> es Gamma y se denota por
 <span class="math display">\[X \sim Gamma(\alpha,\lambda) \ , \  \alpha &gt; 0 \ , \ \lambda &gt;0\]</span></p></li>
@@ -501,12 +499,12 @@ respectivamente.</p></li>
 </ul>
 <!--![](img_MCont/Figure4.PNG)-->
 </div>
-<div id="graficamente" class="section level3" number="6.2.2">
-<h3><span class="header-section-number">6.2.2</span> Graficamente</h3>
+<div id="graficamente" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Graficamente</h3>
 <p><img src="img_MCont/Figure5.PNG" />{width=500px}</p>
 </div>
-<div id="esperanza-y-varianza-2" class="section level3" number="6.2.3">
-<h3><span class="header-section-number">6.2.3</span> Esperanza y varianza</h3>
+<div id="esperanza-y-varianza-2" class="section level3" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Esperanza y varianza</h3>
 <ul>
 <li>La esperanza y varianza son</li>
 </ul>
@@ -522,34 +520,34 @@ respectivamente.</p></li>
 <span class="math display">\[Y = X_1 + \dots + X_n \sim Gamma(n,\lambda)\]</span></li>
 </ul>
 </div>
-<div id="ejercicios-2" class="section level3" number="6.2.4">
-<h3><span class="header-section-number">6.2.4</span> Ejercicios</h3>
-<div id="cálculos-en-r-1" class="section level4" number="6.2.4.1">
-<h4><span class="header-section-number">6.2.4.1</span> Cálculos en R</h4>
+<div id="ejercicios-2" class="section level3" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Ejercicios</h3>
+<div id="cálculos-en-r-1" class="section level4" number="5.2.4.1">
+<h4><span class="header-section-number">5.2.4.1</span> Cálculos en R</h4>
 <p>Supongamos que <span class="math inline">\(X \sim Gamma(\alpha=2,\lambda=2)\)</span></p>
 <ul>
 <li>Cálculo de <span class="math inline">\(P(X\leq 1)\)</span></li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="modelos-notables-para-v-a-continuas.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pgamma</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="modelos-notables-para-v-a-continuas.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pgamma</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.5939942</code></pre>
 <ul>
 <li>Cálculo de <span class="math inline">\(P(X &gt; 4) = 1- P(X \leq 4)\)</span></li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="modelos-notables-para-v-a-continuas.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="modelos-notables-para-v-a-continuas.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pgamma</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.003019164</code></pre>
 <ul>
 <li>Cálculo de <span class="math inline">\(P(1 \leq X \leq 10) = F(10) - F(1)\)</span></li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="modelos-notables-para-v-a-continuas.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pgamma</span>(<span class="dv">10</span>,<span class="dv">2</span>,<span class="dv">2</span>) <span class="sc">-</span> <span class="fu">pgamma</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="modelos-notables-para-v-a-continuas.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pgamma</span>(<span class="dv">10</span>,<span class="dv">2</span>,<span class="dv">2</span>) <span class="sc">-</span> <span class="fu">pgamma</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.4060058</code></pre>
 <ul>
 <li>El tercer cuartil <span class="math inline">\(Q_3\)</span></li>
 </ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="modelos-notables-para-v-a-continuas.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qgamma</span>(<span class="fl">0.75</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="modelos-notables-para-v-a-continuas.html#cb246-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qgamma</span>(<span class="fl">0.75</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 1.346317</code></pre>
 </div>
-<div id="caso-duración-de-la-atención" class="section level4" number="6.2.4.2">
-<h4><span class="header-section-number">6.2.4.2</span> Caso: Duración de la atención</h4>
+<div id="caso-duración-de-la-atención" class="section level4" number="5.2.4.2">
+<h4><span class="header-section-number">5.2.4.2</span> Caso: Duración de la atención</h4>
 <ul>
 <li><p>Sea <span class="math inline">\(X\)</span> la duración de la atención en minutos</p></li>
 <li><p>Supongamos que <span class="math inline">\(X\)</span> se modela via <span class="math display">\[X \sim Gamma(\alpha,\lambda)\]</span></p></li>
@@ -610,10 +608,10 @@ respectivamente.</p></li>
 </div>
 </div>
 </div>
-<div id="modelo-weibull" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Modelo: Weibull</h2>
-<div id="función-de-densidad-f-2" class="section level3" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> Función de densidad f</h3>
+<div id="modelo-weibull" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Modelo: Weibull</h2>
+<div id="función-de-densidad-f-2" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Función de densidad f</h3>
 <ul>
 <li><p>Decimos que una variable continua <span class="math inline">\(X\)</span> es Gamma y se denota por
 <span class="math display">\[X \sim Weibull(\alpha,\beta) \ , \  \alpha &gt; 0 \ , \ \beta &gt;0\]</span></p></li>
@@ -631,8 +629,8 @@ e^{-
 escala, respectivamente.</p></li>
 </ul>
 </div>
-<div id="función-acumulada-f-1" class="section level3" number="6.3.2">
-<h3><span class="header-section-number">6.3.2</span> Función acumulada F</h3>
+<div id="función-acumulada-f-1" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> Función acumulada F</h3>
 <ul>
 <li><p>La función de distribución acumulada es <span class="math display">\[F(x) =
 \left \{
@@ -665,35 +663,35 @@ Var[X] &amp;=&amp; \beta^2
 </ul>
 <p><img src="img_MCont/Figure7.PNG" /></p>
 </div>
-<div id="ejercicios-3" class="section level3" number="6.3.3">
-<h3><span class="header-section-number">6.3.3</span> Ejercicios</h3>
+<div id="ejercicios-3" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Ejercicios</h3>
 </div>
-<div id="calculos-en-r" class="section level3" number="6.3.4">
-<h3><span class="header-section-number">6.3.4</span> Calculos en R</h3>
+<div id="calculos-en-r" class="section level3" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Calculos en R</h3>
 <ul>
 <li><p>Supongamos que <span class="math inline">\(X \sim Weibull(\alpha=2,\beta=2)\)</span></p></li>
 <li><p><span class="math inline">\(P(X\leq 1)\)</span></p></li>
 </ul>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="modelos-notables-para-v-a-continuas.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pweibull</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="modelos-notables-para-v-a-continuas.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pweibull</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.2211992</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="modelos-notables-para-v-a-continuas.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 0.2211992</span></span></code></pre></div>
+<div class="sourceCode" id="cb250"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb250-1"><a href="modelos-notables-para-v-a-continuas.html#cb250-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 0.2211992</span></span></code></pre></div>
 <ul>
 <li><span class="math inline">\(P(X &gt; 4) = 1- P(X \leq 4)\)</span></li>
 </ul>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="modelos-notables-para-v-a-continuas.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pweibull</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="modelos-notables-para-v-a-continuas.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pweibull</span>(<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.01831564</code></pre>
 <ul>
 <li><span class="math inline">\(P(1 \leq X \leq 10) = F(10) - F(2)\)</span></li>
 </ul>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="modelos-notables-para-v-a-continuas.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pweibull</span>(<span class="dv">10</span>,<span class="dv">2</span>,<span class="dv">2</span>) <span class="sc">-</span> <span class="fu">pweibull</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="modelos-notables-para-v-a-continuas.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pweibull</span>(<span class="dv">10</span>,<span class="dv">2</span>,<span class="dv">2</span>) <span class="sc">-</span> <span class="fu">pweibull</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.7788008</code></pre>
 <ul>
 <li>El primer quartil <span class="math inline">\(Q_1\)</span></li>
 </ul>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="modelos-notables-para-v-a-continuas.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qweibull</span>(<span class="fl">0.25</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="modelos-notables-para-v-a-continuas.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qweibull</span>(<span class="fl">0.25</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 1.07272</code></pre>
-<div id="caso-duración-de-atención" class="section level4" number="6.3.4.1">
-<h4><span class="header-section-number">6.3.4.1</span> Caso: Duración de atención</h4>
+<div id="caso-duración-de-atención" class="section level4" number="5.3.4.1">
+<h4><span class="header-section-number">5.3.4.1</span> Caso: Duración de atención</h4>
 <ul>
 <li><p>Sea <span class="math inline">\(X\)</span> la duración de la atención en minutos</p></li>
 <li><p>Supongamos que <span class="math inline">\(X\)</span> se modela via <span class="math display">\[X \sim Weibull(\alpha,\beta)\]</span></p></li>
@@ -750,43 +748,43 @@ Var[X] &amp;=&amp; \beta^2
 </tbody>
 </table>
 </div>
-<div id="duración-de-atención" class="section level4" number="6.3.4.2">
-<h4><span class="header-section-number">6.3.4.2</span> Duración de atención</h4>
+<div id="duración-de-atención" class="section level4" number="5.3.4.2">
+<h4><span class="header-section-number">5.3.4.2</span> Duración de atención</h4>
 <ul>
 <li><p>En R, se puede obtener la mediana, media y varianza para el modelo.</p></li>
 <li><p>Medianas:</p></li>
 </ul>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="modelos-notables-para-v-a-continuas.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qweibull</span>(<span class="fl">0.5</span>,<span class="dv">2</span>,<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="modelos-notables-para-v-a-continuas.html#cb257-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qweibull</span>(<span class="fl">0.5</span>,<span class="dv">2</span>,<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 8.325546</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="modelos-notables-para-v-a-continuas.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qweibull</span>(<span class="fl">0.5</span>,<span class="dv">3</span>,<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="modelos-notables-para-v-a-continuas.html#cb259-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qweibull</span>(<span class="fl">0.5</span>,<span class="dv">3</span>,<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 8.84997</code></pre>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="modelos-notables-para-v-a-continuas.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qweibull</span>(<span class="fl">0.5</span>,<span class="dv">4</span>,<span class="dv">10</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb261-1"><a href="modelos-notables-para-v-a-continuas.html#cb261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qweibull</span>(<span class="fl">0.5</span>,<span class="dv">4</span>,<span class="dv">10</span>)</span></code></pre></div>
 <pre><code>## [1] 9.124443</code></pre>
 <ul>
 <li>Cálculo de la media:</li>
 </ul>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="modelos-notables-para-v-a-continuas.html#cb42-1" aria-hidden="true" tabindex="-1"></a>fun210 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">2</span>,<span class="dv">10</span>)</span>
-<span id="cb42-2"><a href="modelos-notables-para-v-a-continuas.html#cb42-2" aria-hidden="true" tabindex="-1"></a>fun310 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">3</span>,<span class="dv">10</span>)</span>
-<span id="cb42-3"><a href="modelos-notables-para-v-a-continuas.html#cb42-3" aria-hidden="true" tabindex="-1"></a>fun410 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">4</span>,<span class="dv">10</span>)</span>
-<span id="cb42-4"><a href="modelos-notables-para-v-a-continuas.html#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-5"><a href="modelos-notables-para-v-a-continuas.html#cb42-5" aria-hidden="true" tabindex="-1"></a>funx2_210 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">2</span>,<span class="dv">10</span>)</span>
-<span id="cb42-6"><a href="modelos-notables-para-v-a-continuas.html#cb42-6" aria-hidden="true" tabindex="-1"></a>funx2_310 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">3</span>,<span class="dv">10</span>)</span>
-<span id="cb42-7"><a href="modelos-notables-para-v-a-continuas.html#cb42-7" aria-hidden="true" tabindex="-1"></a>funx2_410 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">4</span>,<span class="dv">10</span>)</span>
-<span id="cb42-8"><a href="modelos-notables-para-v-a-continuas.html#cb42-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-9"><a href="modelos-notables-para-v-a-continuas.html#cb42-9" aria-hidden="true" tabindex="-1"></a>E210   <span class="ot">=</span> <span class="fu">integrate</span>(fun210,<span class="dv">0</span>,<span class="cn">Inf</span>)</span>
-<span id="cb42-10"><a href="modelos-notables-para-v-a-continuas.html#cb42-10" aria-hidden="true" tabindex="-1"></a>E210</span></code></pre></div>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="modelos-notables-para-v-a-continuas.html#cb263-1" aria-hidden="true" tabindex="-1"></a>fun210 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">2</span>,<span class="dv">10</span>)</span>
+<span id="cb263-2"><a href="modelos-notables-para-v-a-continuas.html#cb263-2" aria-hidden="true" tabindex="-1"></a>fun310 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">3</span>,<span class="dv">10</span>)</span>
+<span id="cb263-3"><a href="modelos-notables-para-v-a-continuas.html#cb263-3" aria-hidden="true" tabindex="-1"></a>fun410 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">4</span>,<span class="dv">10</span>)</span>
+<span id="cb263-4"><a href="modelos-notables-para-v-a-continuas.html#cb263-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-5"><a href="modelos-notables-para-v-a-continuas.html#cb263-5" aria-hidden="true" tabindex="-1"></a>funx2_210 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">2</span>,<span class="dv">10</span>)</span>
+<span id="cb263-6"><a href="modelos-notables-para-v-a-continuas.html#cb263-6" aria-hidden="true" tabindex="-1"></a>funx2_310 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">3</span>,<span class="dv">10</span>)</span>
+<span id="cb263-7"><a href="modelos-notables-para-v-a-continuas.html#cb263-7" aria-hidden="true" tabindex="-1"></a>funx2_410 <span class="ot">=</span> <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span><span class="sc">*</span><span class="fu">dweibull</span>(x,<span class="dv">4</span>,<span class="dv">10</span>)</span>
+<span id="cb263-8"><a href="modelos-notables-para-v-a-continuas.html#cb263-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb263-9"><a href="modelos-notables-para-v-a-continuas.html#cb263-9" aria-hidden="true" tabindex="-1"></a>E210   <span class="ot">=</span> <span class="fu">integrate</span>(fun210,<span class="dv">0</span>,<span class="cn">Inf</span>)</span>
+<span id="cb263-10"><a href="modelos-notables-para-v-a-continuas.html#cb263-10" aria-hidden="true" tabindex="-1"></a>E210</span></code></pre></div>
 <pre><code>## 8.862269 with absolute error &lt; 0.00013</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="modelos-notables-para-v-a-continuas.html#cb44-1" aria-hidden="true" tabindex="-1"></a>E310   <span class="ot">=</span> <span class="fu">integrate</span>(fun310,<span class="dv">0</span>,<span class="cn">Inf</span>)</span>
-<span id="cb44-2"><a href="modelos-notables-para-v-a-continuas.html#cb44-2" aria-hidden="true" tabindex="-1"></a>E310</span></code></pre></div>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="modelos-notables-para-v-a-continuas.html#cb265-1" aria-hidden="true" tabindex="-1"></a>E310   <span class="ot">=</span> <span class="fu">integrate</span>(fun310,<span class="dv">0</span>,<span class="cn">Inf</span>)</span>
+<span id="cb265-2"><a href="modelos-notables-para-v-a-continuas.html#cb265-2" aria-hidden="true" tabindex="-1"></a>E310</span></code></pre></div>
 <pre><code>## 8.929795 with absolute error &lt; 8e-06</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="modelos-notables-para-v-a-continuas.html#cb46-1" aria-hidden="true" tabindex="-1"></a>E410   <span class="ot">=</span> <span class="fu">integrate</span>(fun410,<span class="dv">0</span>,<span class="cn">Inf</span>)</span>
-<span id="cb46-2"><a href="modelos-notables-para-v-a-continuas.html#cb46-2" aria-hidden="true" tabindex="-1"></a>E410</span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="modelos-notables-para-v-a-continuas.html#cb267-1" aria-hidden="true" tabindex="-1"></a>E410   <span class="ot">=</span> <span class="fu">integrate</span>(fun410,<span class="dv">0</span>,<span class="cn">Inf</span>)</span>
+<span id="cb267-2"><a href="modelos-notables-para-v-a-continuas.html#cb267-2" aria-hidden="true" tabindex="-1"></a>E410</span></code></pre></div>
 <pre><code>## 9.064025 with absolute error &lt; 5.5e-05</code></pre>
 <ul>
 <li>También, es posible calcular la varianza:</li>
 </ul>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="modelos-notables-para-v-a-continuas.html#cb48-1" aria-hidden="true" tabindex="-1"></a>Var210 <span class="ot">=</span> <span class="fu">integrate</span>(funx2_210,<span class="dv">0</span>,<span class="cn">Inf</span>)<span class="sc">$</span>value <span class="sc">-</span> E210<span class="sc">$</span>value<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb48-2"><a href="modelos-notables-para-v-a-continuas.html#cb48-2" aria-hidden="true" tabindex="-1"></a>Var210</span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb269-1"><a href="modelos-notables-para-v-a-continuas.html#cb269-1" aria-hidden="true" tabindex="-1"></a>Var210 <span class="ot">=</span> <span class="fu">integrate</span>(funx2_210,<span class="dv">0</span>,<span class="cn">Inf</span>)<span class="sc">$</span>value <span class="sc">-</span> E210<span class="sc">$</span>value<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb269-2"><a href="modelos-notables-para-v-a-continuas.html#cb269-2" aria-hidden="true" tabindex="-1"></a>Var210</span></code></pre></div>
 <pre><code>## [1] 21.46018</code></pre>
 </div>
 <div id="graficando" class="section level4 unnumbered">

@@ -4,21 +4,21 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 5 Variables aleatorias | Estadística</title>
-  <meta name="description" content="Capítulo 5 Variables aleatorias | Estadística con aplicaciones utilizando R" />
+  <title>Capítulo 4 Variables aleatorias | Estadística</title>
+  <meta name="description" content="Capítulo 4 Variables aleatorias | Estadística con aplicaciones utilizando R" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 5 Variables aleatorias | Estadística" />
+  <meta property="og:title" content="Capítulo 4 Variables aleatorias | Estadística" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Capítulo 5 Variables aleatorias | Estadística con aplicaciones utilizando R" />
+  <meta property="og:description" content="Capítulo 4 Variables aleatorias | Estadística con aplicaciones utilizando R" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Variables aleatorias | Estadística" />
+  <meta name="twitter:title" content="Capítulo 4 Variables aleatorias | Estadística" />
   
-  <meta name="twitter:description" content="Capítulo 5 Variables aleatorias | Estadística con aplicaciones utilizando R" />
+  <meta name="twitter:description" content="Capítulo 4 Variables aleatorias | Estadística con aplicaciones utilizando R" />
   
 
 <meta name="author" content="Evelyn Gutierrez" />
@@ -34,7 +34,7 @@
 <link rel="prev" href="análisis-bivariado.html"/>
 <link rel="next" href="modelos-de-probabilidad-notables-.html"/>
 <script src="libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -53,8 +53,80 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -74,42 +146,41 @@
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
-<li class="chapter" data-level="2" data-path="análisis-univariado.html"><a href="análisis-univariado.html"><i class="fa fa-check"></i><b>2</b> Análisis univariado</a></li>
-<li class="chapter" data-level="3" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html"><i class="fa fa-check"></i><b>3</b> Materiales adicionales:</a>
+<li class="chapter" data-level="2" data-path="análisis-univariado.html"><a href="análisis-univariado.html"><i class="fa fa-check"></i><b>2</b> Análisis univariado</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html#caso-encuesta-a-médicos-y-enfermeros."><i class="fa fa-check"></i><b>3.1</b> Caso: Encuesta a médicos y enfermeros.</a>
+<li class="chapter" data-level="2.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#caso-encuesta-a-médicos-y-enfermeros."><i class="fa fa-check"></i><b>2.1</b> Caso: Encuesta a médicos y enfermeros.</a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html#lectura"><i class="fa fa-check"></i><b>3.1.1</b> Lectura de datos.</a></li>
-<li class="chapter" data-level="3.1.2" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html#exploración-básica"><i class="fa fa-check"></i><b>3.1.2</b> Exploración básica</a></li>
-<li class="chapter" data-level="3.1.3" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html#análisis-univariado-1"><i class="fa fa-check"></i><b>3.1.3</b> Análisis univariado</a></li>
-<li class="chapter" data-level="3.1.4" data-path="materiales-adicionales.html"><a href="materiales-adicionales.html#ejercicios"><i class="fa fa-check"></i><b>3.1.4</b> Ejercicio</a></li>
+<li class="chapter" data-level="2.1.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#lectura"><i class="fa fa-check"></i><b>2.1.1</b> Lectura de datos.</a></li>
+<li class="chapter" data-level="2.1.2" data-path="análisis-univariado.html"><a href="análisis-univariado.html#exploración-básica"><i class="fa fa-check"></i><b>2.1.2</b> Exploración básica</a></li>
+<li class="chapter" data-level="2.1.3" data-path="análisis-univariado.html"><a href="análisis-univariado.html#análisis-univariado-1"><i class="fa fa-check"></i><b>2.1.3</b> Análisis univariado</a></li>
+<li class="chapter" data-level="2.1.4" data-path="análisis-univariado.html"><a href="análisis-univariado.html#ejercicios"><i class="fa fa-check"></i><b>2.1.4</b> Ejercicio</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html"><i class="fa fa-check"></i><b>4</b> Análisis bivariado</a>
+<li class="chapter" data-level="3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html"><i class="fa fa-check"></i><b>3</b> Análisis bivariado</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#dos-variables-cualitativas"><i class="fa fa-check"></i><b>4.1</b> Dos variables cualitativas</a>
+<li class="chapter" data-level="3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#dos-variables-cualitativas"><i class="fa fa-check"></i><b>3.1</b> Dos variables cualitativas</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos."><i class="fa fa-check"></i><b>4.1.1</b> Lectura de datos.</a></li>
-<li class="chapter" data-level="4.1.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica."><i class="fa fa-check"></i><b>4.1.2</b> Exploración básica.</a></li>
-<li class="chapter" data-level="4.1.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado."><i class="fa fa-check"></i><b>4.1.3</b> Análisis univariado.</a></li>
-<li class="chapter" data-level="4.1.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado-1"><i class="fa fa-check"></i><b>4.1.4</b> Análisis bivariado</a></li>
-<li class="chapter" data-level="4.1.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio"><i class="fa fa-check"></i><b>4.1.5</b> Ejercicio</a></li>
+<li class="chapter" data-level="3.1.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos."><i class="fa fa-check"></i><b>3.1.1</b> Lectura de datos.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica."><i class="fa fa-check"></i><b>3.1.2</b> Exploración básica.</a></li>
+<li class="chapter" data-level="3.1.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado."><i class="fa fa-check"></i><b>3.1.3</b> Análisis univariado.</a></li>
+<li class="chapter" data-level="3.1.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado-1"><i class="fa fa-check"></i><b>3.1.4</b> Análisis bivariado</a></li>
+<li class="chapter" data-level="3.1.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio"><i class="fa fa-check"></i><b>3.1.5</b> Ejercicio</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#una-variable-cualitativa-y-otra-cuantitativa"><i class="fa fa-check"></i><b>4.2</b> Una variable cualitativa y otra cuantitativa</a>
+<li class="chapter" data-level="3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#una-variable-cualitativa-y-otra-cuantitativa"><i class="fa fa-check"></i><b>3.2</b> Una variable cualitativa y otra cuantitativa</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos.-1"><i class="fa fa-check"></i><b>4.2.1</b> Lectura de datos.</a></li>
-<li class="chapter" data-level="4.2.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica.-1"><i class="fa fa-check"></i><b>4.2.2</b> Exploración básica.</a></li>
-<li class="chapter" data-level="4.2.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado.-1"><i class="fa fa-check"></i><b>4.2.3</b> Análisis univariado.</a></li>
-<li class="chapter" data-level="4.2.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado."><i class="fa fa-check"></i><b>4.2.4</b> Análisis bivariado.</a></li>
-<li class="chapter" data-level="4.2.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio-1"><i class="fa fa-check"></i><b>4.2.5</b> Ejercicio</a></li>
+<li class="chapter" data-level="3.2.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos.-1"><i class="fa fa-check"></i><b>3.2.1</b> Lectura de datos.</a></li>
+<li class="chapter" data-level="3.2.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica.-1"><i class="fa fa-check"></i><b>3.2.2</b> Exploración básica.</a></li>
+<li class="chapter" data-level="3.2.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado.-1"><i class="fa fa-check"></i><b>3.2.3</b> Análisis univariado.</a></li>
+<li class="chapter" data-level="3.2.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado."><i class="fa fa-check"></i><b>3.2.4</b> Análisis bivariado.</a></li>
+<li class="chapter" data-level="3.2.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio-1"><i class="fa fa-check"></i><b>3.2.5</b> Ejercicio</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#variables-cuantitativas."><i class="fa fa-check"></i><b>4.3</b> Variables cuantitativas.</a>
+<li class="chapter" data-level="3.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#variables-cuantitativas."><i class="fa fa-check"></i><b>3.3</b> Variables cuantitativas.</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-1-bmi"><i class="fa fa-check"></i><b>4.3.1</b> Caso 1: BMI</a></li>
-<li class="chapter" data-level="4.3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-2-arboles"><i class="fa fa-check"></i><b>4.3.2</b> Caso 2: Arboles</a></li>
+<li class="chapter" data-level="3.3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-1-bmi"><i class="fa fa-check"></i><b>3.3.1</b> Caso 1: BMI</a></li>
+<li class="chapter" data-level="3.3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-2-arboles"><i class="fa fa-check"></i><b>3.3.2</b> Caso 2: Arboles</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html"><i class="fa fa-check"></i><b>5</b> Variables aleatorias</a>
+<li class="chapter" data-level="4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html"><i class="fa fa-check"></i><b>4</b> Variables aleatorias</a>
 <ul>
 <li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#ejemplo-lanzamiento-de-moneda"><i class="fa fa-check"></i>Ejemplo: Lanzamiento de moneda</a></li>
 <li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#tipos-de-variables-aleatorias"><i class="fa fa-check"></i>Tipos de variables aleatorias</a>
@@ -117,76 +188,71 @@
 <li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-discretas"><i class="fa fa-check"></i>Variables aleatorias discretas</a></li>
 <li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-continuas"><i class="fa fa-check"></i>Variables aleatorias continuas</a></li>
 </ul></li>
-<li class="chapter" data-level="5.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-discretas-1"><i class="fa fa-check"></i><b>5.1</b> Variables Aleatorias Discretas</a>
+<li class="chapter" data-level="4.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-discretas-1"><i class="fa fa-check"></i><b>4.1</b> Variables Aleatorias Discretas</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-distribución-de-probabilidad-fx"><i class="fa fa-check"></i><b>5.1.1</b> Función de distribución de probabilidad f(X)</a></li>
-<li class="chapter" data-level="5.1.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-probabilidad-acumulada-fx"><i class="fa fa-check"></i><b>5.1.2</b> Función de probabilidad acumulada F(X)</a></li>
-<li class="chapter" data-level="5.1.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-cuantil-qp"><i class="fa fa-check"></i><b>5.1.3</b> Función Cuantil <span class="math inline">\(Q(p)\)</span></a></li>
-<li class="chapter" data-level="5.1.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza"><i class="fa fa-check"></i><b>5.1.4</b> Esperanza</a></li>
-<li class="chapter" data-level="5.1.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#media-y-varianza."><i class="fa fa-check"></i><b>5.1.5</b> Media y varianza.</a></li>
-<li class="chapter" data-level="5.1.6" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades"><i class="fa fa-check"></i><b>5.1.6</b> Propiedades</a></li>
+<li class="chapter" data-level="4.1.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-distribución-de-probabilidad-fx"><i class="fa fa-check"></i><b>4.1.1</b> Función de distribución de probabilidad f(X)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-probabilidad-acumulada-fx"><i class="fa fa-check"></i><b>4.1.2</b> Función de probabilidad acumulada F(X)</a></li>
+<li class="chapter" data-level="4.1.3" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-cuantil-qp"><i class="fa fa-check"></i><b>4.1.3</b> Función Cuantil <span class="math inline">\(Q(p)\)</span></a></li>
+<li class="chapter" data-level="4.1.4" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#esperanza"><i class="fa fa-check"></i><b>4.1.4</b> Esperanza</a></li>
+<li class="chapter" data-level="4.1.5" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#media-y-varianza."><i class="fa fa-check"></i><b>4.1.5</b> Media y varianza.</a></li>
+<li class="chapter" data-level="4.1.6" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#propiedades"><i class="fa fa-check"></i><b>4.1.6</b> Propiedades</a></li>
 <li class="chapter" data-level="" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#ejercicio-2"><i class="fa fa-check"></i>Ejercicio</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-continuas-1"><i class="fa fa-check"></i><b>5.2</b> Variables Aleatorias Continuas</a>
+<li class="chapter" data-level="4.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#variables-aleatorias-continuas-1"><i class="fa fa-check"></i><b>4.2</b> Variables Aleatorias Continuas</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-densidad-fx"><i class="fa fa-check"></i><b>5.2.1</b> Función de densidad – f(x)</a></li>
-<li class="chapter" data-level="5.2.2" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#modelos-probabilísticos-y-datos-observados"><i class="fa fa-check"></i><b>5.2.2</b> Modelos probabilísticos y Datos observados</a></li>
+<li class="chapter" data-level="4.2.1" data-path="variables-aleatorias.html"><a href="variables-aleatorias.html#función-de-densidad-fx"><i class="fa fa-check"></i><b>4.2.1</b> Función de densidad – f(x)</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html"><i class="fa fa-check"></i>Modelos de probabilidad notables.</a>
 <ul>
 <li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#experimento-bernoulli"><i class="fa fa-check"></i>Experimento Bernoulli</a></li>
-<li class="chapter" data-level="5.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-bernoulli"><i class="fa fa-check"></i><b>5.3</b> Distribución Bernoulli</a>
+<li class="chapter" data-level="4.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-bernoulli"><i class="fa fa-check"></i><b>4.3</b> Distribución Bernoulli</a>
 <ul>
-<li class="chapter" data-level="5.3.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#media-y-varianza"><i class="fa fa-check"></i><b>5.3.1</b> Media y varianza</a></li>
+<li class="chapter" data-level="4.3.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#media-y-varianza"><i class="fa fa-check"></i><b>4.3.1</b> Media y varianza</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-binomial"><i class="fa fa-check"></i><b>5.4</b> Distribución Binomial</a>
+<li class="chapter" data-level="4.4" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-binomial"><i class="fa fa-check"></i><b>4.4</b> Distribución Binomial</a>
 <ul>
-<li class="chapter" data-level="5.4.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#media-y-varianza-1"><i class="fa fa-check"></i><b>5.4.1</b> Media y varianza</a></li>
-<li class="chapter" data-level="5.4.2" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente"><i class="fa fa-check"></i><b>5.4.2</b> Gráficamente</a></li>
-<li class="chapter" data-level="5.4.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones"><i class="fa fa-check"></i><b>5.4.3</b> Aplicaciones</a></li>
+<li class="chapter" data-level="4.4.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#media-y-varianza-1"><i class="fa fa-check"></i><b>4.4.1</b> Media y varianza</a></li>
+<li class="chapter" data-level="4.4.2" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente"><i class="fa fa-check"></i><b>4.4.2</b> Gráficamente</a></li>
+<li class="chapter" data-level="4.4.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones"><i class="fa fa-check"></i><b>4.4.3</b> Aplicaciones</a></li>
 </ul></li>
-<li class="chapter" data-level="5.5" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-hipergeométrica"><i class="fa fa-check"></i><b>5.5</b> Distribución Hipergeométrica</a>
+<li class="chapter" data-level="4.5" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-hipergeométrica"><i class="fa fa-check"></i><b>4.5</b> Distribución Hipergeométrica</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#esperanza-y-varianza"><i class="fa fa-check"></i><b>5.5.1</b> Esperanza y varianza</a></li>
+<li class="chapter" data-level="4.5.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#esperanza-y-varianza"><i class="fa fa-check"></i><b>4.5.1</b> Esperanza y varianza</a></li>
+<li class="chapter" data-level="4.5.2" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente-1"><i class="fa fa-check"></i><b>4.5.2</b> Gráficamente</a></li>
+<li class="chapter" data-level="4.5.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones-1"><i class="fa fa-check"></i><b>4.5.3</b> Aplicaciones</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aproximación-binomial"><i class="fa fa-check"></i>Aproximación Binomial</a>
+<li class="chapter" data-level="4.6" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-poisson"><i class="fa fa-check"></i><b>4.6</b> Distribución Poisson</a>
 <ul>
-<li class="chapter" data-level="5.5.2" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente-1"><i class="fa fa-check"></i><b>5.5.2</b> Gráficamente</a></li>
-<li class="chapter" data-level="5.5.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones-1"><i class="fa fa-check"></i><b>5.5.3</b> Aplicaciones</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#distribución-poisson"><i class="fa fa-check"></i><b>5.6</b> Distribución Poisson</a>
-<ul>
-<li class="chapter" data-level="5.6.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#esperanza-y-varianza-1"><i class="fa fa-check"></i><b>5.6.1</b> Esperanza y varianza</a></li>
-<li class="chapter" data-level="5.6.2" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente-distribución-poisson"><i class="fa fa-check"></i><b>5.6.2</b> Gráficamente: Distribución Poisson</a></li>
-<li class="chapter" data-level="5.6.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones-2"><i class="fa fa-check"></i><b>5.6.3</b> Aplicaciones</a></li>
-<li class="chapter" data-level="5.6.4" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#medición-de-la-radiactividad."><i class="fa fa-check"></i><b>5.6.4</b> Medición de la radiactividad.</a></li>
+<li class="chapter" data-level="4.6.1" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#esperanza-y-varianza-1"><i class="fa fa-check"></i><b>4.6.1</b> Esperanza y varianza</a></li>
+<li class="chapter" data-level="4.6.2" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#gráficamente-distribución-poisson"><i class="fa fa-check"></i><b>4.6.2</b> Gráficamente: Distribución Poisson</a></li>
+<li class="chapter" data-level="4.6.3" data-path="modelos-de-probabilidad-notables-.html"><a href="modelos-de-probabilidad-notables-.html#aplicaciones-2"><i class="fa fa-check"></i><b>4.6.3</b> Aplicaciones</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html"><i class="fa fa-check"></i><b>6</b> Modelos Notables para v.a. continuas</a>
+<li class="chapter" data-level="5" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html"><i class="fa fa-check"></i><b>5</b> Modelos Notables para v.a. continuas</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-exponencial"><i class="fa fa-check"></i><b>6.1</b> Modelo: Exponencial</a>
+<li class="chapter" data-level="5.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-exponencial"><i class="fa fa-check"></i><b>5.1</b> Modelo: Exponencial</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f"><i class="fa fa-check"></i><b>6.1.1</b> Función de densidad f</a></li>
-<li class="chapter" data-level="6.1.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-acumulada-f"><i class="fa fa-check"></i><b>6.1.2</b> Función acumulada F</a></li>
-<li class="chapter" data-level="6.1.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#gráficamente-2"><i class="fa fa-check"></i><b>6.1.3</b> Gráficamente</a></li>
-<li class="chapter" data-level="6.1.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#esperanza-y-varianza."><i class="fa fa-check"></i><b>6.1.4</b> Esperanza y varianza.</a></li>
-<li class="chapter" data-level="6.1.5" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#nota-otros-parametros."><i class="fa fa-check"></i><b>6.1.5</b> Nota: Otros parametros.</a></li>
-<li class="chapter" data-level="6.1.6" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>6.1.6</b> Ejercicios:</a></li>
+<li class="chapter" data-level="5.1.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f"><i class="fa fa-check"></i><b>5.1.1</b> Función de densidad f</a></li>
+<li class="chapter" data-level="5.1.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-acumulada-f"><i class="fa fa-check"></i><b>5.1.2</b> Función acumulada F</a></li>
+<li class="chapter" data-level="5.1.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#gráficamente-2"><i class="fa fa-check"></i><b>5.1.3</b> Gráficamente</a></li>
+<li class="chapter" data-level="5.1.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#esperanza-y-varianza."><i class="fa fa-check"></i><b>5.1.4</b> Esperanza y varianza.</a></li>
+<li class="chapter" data-level="5.1.5" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#nota-otros-parametros."><i class="fa fa-check"></i><b>5.1.5</b> Nota: Otros parametros.</a></li>
+<li class="chapter" data-level="5.1.6" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-1"><i class="fa fa-check"></i><b>5.1.6</b> Ejercicios:</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-gamma"><i class="fa fa-check"></i><b>6.2</b> Modelo: Gamma</a>
+<li class="chapter" data-level="5.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-gamma"><i class="fa fa-check"></i><b>5.2</b> Modelo: Gamma</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f-1"><i class="fa fa-check"></i><b>6.2.1</b> Función de densidad f</a></li>
-<li class="chapter" data-level="6.2.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#graficamente"><i class="fa fa-check"></i><b>6.2.2</b> Graficamente</a></li>
-<li class="chapter" data-level="6.2.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#esperanza-y-varianza-2"><i class="fa fa-check"></i><b>6.2.3</b> Esperanza y varianza</a></li>
-<li class="chapter" data-level="6.2.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-2"><i class="fa fa-check"></i><b>6.2.4</b> Ejercicios</a></li>
+<li class="chapter" data-level="5.2.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f-1"><i class="fa fa-check"></i><b>5.2.1</b> Función de densidad f</a></li>
+<li class="chapter" data-level="5.2.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#graficamente"><i class="fa fa-check"></i><b>5.2.2</b> Graficamente</a></li>
+<li class="chapter" data-level="5.2.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#esperanza-y-varianza-2"><i class="fa fa-check"></i><b>5.2.3</b> Esperanza y varianza</a></li>
+<li class="chapter" data-level="5.2.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-2"><i class="fa fa-check"></i><b>5.2.4</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-weibull"><i class="fa fa-check"></i><b>6.3</b> Modelo: Weibull</a>
+<li class="chapter" data-level="5.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#modelo-weibull"><i class="fa fa-check"></i><b>5.3</b> Modelo: Weibull</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f-2"><i class="fa fa-check"></i><b>6.3.1</b> Función de densidad f</a></li>
-<li class="chapter" data-level="6.3.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-acumulada-f-1"><i class="fa fa-check"></i><b>6.3.2</b> Función acumulada F</a></li>
-<li class="chapter" data-level="6.3.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-3"><i class="fa fa-check"></i><b>6.3.3</b> Ejercicios</a></li>
-<li class="chapter" data-level="6.3.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#calculos-en-r"><i class="fa fa-check"></i><b>6.3.4</b> Calculos en R</a></li>
+<li class="chapter" data-level="5.3.1" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-de-densidad-f-2"><i class="fa fa-check"></i><b>5.3.1</b> Función de densidad f</a></li>
+<li class="chapter" data-level="5.3.2" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#función-acumulada-f-1"><i class="fa fa-check"></i><b>5.3.2</b> Función acumulada F</a></li>
+<li class="chapter" data-level="5.3.3" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#ejercicios-3"><i class="fa fa-check"></i><b>5.3.3</b> Ejercicios</a></li>
+<li class="chapter" data-level="5.3.4" data-path="modelos-notables-para-v-a-continuas.html"><a href="modelos-notables-para-v-a-continuas.html#calculos-en-r"><i class="fa fa-check"></i><b>5.3.4</b> Calculos en R</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -210,8 +276,8 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="variables-aleatorias" class="section level1" number="5">
-<h1><span class="header-section-number">Capítulo 5</span> Variables aleatorias</h1>
+<div id="variables-aleatorias" class="section level1" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> Variables aleatorias</h1>
 <p>Recordemos brevemente algunos conceptos de variables aleatorias.</p>
 <p>De forma intuitiva, una variable aleatoria es un resultado númerico obtenido a partir un experimento aleatorio.</p>
 <p>Formalmente, una variable aleatoria es una función que asigna un número real a un elemento del espacio muestral</p>
@@ -276,19 +342,19 @@ muestral.</p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="variables-aleatorias-discretas-1" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Variables Aleatorias Discretas</h2>
+<div id="variables-aleatorias-discretas-1" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Variables Aleatorias Discretas</h2>
 <p>En esta sección veremos caracteristicas de las variables aleatorias discretas.</p>
-<div id="función-de-distribución-de-probabilidad-fx" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Función de distribución de probabilidad f(X)</h3>
+<div id="función-de-distribución-de-probabilidad-fx" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Función de distribución de probabilidad f(X)</h3>
 <p>Esta función asigna un valor de probabilidad a cada valor de la variable aleatoria X:</p>
 <p><span class="math display">\[f(x) = P(X=x)\]</span></p>
 <p><span class="math inline">\(f(x)\)</span> es la probabilidad de que la variable aleatoria X sea igual a x. Por ejemplo, f(5) será la probabilidad de que X tome el valor de 5.</p>
 <p>Por los axiomas de probabilidad, la suma de las probabilidades en todo el rango de X es 1:</p>
 <p><span class="math display">\[\sum_{x \in R_x}f(x)=1\]</span></p>
 </div>
-<div id="función-de-probabilidad-acumulada-fx" class="section level3" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Función de probabilidad acumulada F(X)</h3>
+<div id="función-de-probabilidad-acumulada-fx" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Función de probabilidad acumulada F(X)</h3>
 <p>Si <span class="math inline">\(X\)</span> una variable aleatoria discreta, la función de distribución acumulada, de <span class="math inline">\(X\)</span>, esta definida de la siguiente manera:</p>
 <p><span class="math display">\[F(x) = P(X \leq x) = \sum_{a \leq x} P(X = a)\]</span>
 es decir, <span class="math inline">\(F(x)\)</span> es la probabilidad que el valor de <span class="math inline">\(X\)</span> sea menor o igual a <span class="math inline">\(x\)</span>.</p>
@@ -331,8 +397,8 @@ F(x) = P(X \le x)=  \left\{
 \]</span></p>
 </div>
 </div>
-<div id="función-cuantil-qp" class="section level3" number="5.1.3">
-<h3><span class="header-section-number">5.1.3</span> Función Cuantil <span class="math inline">\(Q(p)\)</span></h3>
+<div id="función-cuantil-qp" class="section level3" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Función Cuantil <span class="math inline">\(Q(p)\)</span></h3>
 <!--Es la inversa de la función de Distribución Acumulada: $Q(p) = F^-1(p)$. -->
 <p>Sea <span class="math inline">\(X\)</span> una variable aleatoria con función de probabilidad <span class="math inline">\(F_X\)</span>. La función de distribución
 acumulada inversa o <strong>función de cuantiles</strong> se define para <span class="math inline">\(p \in [0,1]\)</span></p>
@@ -351,8 +417,8 @@ acumulada inversa o <strong>función de cuantiles</strong> se define para <span 
 <span class="math display">\[Q(3/4)\]</span></p>
 </div>
 </div>
-<div id="esperanza" class="section level3" number="5.1.4">
-<h3><span class="header-section-number">5.1.4</span> Esperanza</h3>
+<div id="esperanza" class="section level3" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Esperanza</h3>
 <p>Si X es una variable aleatoria con función de probabilidad <span class="math inline">\(f(x)\)</span>, el valor esperado de la variable X se define como: <span class="math display">\[E(X)=\sum_{x\in R_x} x f(x) = \sum_{x\in R_x}xP(X=x)\]</span></p>
 <p>Intuición: el promedio de todos los posibles valores de <span class="math inline">\(X\)</span> ponderados por sus probabilidades.</p>
 <p>Por ejemplo, si <span class="math inline">\(X\)</span> toma únicamente dos posibles valores, <span class="math inline">\(a,b\)</span> con
@@ -380,12 +446,12 @@ mean(x)
 ```
 
 ```
-## [1] 10.01095
+## [1] 9.996681
 ```
 -->
 </div>
-<div id="media-y-varianza." class="section level3" number="5.1.5">
-<h3><span class="header-section-number">5.1.5</span> Media y varianza.</h3>
+<div id="media-y-varianza." class="section level3" number="4.1.5">
+<h3><span class="header-section-number">4.1.5</span> Media y varianza.</h3>
 <p>Sea X una variable aleatoria con función de probabilidad <span class="math inline">\(f(x)\)</span>; entonces, la media y la variancia de la variable aleatoria X se definen de la siguiente manera:</p>
 <p><strong>Media de X</strong> <span class="math display">\[\mu_x=E(X)\]</span></p>
 <ul>
@@ -404,10 +470,10 @@ distribución de <span class="math inline">\((X-\mu)^2\)</span>, su raíz cuadra
 la desviación absoluta <span class="math inline">\(|X-\mu|\)</span>.</p>
 <p>Observar que <span class="math inline">\(\mu_x\)</span>, <span class="math inline">\(\sigma^2_x\)</span> y <span class="math inline">\(\sigma_x\)</span> están determinados por <span class="math inline">\(X\)</span> y <span class="math inline">\(f(x)\)</span> de tal manera que si dos variables aleatorias <strong>tienen la misma distribución de probabilidad</strong>, también tendrán <strong>la misma</strong> media, varianza y desviación estándar.</p>
 </div>
-<div id="propiedades" class="section level3" number="5.1.6">
-<h3><span class="header-section-number">5.1.6</span> Propiedades</h3>
-<div id="esperanza-1" class="section level4" number="5.1.6.1">
-<h4><span class="header-section-number">5.1.6.1</span> Esperanza</h4>
+<div id="propiedades" class="section level3" number="4.1.6">
+<h3><span class="header-section-number">4.1.6</span> Propiedades</h3>
+<div id="esperanza-1" class="section level4" number="4.1.6.1">
+<h4><span class="header-section-number">4.1.6.1</span> Esperanza</h4>
 <p>La esperanza cumple las siguientes propiedades:</p>
 <ol style="list-style-type: decimal">
 <li><strong>Esperanza de una función</strong>. Usualmente, <span class="math inline">\(E[g(X)]\ne g[E(X)]\)</span>; sin embargo se cumple lo siguiente:</li>
@@ -433,8 +499,8 @@ es su valor constante,
 </ol>
 <p>Usualmente <span class="math inline">\(E(XY) \ne E(X)E(Y)\)</span>; sin embargo, si <span class="math inline">\(X\)</span> y <span class="math inline">\(Y\)</span> son independientes, entonces <span class="math display">\[E(XY)=E(X)E(Y)\]</span></p>
 </div>
-<div id="varianza" class="section level4" number="5.1.6.2">
-<h4><span class="header-section-number">5.1.6.2</span> Varianza:</h4>
+<div id="varianza" class="section level4" number="4.1.6.2">
+<h4><span class="header-section-number">4.1.6.2</span> Varianza:</h4>
 <ol style="list-style-type: decimal">
 <li><strong>Varianza de una constante</strong>.</li>
 </ol>
@@ -495,26 +561,87 @@ es su valor constante,
 
 </div>
 </div>
-<div id="variables-aleatorias-continuas-1" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Variables Aleatorias Continuas</h2>
-<div id="función-de-densidad-fx" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Función de densidad – f(x)</h3>
+<div id="variables-aleatorias-continuas-1" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Variables Aleatorias Continuas</h2>
+<p>En esta sección veremos caracteristicas de las variables aleatorias continuas.</p>
+<p>Veremos las siguientes funciones asociadas a las variables alreatorias continuas:</p>
+<ul>
+<li>Función de densidad de probabilidad– f(x)</li>
+<li>Función de distribución acumulativa – F(x)</li>
+<li>Función cuantil – Q(p)</li>
+<li>Esperanza - E(x)</li>
+</ul>
+<div id="función-de-densidad-fx" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Función de densidad – f(x)</h3>
+<ul>
+<li><p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua</p></li>
+<li><p>La función de densidad es una función</p>
+<ul>
+<li><p>No negativa: <span class="math inline">\(f(x) \geq 0 \ , \ \forall x\)</span></p></li>
+<li><p>Debe cumplir</p>
+<p><span class="math display">\[P(a &lt; X &lt; b) = \int_a^b f(x)dx\]</span>
+<span class="math display">\[\int_{-\infty}^\infty f(x)dx = 1\]</span></p></li>
+</ul></li>
+</ul>
+<p>Note que la función de densidad en un valor específico de x es cero: <span class="math inline">\(f(x)=P(X=x)=0\)</span></p>
 <div id="ejemplo-fx" class="section level4 unnumbered">
 <h4>Ejemplo – f(x)</h4>
+<p>El tiempo que demora un empleado de la SUNAT en un proceso de fiscalización de una pequeña empresa (en horas), se distribuye uniformemente y tiene la siguiente función de densidad <span class="math inline">\(f(x)=k\)</span>; <span class="math inline">\(x\in[0,3]\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>Determine k para la función de densidad de probabilidad del tiempo que demora un Empleado de la SUNAT en realizar el proceso de fiscalización de una pequeña empresa.</li>
+</ol>
+<p>Sabemos que la fx debe cumplir lo siguiente <span class="math inline">\(\int_{-\infty}^\infty f(x)dx = 1\)</span></p>
+<p>De aqui, vemos que k=1/3.</p>
 </div>
-<div id="función-de-distribución-acumulada---fx" class="section level4" number="5.2.1.1">
-<h4><span class="header-section-number">5.2.1.1</span> Función de distribución acumulada - F(X)</h4>
+<div id="función-de-distribución-acumulada---fx" class="section level4" number="4.2.1.1">
+<h4><span class="header-section-number">4.2.1.1</span> Función de distribución acumulada - F(X)</h4>
+<ul>
+<li><p>La función de distribución acumulada es
+<span class="math display">\[F(x) = P(X \leq x) = \int_{-\infty}^x f(u)du\]</span></p></li>
+<li><p>Propiedades</p>
+<ul>
+<li><p>Si <span class="math inline">\(X\)</span> es continua
+<span class="math display">\[P(a &lt; X &lt; b) = P(a \leq X \leq b) = F(b) - F(a)\]</span></p></li>
+<li><p>Si <span class="math inline">\(f\)</span> es continua, entonces <span class="math display">\[\frac{dF(x)}{dx} = f(x)\]</span></p></li>
+</ul></li>
+</ul>
 </div>
-<div id="valor-esperado" class="section level4" number="5.2.1.2">
-<h4><span class="header-section-number">5.2.1.2</span> Valor esperado</h4>
+<div id="valor-esperado" class="section level4" number="4.2.1.2">
+<h4><span class="header-section-number">4.2.1.2</span> Valor esperado</h4>
+<ul>
+<li><p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua</p></li>
+<li><p>La esperanza de una variable aleatoria <span class="math inline">\(X\)</span> esta definida por
+<span class="math display">\[E[X] = \int x f(x) dx\]</span></p></li>
+<li><p>Interpretación:</p>
+<ul>
+<li>Es el valor que representa a los datos del experimento</li>
+</ul></li>
+</ul>
 </div>
-<div id="varianza-1" class="section level4" number="5.2.1.3">
-<h4><span class="header-section-number">5.2.1.3</span> Varianza</h4>
-</div>
-</div>
-<div id="modelos-probabilísticos-y-datos-observados" class="section level3" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Modelos probabilísticos y Datos observados</h3>
+<div id="varianza-1" class="section level4" number="4.2.1.3">
+<h4><span class="header-section-number">4.2.1.3</span> Varianza</h4>
+<ul>
+<li><p>Sea <span class="math inline">\(X\)</span> una variable aleatoria continua</p></li>
+<li><p>La varianza de una variable aleatoria <span class="math inline">\(X\)</span> esta definida por</p>
+<p><span class="math display">\[\begin{aligned}
+Var[X] &amp;=&amp; E[(X-E[X])^2]
+\nonumber \\
+&amp;=&amp; \int (u - E[X])^2 f(u)du
+\nonumber \end{aligned}\]</span></p></li>
+<li><p>Interpretación:</p>
+<ul>
+<li><p>Es cuanto se espera que varien los valores del experimento con
+respecto a su valor esperado</p></li>
+<li><p>Un valor grande (pequeño) significa que los resultados del
+experimento varian bastante (poco) con respecto a su valor
+esperado</p></li>
+</ul></li>
+</ul>
+<!--        
+### Modelos probabilísticos y Datos observados
+-->
 
+</div>
 </div>
 </div>
 </div>
