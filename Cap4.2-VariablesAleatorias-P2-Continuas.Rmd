@@ -1,0 +1,93 @@
+
+
+## Variables Aleatorias Continuas
+
+En esta sección veremos caracteristicas de las variables aleatorias continuas.
+
+Veremos las siguientes funciones asociadas a las variables alreatorias continuas:
+
+* Función de densidad de probabilidad– f(x)
+* Función de distribución acumulativa – F(x)
+* Función cuantil – Q(p)
+* Esperanza - E(x)
+
+
+### Función de densidad – f(x)
+
+-   Sea $X$ una variable aleatoria continua
+
+-   La función de densidad es una función
+
+    -   No negativa: $f(x) \geq 0 \ , \ \forall x$
+
+    -   Debe cumplir 
+    
+          $$P(a < X < b) = \int_a^b f(x)dx$$
+          $$\int_{-\infty}^\infty f(x)dx = 1$$
+
+
+Note que la función de densidad en un valor específico de x es cero: $f(x)=P(X=x)=0$
+
+#### Ejemplo – f(x) {-}
+
+El tiempo que demora un empleado de la SUNAT en un proceso de fiscalización de una pequeña empresa (en horas), se distribuye uniformemente y tiene la siguiente función de densidad $f(x)=k$; $x\in[0,3]$
+
+a) Determine k para la función de densidad de probabilidad del tiempo que demora un Empleado de la SUNAT en realizar el proceso de fiscalización de una pequeña empresa.
+
+Sabemos que la fx debe cumplir lo siguiente $\int_{-\infty}^\infty f(x)dx = 1$
+
+De aqui, vemos que k=1/3.
+
+
+#### Función de distribución acumulada - F(X)
+
+-   La función de distribución acumulada es
+    $$F(x) = P(X \leq x) = \int_{-\infty}^x f(u)du$$
+
+-   Propiedades
+
+    -   Si $X$ es continua
+        $$P(a < X < b) = P(a \leq X \leq b) = F(b) - F(a)$$
+
+    -   Si $f$ es continua, entonces $$\frac{dF(x)}{dx} = f(x)$$
+    
+
+#### Valor esperado
+
+-   Sea $X$ una variable aleatoria continua
+
+-   La esperanza de una variable aleatoria $X$ esta definida por
+    $$E[X] = \int x f(x) dx$$
+
+-   Interpretación:
+
+    -   Es el valor que representa a los datos del experimento
+
+
+#### Varianza
+
+-   Sea $X$ una variable aleatoria continua
+
+-   La varianza de una variable aleatoria $X$ esta definida por
+
+    $$\begin{aligned}
+    Var[X] &=& E[(X-E[X])^2]
+    \nonumber \\
+    &=& \int (u - E[X])^2 f(u)du
+    \nonumber \end{aligned}$$
+
+
+-   Interpretación:
+
+    -   Es cuanto se espera que varien los valores del experimento con
+        respecto a su valor esperado
+
+    -   Un valor grande (pequeño) significa que los resultados del
+        experimento varian bastante (poco) con respecto a su valor
+        esperado
+        
+
+<!--        
+### Modelos probabilísticos y Datos observados
+-->
+ 

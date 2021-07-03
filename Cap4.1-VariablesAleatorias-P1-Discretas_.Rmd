@@ -1,27 +1,4 @@
----
-title: "Variables Aleatorias"
-author: "Evelyn Gutierrez"
-date: "`r Sys.Date()`"
-output:
-  pdf_document: 
-    number_sections: true
-    toc: true
-  rmdformats::robobook:
-    highlight: tango
-    number_sections: true
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-<!--Recordemos:
-
-El conjunto de todos los valores posibles y las probabilidades de que se produzcan se denomina modelo de probabilidad de la variable aleatoria.
--->
-
-\newpage
-
+ 
 # Variables aleatorias
 
 Recordemos brevemente algunos conceptos de variables aleatorias.
@@ -73,11 +50,11 @@ Ejemplos:
 
 \newpage
 
-# Variables Aleatorias Discretas 
+## Variables Aleatorias Discretas 
 
 En esta sección veremos caracteristicas de las variables aleatorias discretas.
 
-## Función de distribución de probabilidad f(X)
+### Función de distribución de probabilidad f(X)
 
 Esta función asigna un valor de probabilidad a cada valor de la variable aleatoria X:
 
@@ -89,7 +66,7 @@ Por los axiomas de probabilidad, la suma de las probabilidades en todo el rango 
 
 $$\sum_{x \in R_x}f(x)=1$$
 
-## Función de probabilidad acumulada F(X)
+### Función de probabilidad acumulada F(X)
 
 Si $X$ una variable aleatoria discreta, la función de distribución acumulada, de $X$, esta definida de la siguiente manera:
 
@@ -109,7 +86,7 @@ F :& R & \rightarrow & [0,1] \\
     -   El limite superior es $$\lim_{x \rightarrow \infty} F(x) = 1$$
     -   El limite inferior es $$\lim_{x \rightarrow -\infty} F(x) = 0$$
      
-### Ejemplo: Lanzamiento de moneda (continuación) {-}
+#### Ejemplo: Lanzamiento de moneda (continuación) {-}
 
 Para el ejemplo anterior sobre el lanzamiento de una moneda, recordemos que $X$ es una v.a. definida como en el número de sellos al lanzar 2 monedas. La función de probabilidad f(x) es la siguiente:
 
@@ -138,7 +115,7 @@ F(x) = P(X \le x)=  \left\{
 \right.
 $$
 
-## Función Cuantil $Q(p)$
+### Función Cuantil $Q(p)$
 
 <!--Es la inversa de la función de Distribución Acumulada: $Q(p) = F^-1(p)$. -->
 
@@ -151,7 +128,7 @@ Para una probabilidad p ($0<p<1$), la función cuantil devuelve el valor mínimo
 
 * Q(p) ayuda a responderlo siguiente ¿Para que valor de X tengo una probabilidad acumulada de p?
 
-### Cuartiles y Mediana: {-}
+#### Cuartiles y Mediana: {-}
 
 El primer cuartil
 $$Q(1/4)=F_X^{-1}(1/4)$$
@@ -164,7 +141,7 @@ $$Q(3/4)$$
 
  
 
-## Esperanza
+### Esperanza
 
 Si X es una variable aleatoria con función de probabilidad $f(x)$, el valor esperado de la variable X se define como: $$E(X)=\sum_{x\in R_x} x f(x) = \sum_{x\in R_x}xP(X=x)$$
         
@@ -201,7 +178,7 @@ mean(x)
 -->
 
 
-## Media y varianza.
+### Media y varianza.
 
 Sea X una variable aleatoria con función de probabilidad  $f(x)$; entonces, la media y la variancia de la variable aleatoria X se definen de la siguiente manera:  
 
@@ -226,9 +203,9 @@ Observar que $\mu_x$, $\sigma^2_x$ y $\sigma_x$ están determinados por $X$ y $f
 
 
 
-## Propiedades
+### Propiedades
 
-### Esperanza 
+#### Esperanza 
 
 La esperanza cumple las siguientes propiedades: 
 
@@ -267,7 +244,7 @@ $$E(\sum_{i=1}^{k}X_i) = \sum_{i=1}^{k}E(X_i)$$
 Usualmente $E(XY) \ne E(X)E(Y)$; sin embargo, si $X$ y $Y$ son independientes, entonces $$E(XY)=E(X)E(Y)$$
 
 
-### Varianza:
+#### Varianza:
 
 
 1. **Varianza de una constante**.
@@ -294,7 +271,7 @@ $$Var(\sum_{i=1}^{k}X_i)=\sum_{i=1}^{k}Var(X_i)$$
 
 
 
-## Ejercicio {-}
+### Ejercicio {-}
 
 La distribución de una variable aleatoria $X$ es tabulada a continuación.
 
@@ -314,7 +291,4 @@ $X$ |$f(x)=P(X=x)$
 a. Calcular e interpretar la media de la variable aleatoria  X: $E(X)$
 b. Calcular $E(X^2)$.
 c. Calcular e interpretar la varianza de la variable $X$.
-
-
-
 

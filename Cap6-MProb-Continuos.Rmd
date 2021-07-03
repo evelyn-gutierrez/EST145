@@ -1,29 +1,10 @@
----
-title: "Modelos probabilísticos Continuos conocidos"
-date: "`r Sys.Date()`"
-always_allow_html: true
-output:
-  pdf_document:
-    number_sections: yes
-    toc: yes
-    #toc_float: yes
-  html_document: default
-  word_document: default
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(warning = FALSE)
-knitr::opts_chunk$set(message = FALSE)
-```
+# Modelos Notables para v.a. continuas
+
+## Modelo: Exponencial
 
 
-\newpage
-
-# Modelo: Exponencial
-
-
-## Función de densidad f
+### Función de densidad f
 -   Sea $X$ una variable aleatoria (v.a.) continua
 
 -   Decimos que $X$ sigue un modelo exponencial y se denota por
@@ -36,7 +17,7 @@ knitr::opts_chunk$set(message = FALSE)
     \end{array}
     \right.$$ donde $\lambda>0$ se le llama el parámetro de escala.
 
-## Función acumulada F
+### Función acumulada F
 
 -   La función de distribución acumulada es $$F(x) = 
     \left \{
@@ -46,19 +27,19 @@ knitr::opts_chunk$set(message = FALSE)
     \end{array}
     \right.$$
 
-## Gráficamente
+### Gráficamente
 
-![Modelo Exponencial](img_ModelosContinuos/Figure1.PNG){width=500px}
+![Modelo Exponencial](img_MCont/Figure1.PNG){width=500px}
 
-## Esperanza y varianza.
+### Esperanza y varianza.
 
 -   La esperanza y varianza son
 
-    $$\begin{aligned}
-    E[X] &=& \frac{1}{\lambda} 
-    \nonumber \\
-    Var[X] &=& \frac{1}{\lambda^2}
-    \nonumber\end{aligned}$$
+  $$\begin{aligned}
+  E[X] &=& \frac{1}{\lambda} 
+  \nonumber \\
+  Var[X] &=& \frac{1}{\lambda^2}
+  \nonumber\end{aligned}$$
 
 -   La mediana es $$Q_2 = -\frac{1}{\lambda} \log_e{(0.5)}$$
 
@@ -66,32 +47,32 @@ knitr::opts_chunk$set(message = FALSE)
     $$q_p = -\frac{1}{\lambda} \log_e{(1-p)}$$
 
 
-## Nota: Otros parametros.
+### Nota: Otros parametros.
 
 -   Otra parametrización es en función de su valor esperado
     $$X \sim Exponencial(\beta) \ , \ \beta >0$$
 
 -   La función de densidad y de distribución acumulada son
 
-    $$\begin{aligned}
-    f(x) &=& \frac{1}{\beta} e^{-x/\beta} \ , \ x > 0 
-    \nonumber \\
-    F(x) &=& e^{-x/\beta} \ , \ x > 0 
-    \nonumber\end{aligned}$$
+  $$\begin{aligned}
+  f(x) &=& \frac{1}{\beta} e^{-x/\beta} \ , \ x > 0 
+  \nonumber \\
+  F(x) &=& e^{-x/\beta} \ , \ x > 0 
+  \nonumber\end{aligned}$$
 
-    y $0$ en caso contrario.
+  y $0$ en caso contrario.
 
 -   La esperanza y la varianza son
 
-    $$\begin{aligned}
-    E[X] &=& \beta 
-    \nonumber \\
-    Var[X] &=& \beta^2
-    \nonumber \end{aligned}$$
+  $$\begin{aligned}
+  E[X] &=& \beta 
+  \nonumber \\
+  Var[X] &=& \beta^2
+  \nonumber \end{aligned}$$
 
-## Ejercicios:
+### Ejercicios:
 
-### Cálculos en R
+#### Cálculos en R
 
  Supongamos que $X \sim Exponencial(\lambda=2)$: 
 
@@ -119,7 +100,7 @@ pexp(10,rate=2) -  pexp(1,rate=2)
 qexp(0.9,rate=2)
 ```
 
-### Caso: Tiempo de atención
+#### Caso: Tiempo de atención
 
 -   Consideremos la Encuesta de satisfacción en salud (del año 2015).
 -   En esta encuesta se obtuvo la duración de la atención de pacientes.
@@ -146,7 +127,7 @@ sd(salud.paciente$C1P14,na.rm = T)
     y 4.7 minutos, respectivamente.
 
 
-![](img_ModelosContinuos/Figure2.PNG){width=500px}
+![](img_MCont/Figure2.PNG){width=500px}
 
 
 -   Sea $X$ la duración de la atención en minutos
@@ -174,24 +155,30 @@ $\lambda$ |$E[X]$ |$Var[X]$ |$Q_2$
 -   Note que todos los modelos (usados) esperan **más variabilidad** que la observada.
 
 
-![](img_ModelosContinuos/Figure3.PNG){width=400x}
+![](img_MCont/Figure3.PNG){width=400x}
 
 
-# Modelo: Gamma
+## Modelo: Gamma
 
 
-## Función de densidad f
+### Función de densidad f
 
 -   Decimos que una variable continua $X$ es Gamma y se denota por
     $$X \sim Gamma(\alpha,\lambda) \ , \  \alpha > 0 \ , \ \lambda >0$$
 
--   Su función de densidad es $$f(x) = 
-    \left \{
-    \begin{array}{ccc}
-    \frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha - 1}e^{- \lambda x} & , & x>0 \\
-    0 & , & x \leq 0
-    \end{array}
-    \right.$$ donde
+-   Su función de densidad es 
+
+$$
+f(x) = 
+\left \{
+\begin{array}{ccc}
+\frac{\lambda^\alpha}{\Gamma(\alpha)} x^{\alpha - 1}e^{- \lambda x} & , & x>0 \\
+0 & , & x \leq 0
+\end{array}
+\right.
+$$
+
+donde
 
 * $(\alpha,\lambda)$: Son los parametros de forma y escala,
         respectivamente.
@@ -205,21 +192,21 @@ $\lambda$ |$E[X]$ |$Var[X]$ |$Q_2$
 
 -   Si $x \in Z^{+}$ $$\Gamma(x) = (x-1)!$$
 
-<!--![](img_ModelosContinuos/Figure4.PNG)-->
+<!--![](img_MCont/Figure4.PNG)-->
 
-## Graficamente
+### Graficamente
 
-![](img_ModelosContinuos/Figure5.PNG){width=500x}{width=500px}
+![](img_MCont/Figure5.PNG){width=500x}{width=500px}
 
-## Esperanza y varianza
+### Esperanza y varianza
 
 -   La esperanza y varianza son
 
-    $$\begin{aligned}
-    E[X] &=& \frac{\alpha}{\lambda}
-    \nonumber \\
-    Var[X] &=& \frac{\alpha}{\lambda^2}
-    \nonumber \end{aligned}$$
+  $$\begin{aligned}
+  E[X] &=& \frac{\alpha}{\lambda}
+  \nonumber \\
+  Var[X] &=& \frac{\alpha}{\lambda^2}
+  \nonumber \end{aligned}$$
 
 -   Si $X_1,\dots,X_n$ son independientes y
     $$X_i \sim Exponencial(\lambda)
@@ -227,9 +214,9 @@ $\lambda$ |$E[X]$ |$Var[X]$ |$Q_2$
     $$Y = X_1 + \dots + X_n \sim Gamma(n,\lambda)$$
 
 
-## Ejercicios
+### Ejercicios
 
-### Cálculos en R
+#### Cálculos en R
 
 Supongamos que $X \sim Gamma(\alpha=2,\lambda=2)$
 
@@ -257,7 +244,7 @@ pgamma(10,2,2) - pgamma(1,2,2)
 qgamma(0.75,2,2)
 ```
 
-### Caso: Duración de la atención
+#### Caso: Duración de la atención
 
 -   Sea $X$ la duración de la atención en minutos
 
@@ -287,13 +274,13 @@ Graficando los datos y los modelos candidatos:
 
 
 
-![](img_ModelosContinuos/Figure6.PNG){width=500px}
+![](img_MCont/Figure6.PNG){width=500px}
 
 
-# Modelo: Weibull
+## Modelo: Weibull
 
 
-## Función de densidad f
+### Función de densidad f
 -   Decimos que una variable continua $X$ es Gamma y se denota por
     $$X \sim Weibull(\alpha,\beta) \ , \  \alpha > 0 \ , \ \beta >0$$
 
@@ -310,7 +297,7 @@ Graficando los datos y los modelos candidatos:
     \right.$$ donde $(\alpha,\beta)$ son los parametros de forma y
     escala, respectivamente.
 
-## Función acumulada F
+### Función acumulada F
 
 -   La función de distribución acumulada es $$F(x) =
     \left \{
@@ -344,12 +331,12 @@ Graficando los datos y los modelos candidatos:
     \nonumber \end{aligned}$$
 
 
-![](img_ModelosContinuos/Figure7.PNG)
+![](img_MCont/Figure7.PNG)
 
 
-## Ejercicios
+### Ejercicios
 
-## Calculos en R
+### Calculos en R
 
 -   Supongamos que $X \sim Weibull(\alpha=2,\beta=2)$
 
@@ -379,7 +366,7 @@ qweibull(0.25,2,2)
 ```
 
  
-### Caso: Duración de atención
+#### Caso: Duración de atención
 
 -   Sea $X$ la duración de la atención en minutos
 
@@ -404,7 +391,7 @@ $\alpha$ | $\beta$ |$E[X]$ |$Var[X]$ |$Q_2$
 4| 10 | 9.06 | 6.47 | 9.12
 
  
-### Duración de atención
+#### Duración de atención
 
 * En R, se puede obtener la mediana, media y varianza para el modelo.
 
@@ -452,6 +439,6 @@ Var210
 ```
 
 
-### Graficando {-}
+#### Graficando {-}
 
-![](img_ModelosContinuos/Figure8.PNG){width=500px}
+![](img_MCont/Figure8.PNG){width=500px}

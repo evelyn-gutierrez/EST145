@@ -1,27 +1,3 @@
----
-title: "Modelos Probabilísticos Discretos"
-author: "Evelyn Gutierrez"
-date: "`r Sys.Date()`"
-always_allow_html: true
-output:
-  pdf_document:
-    number_sections: yes
-    toc: yes
-    #toc_float: yes
-  rmdformats::robobook:
-    highlight: tango
-    number_sections: true
-    #code_folding: "hide"
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(warning = FALSE)
-knitr::opts_chunk$set(message = FALSE)
-```
-
-
-\newpage
 
 # Modelos de probabilidad notables. {-}
 
@@ -35,18 +11,7 @@ Por ejemplo, el resultado de interés en muchos experimentos es un resultado que
 * Observar un transistor y ver si está defectuoso o no, etc
 
 La distribución de probabilidad que describe a una variable aleatoria que puede tomar el valor de $1$ con probabilidad $p$ y $0$ con probabilidad $q=1-p$, se conoce como distribución Bernoulli.
-
-<!--
-# Distribuciones discretas notables.
-
-- [Bernoulli](https://es.wikipedia.org/wiki/Distribución_de_Bernoulli)
-- [Binomial](https://es.wikipedia.org/wiki/Distribución_binomial)
-- [Geométrica](https://es.wikipedia.org/wiki/Distribución_geométrica)
-- [Hipergeométrica](https://es.wikipedia.org/wiki/Distribución_hipergeométrica)
-- [Poisson](https://es.wikipedia.org/wiki/Distribución_de_Poisson)
-- [Binomial Negativa](https://es.wikipedia.org/wiki/Distribución_binomial_negativa)
--->
-
+ 
 ## Experimento Bernoulli {-}
 
 Un experimento de Bernoulli es un experimento aleatorio con dos únicos resultados posibles a los que llamaremos:
@@ -64,7 +29,7 @@ $$P(F)=1-p=q$$
 
 \newpage
 
-# Distribución Bernoulli
+## Distribución Bernoulli
 
 Si se define una variable aleatoria como $X:$ Número de éxitos en un experimento de Bernoulli. Esta variable aleatoria ($X$) sigue una distribución Bernoulli. Su función de probabilidad esta dada por la siguiente función de probabilidad:
 
@@ -92,7 +57,7 @@ kable(mitabla, "latex") %>%
 
 ```
 
-## Media y varianza
+### Media y varianza
 
 La media y varianza para esta variable sería lo siguiente:
 
@@ -102,7 +67,7 @@ $$\sigma^2_x=Var(X)=p(1-p)$$
 Note que un experimento Bernoulli es solamente **una repetición** del experimento con dos posibles resultados. Usualmente, nos interesa el resultado de la repetición de varios experimentos Bernoulli independientes, y en ese caso se usará la distribución Binomial.
 
 
-# Distribución Binomial
+## Distribución Binomial
 
 Sea **X: el número total de éxitos en ‘n’ experimentos bernoulli independientes.** Esta variable aleatoria X tiene una distribución binomial si se cumplen estas condiciones:
 
@@ -123,7 +88,7 @@ f(x) = \left\{
 \right.
 $$
 
-## Media y varianza
+### Media y varianza
 
 Su media y varianza serían los siguientes:
 
@@ -137,7 +102,7 @@ Si $X_1 \sim Binomial(n_1, p)$ y $X_2 \sim Binomial(n_2,p)$ entonces, $$X_1 + X_
 
  
  
-## Gráficamente
+### Gráficamente
 
 En el siguiente gráfico tenemos $f(x)$ y $F(x)$ para dos variables aleatorias $X_1$ y $X_2$.
 
@@ -166,9 +131,9 @@ dists <- ggplot(data.frame(x = -1:20), aes(x)) +
 grid.arrange(densidades, dists, ncol = 2, newpage = FALSE)
 ```
  
-## Aplicaciones {.tabset}
+### Aplicaciones {.tabset}
 
-### Uso de R {-}
+#### Uso de R {-}
 
 Sea $$X \sim Binom(n=20, p=0.1)$$
 
@@ -214,7 +179,7 @@ Calculo de $P(X>8)$ en R:
 
 
 
-### Caso: Consumo de frutas {-}
+#### Caso: Consumo de frutas {-}
 
 -   Se cree que el 15% de peruanos consume frutas en un dia cualquiera.
 
@@ -259,7 +224,7 @@ Será $\sigma_x^2=Var(X)=n*p*(1-p)$
 10*0.15*(1-0.15)
 ```
 
-### Caso: Aprobación presidencial. {-}
+#### Caso: Aprobación presidencial. {-}
 
 -   En Mayo del 2020, la empresa Ipssos realizó una [encuesta](https://www.ipsos.com/sites/default/files/ct/
 news/documents/2020-05/el_2021._encuesta_nacional_
@@ -290,7 +255,7 @@ Varios valores de $p$ pueden ser congruentes con los datos observados. Más adel
 
 ----
 
-# Distribución Hipergeométrica
+## Distribución Hipergeométrica
 
 El experimento hipergeométrico consiste en extraer al azar y sin sustitución **n** elementos de un conjunto de **N** elementos, **M_1** de los cuales son etiquetados como **"éxitos"** y **M_2=N-M_1** son **"fracasos"**.
 
@@ -334,7 +299,7 @@ $$P(X=x) =\frac{\left (\begin{array}{c}
     }$$
 
 
-## Esperanza y varianza
+### Esperanza y varianza
 
 $$\mu_X=E(X) = n\frac{M_1}{N}$$
 
@@ -359,7 +324,7 @@ Si N es mucho mayor que n, el muestreo con y sin reemplazo son aproximadamente i
 
 
  
-## Gráficamente
+### Gráficamente
 
 En el siguiente gráfico tenemos $f(x)$ y $F(x)$ para tres variables aleatorias $X_1$,  $X_2$ y $X_3$.
 
@@ -397,9 +362,9 @@ grid.arrange(densidades, dists, ncol = 2, newpage = FALSE)
 ```
  
 
-## Aplicaciones {.tabset .tabset-pills}
+### Aplicaciones {.tabset .tabset-pills}
 
-### Uso en R {-}
+#### Uso en R {-}
 
 En `R` tenemos las funciones:
 
@@ -415,7 +380,7 @@ donde
 * `k` el número de extracciones realizadas.
 
 
-### Alumnos desaprobados {-}
+#### Alumnos desaprobados {-}
  
 Se tienen 50 alumnos en el curso de los cuales 10 desaprueban el curso. Se escoge aleatoriamente 5 de ellos para entrevistarlos, y se define la siguiente variable: 
 
@@ -479,7 +444,7 @@ Nos piden $1-F(2) = 1-P(X<=2)$
 
 
 
-# Distribución Poisson
+## Distribución Poisson
 
 
 Sea $X$ una variable aleatoria con rango $R_X = \{ 0 ,1,2,\dots \}$. 
@@ -494,7 +459,7 @@ Función de distribución acumulada:
 
 $$F(x) = \sum_{i=0}^{i\leq x} \frac{e^{-\lambda} \lambda^i}{i!}$$
 
-## Esperanza y varianza
+### Esperanza y varianza
 
 A partir de este modelo de probabilidad, su esperanza y varianza serán los siguiente:
 
@@ -528,14 +493,14 @@ La suma de las variables tendrá distribución Poisson con parámetro $\lambda_1
 $$X_1 + X_2 \sim Poisson(\lambda_1 + \lambda_2)$$
 -->
 
-### Proceso de Poisson
+#### Proceso de Poisson
 
 La distribución de Poisson está asociada al **proceso de Poisson**, que es un modelo para una secuencia de eventos que ocurren "al azar", sin memoria.
 
 Si los sucesos se producen en un **proceso de Poisson** con una tasa $\lambda$ (sucesos por unidad tiempo), entonces el número de eventos en cualquier intervalo de tiempo de longitud t tiene la distribución de Poisson con el parámetro $\lambda t$.
 **En un proceso de Poisson** los eventos son independientes: la ocurrencia de un evento no afecta la probabilidad de ocurrencia de otro.
   
-#### Caso: Autobuses
+##### Caso: Autobuses
   
 Suponga que llega a una parada de autobus y se decide a esperar un autobús que pasa cada 20 minutos.
 
@@ -546,7 +511,7 @@ Supongamos que nos informan que el último autobús ha llegado hace 19 minutos. 
 Pero si el bus suele retrasarse, ya no estarías tan seguro. Si los autobuses se suelen retrasarse o adelantarse demasiado, la información sobre el último autobús sería irrelevante. Los autobuses llegarían siguiendo un proceso de Poisson con una tasa 1/20 = 0.05 autobuses por minuto.
   
 
-## Gráficamente: Distribución Poisson
+### Gráficamente: Distribución Poisson
 
 Observamos, a continuación, dos variables con distribución Poisson con diferentes parámetros. 
 $$X_1 \sim Poisson(10)$$
@@ -573,9 +538,9 @@ grid.arrange(densidades, dists, ncol = 2, newpage = FALSE)
 
 
 
-## Aplicaciones {.tabset}
+### Aplicaciones {.tabset}
 
-### Usando R {-}
+#### Usando R {-}
  
 Sea X una v.a. con distribución de Poisson con parámetro $\lambda=2$.
 $$X \sim Poisson(\lambda=2)$$
@@ -596,7 +561,7 @@ Calculo de $F(5)=P(X\leq5)$:
 ppois(5,lambda=2)
 ```
 
-### Caso: Número de dependientes {-}
+#### Caso: Número de dependientes {-}
 
 Supongamos que deseamos entender el número de dependientes en el país. 
 Para esto, definimos la variable aleatoria $X$: número de dependientes que tiene una persona en el país.

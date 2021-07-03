@@ -550,19 +550,5 @@ Para interpretar el gráfico, utilizamos las siguiente preguntas:
 * [Boxplot en R](https://r-coder.com/boxplot-en-r/)
 * [Visualización de datos con R (inglés)](https://rkabacoff.github.io/datavis/Univariate.html)
 
-
-
-<!--
-Otros materiales:
-https://rpubs.com/oscarrdiaz/581303
-
-newdir  <- "G:/Mon Drive/6. Trabajos/2021/PUCP_EST145-022/Materiales_R/"
-
-setwd("G:/Mon Drive/6. Trabajos/2021/UNICA/Presentaciones/Tema2_Univariado/")
-knitr::purl("Exploracion_VariablesCuantitativas.Rmd",paste0(newdir,"CapII_CasoAbulones_P1.R"))
-knitr::purl("Exploracion_Medidas_Boxplot.Rmd",paste0(newdir,"CapII_CasoAbulones_P2.R"))
-
-setwd(paste0(newdir,"RMarkdown"))
-knitr::purl("Cap2_Exploracion_Medidas_Boxplot_Ciencias.Rmd",paste0(newdir,"CapII_VCuanti_CasoMedicos.R"))
-
+  
 --> 
