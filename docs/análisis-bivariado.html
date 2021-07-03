@@ -5,20 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 3 Análisis bivariado | Estadística</title>
-  <meta name="description" content="Guías del curso EST145." />
+  <meta name="description" content="Capítulo 3 Análisis bivariado | Estadística con aplicaciones utilizando R" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 3 Análisis bivariado | Estadística" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Guías del curso EST145." />
+  <meta property="og:description" content="Capítulo 3 Análisis bivariado | Estadística con aplicaciones utilizando R" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Capítulo 3 Análisis bivariado | Estadística" />
   
-  <meta name="twitter:description" content="Guías del curso EST145." />
+  <meta name="twitter:description" content="Capítulo 3 Análisis bivariado | Estadística con aplicaciones utilizando R" />
   
 
 <meta name="author" content="Evelyn Gutierrez" />
@@ -148,7 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
 <li class="chapter" data-level="2" data-path="análisis-univariado.html"><a href="análisis-univariado.html"><i class="fa fa-check"></i><b>2</b> Análisis univariado</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#variables-cuantitativas"><i class="fa fa-check"></i><b>2.1</b> Variables cuantitativas</a>
+<li class="chapter" data-level="2.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#caso-encuesta-a-médicos-y-enfermeros."><i class="fa fa-check"></i><b>2.1</b> Caso: Encuesta a médicos y enfermeros.</a>
 <ul>
 <li class="chapter" data-level="2.1.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#lectura"><i class="fa fa-check"></i><b>2.1.1</b> Lectura de datos.</a></li>
 <li class="chapter" data-level="2.1.2" data-path="análisis-univariado.html"><a href="análisis-univariado.html#exploración-básica"><i class="fa fa-check"></i><b>2.1.2</b> Exploración básica</a></li>
@@ -694,20 +694,20 @@ install.packages("DT")
 <pre><code>## datos$sexo: 1
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   24.00   38.00   48.00   47.77   57.00   88.00 
-## -------------------------------------------------------------- 
+## -------------------------------------------------------------------------------- 
 ## datos$sexo: 2
 ##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   25.00   34.00   40.00   42.56   51.00   68.00</code></pre>
 <div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="análisis-bivariado.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(datos<span class="sc">$</span>edad,datos<span class="sc">$</span>sexo,IQR)</span></code></pre></div>
 <pre><code>## datos$sexo: 1
 ## [1] 19
-## -------------------------------------------------------------- 
+## -------------------------------------------------------------------------------- 
 ## datos$sexo: 2
 ## [1] 17</code></pre>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="análisis-bivariado.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(datos<span class="sc">$</span>edad,datos<span class="sc">$</span>sexo,Fisher.asi) </span></code></pre></div>
 <pre><code>## datos$sexo: 1
 ## [1] 0.05708801
-## -------------------------------------------------------------- 
+## -------------------------------------------------------------------------------- 
 ## datos$sexo: 2
 ## [1] 0.4042966</code></pre>
 <p>Interpretación:</p>

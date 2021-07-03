@@ -1,0 +1,320 @@
+---
+title: "Variables Aleatorias"
+author: "Evelyn Gutierrez"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: 
+    number_sections: true
+    toc: true
+  rmdformats::robobook:
+    highlight: tango
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!--Recordemos:
+
+El conjunto de todos los valores posibles y las probabilidades de que se produzcan se denomina modelo de probabilidad de la variable aleatoria.
+-->
+
+\newpage
+
+# Variables aleatorias
+
+Recordemos brevemente algunos conceptos de variables aleatorias.
+
+De forma intuitiva, una variable aleatoria es un resultado númerico obtenido a partir un experimento aleatorio.
+
+Formalmente, una variable aleatoria es una función que asigna un número real a un elemento del espacio muestral
+
+$$X:\Omega \to \mathbb{R}$$
+Asigna un número real $X(\omega)$ a cada elemento $\omega$ en el espacio
+muestral. 
+
+
+## Ejemplo: Lanzamiento de moneda {-}
+
+Lanzamos una moneda dos veces, definimos $X$ como en el número de sellos, entonces, la función de probabilidad se resume en la siguiente tabla.
+
+$\omega$ |$X(\omega)$|$P(\{\omega\})$
+---------|--------------|-----------
+CC       |0           |1/4
+CS       |1           |1/4
+SC       |1           |1/4
+SS       |2           |1/4
+
+
+## Tipos de variables aleatorias {-}
+
+### Variables aleatorias discretas {-}
+
+Son aquellas que pueden tomar un número finito (o infinito numerable) de valores.
+
+Ejemplos: 
+
+
+* Número de fallas por cada metro de un tejido.
+* Número de artículos defectuosos producidos.
+
+
+### Variables aleatorias continuas {-}
+
+Son aquella que puede tomar cualquier valor dentro de un intervalo. 
+
+Ejemplos: 
+
+* Cantidad de combustible consumido por día.
+* Peso de un producto.
+* La altura de una persona.
+ 
+
+\newpage
+
+# Variables Aleatorias Discretas 
+
+En esta sección veremos caracteristicas de las variables aleatorias discretas.
+
+## Función de distribución de probabilidad f(X)
+
+Esta función asigna un valor de probabilidad a cada valor de la variable aleatoria X:
+
+$$f(x) = P(X=x)$$
+
+$f(x)$ es la probabilidad de que la variable aleatoria X sea igual a x. Por ejemplo, f(5) será la probabilidad de que X tome el valor de 5.
+
+Por los axiomas de probabilidad, la suma de las probabilidades en todo el rango de X es 1:
+
+$$\sum_{x \in R_x}f(x)=1$$
+
+## Función de probabilidad acumulada F(X)
+
+Si $X$ una variable aleatoria discreta, la función de distribución acumulada, de $X$, esta definida de la siguiente manera:
+
+$$F(x) = P(X \leq x) = \sum_{a \leq x} P(X = a)$$ 
+es decir, $F(x)$ es la probabilidad que el valor de $X$ sea menor o igual a $x$.
+
+Por definición esta función esta definida sobre todos los reales
+$$\begin{array}{cccc}
+F :& R & \rightarrow & [0,1] \\
+&    x & \rightarrow & P(X \leq x) 
+\end{array}$$
+
+
+-   Propiedades
+
+    -   $F(x)$ es una función no decreciente con dominio en los reales
+    -   El limite superior es $$\lim_{x \rightarrow \infty} F(x) = 1$$
+    -   El limite inferior es $$\lim_{x \rightarrow -\infty} F(x) = 0$$
+     
+### Ejemplo: Lanzamiento de moneda (continuación) {-}
+
+Para el ejemplo anterior sobre el lanzamiento de una moneda, recordemos que $X$ es una v.a. definida como en el número de sellos al lanzar 2 monedas. La función de probabilidad f(x) es la siguiente:
+
+$$
+f(x) = P(X = x)=  \left\{
+  \begin{array}{lr}
+    0   &  x = 0\\
+    2/4 &  x = 1 \\
+    1/4 &  x = 2 \\ 
+    0 &  x > 2
+  \end{array}
+\right.
+$$
+
+
+La función de probabilidad acumulada F(X) entonces será de la siguiente manera:
+
+$$
+F(x) = P(X \le x)=  \left\{
+  \begin{array}{lr}
+    0   &  x < 0\\
+    2/4 &  0 \leq x < 1 \\
+    3/4 &  1 \leq x < 2 \\ 
+    1 &  x \ge 2
+  \end{array}
+\right.
+$$
+
+## Función Cuantil $Q(p)$
+
+<!--Es la inversa de la función de Distribución Acumulada: $Q(p) = F^-1(p)$. -->
+
+Sea $X$ una variable aleatoria con función de probabilidad  $F_X$. La función de distribución
+acumulada inversa o **función de cuantiles** se define para $p \in [0,1]$
+
+$$Q(p)=F_X^{-1}(p)=inf\{x:p\le F(x)\}$$
+
+Para una probabilidad p ($0<p<1$), la función cuantil devuelve el valor mínimo de $x$ para el para el cual la probabilidad de que X es menor o igual a $x$ es la probabilidad dada $p$.
+
+* Q(p) ayuda a responderlo siguiente ¿Para que valor de X tengo una probabilidad acumulada de p?
+
+### Cuartiles y Mediana: {-}
+
+El primer cuartil
+$$Q(1/4)=F_X^{-1}(1/4)$$
+
+La mediana: 
+$$Q(1/2)$$
+
+Tercer cuartil: 
+$$Q(3/4)$$
+
+ 
+
+## Esperanza
+
+Si X es una variable aleatoria con función de probabilidad $f(x)$, el valor esperado de la variable X se define como: $$E(X)=\sum_{x\in R_x} x f(x) = \sum_{x\in R_x}xP(X=x)$$
+        
+Intuición: el promedio de todos los posibles valores de $X$ ponderados por sus probabilidades.
+
+
+Por ejemplo, si $X$ toma únicamente dos posibles valores, $a,b$ con
+probabilidad $P(a)$ y $P(b)$ entonces
+$$E(X)=aP(a)+bP(b)$$
+
+Ejemplo: 
+
+Sea $X$ es el valor de la cara obtenida cuando se lanza un dado. Entonces, la esperanza de X será de la siguiente forma:
+
+$$
+\begin{array}{cc}
+E(X)&=1 \cdot P(X=1) +2\cdot P(X=2) +3\cdot P(X=3) \\
+ & +4\cdot P(X=4) +5\cdot P(X=5) +6\cdot P(X=6) \\
+E(X) &= 3.5
+\end{array}
+$$
+
+Si tiramos el dado muchas veces(realizamos el experimento muchas veces y observamo X) deberíamos esperar que el promedio de los resultados sea cercano a 3.5.
+
+<!--
+**Esperanza como un promedio cuando n es grande**. 
+
+Si vemos las probabilidades de los valores de $X$ como una aproximación de las frecuencias relativas(proporciones) cuando n es grande, entonces $E(X)$ es aproximadamente el valor promedio del valor de $X$ cuando n es grande.
+
+```{r}
+x <- rnorm(10000, mean = 10)
+mean(x)
+```
+-->
+
+
+## Media y varianza.
+
+Sea X una variable aleatoria con función de probabilidad  $f(x)$; entonces, la media y la variancia de la variable aleatoria X se definen de la siguiente manera:  
+
+**Media de X** $$\mu_x=E(X)$$
+
+* Es el valor que esperaríamos observar al realizar el experimento.
+
+**Varianza de X: ** $$\sigma^2_x=Var(X)=E([x-\mu_x]^2)=E(X^2)-\mu_x^2$$
+
+* Interpretación: Es cuanto se espera que varien los valores del experimento con respecto a su valor esperado. Un valor grande (pequeño) significa que los resultados del experimento varian bastante (poco) con respecto a su valor esperado.
+
+Relacionada a la varianza, tenemos a la **desviación estandard**
+La desviación estándar de $X$, es la raíz cuadrada de la varianza de X:
+$$\sigma_x=\sqrt{Var(X)}$$
+
+Intuitivamente, $sd(X)$ es una medida de la dispersión de la distribución de $X$ 
+alrededor de su media. Debido a que la varianza es el valor central de la 
+distribución de $(X-\mu)^2$, su raíz cuadrada da una idea del tamaño usual de 
+la desviación absoluta $|X-\mu|$. 
+
+Observar que $\mu_x$, $\sigma^2_x$ y $\sigma_x$ están determinados por $X$ y $f(x)$ de tal manera que si dos variables aleatorias **tienen la misma distribución de probabilidad**, también tendrán **la misma** media, varianza y desviación estándar.
+
+
+
+## Propiedades
+
+### Esperanza 
+
+La esperanza cumple las siguientes propiedades: 
+
+
+1. **Esperanza de una función**. Usualmente, $E[g(X)]\ne g[E(X)]$; sin embargo se cumple lo siguiente:
+
+$$E[g(X)] = \sum_{x \in R_X} g(x) P(X=x)$$
+
+2. **Esperanza de una constante**. La esperanza de una variable aleatoria constante
+es su valor constante,
+$$E(c) = c$$
+
+
+
+3. **Esperanza de cX**. 
+
+Para una constante c,
+
+$$E(cX)=cE(X)$$
+
+
+
+4. **Esperanza de la adición**. 
+
+Para cualquier par de variables aleatorias $X$, $Y$,
+
+$$E(X+Y) = E(X)+E(Y)$$
+
+Para k variables aleatorias: $X_i$
+
+$$E(\sum_{i=1}^{k}X_i) = \sum_{i=1}^{k}E(X_i)$$
+
+
+5. **Esperanza de la Multiplicación**. 
+
+Usualmente $E(XY) \ne E(X)E(Y)$; sin embargo, si $X$ y $Y$ son independientes, entonces $$E(XY)=E(X)E(Y)$$
+
+
+### Varianza:
+
+
+1. **Varianza de una constante**.
+
+$$Var(c)=0$$
+
+2. **Varianza de cX**. 
+
+Para una constante c,
+
+$$Var(cX)=c^2Var(X)$$
+
+
+
+4. **Varianza de la adición**. 
+
+Para cualquier par de variables aleatorias $X$, $Y$. Si $X$ e $Y$ son **independientes**, 
+
+$$Var(X+Y)=Var(X)+Var(Y)$$
+
+En general, para k variables aleatorias **independientes**: $X_i$, $i={0,1,2,... k}$
+
+$$Var(\sum_{i=1}^{k}X_i)=\sum_{i=1}^{k}Var(X_i)$$
+
+
+
+## Ejercicio {-}
+
+La distribución de una variable aleatoria $X$ es tabulada a continuación.
+
+Esta Tiene 5 posibles resultados. $X$, i.e. 1, 2, 3, 5 ,10 y 20.
+
+
+$X$ |$f(x)=P(X=x)$
+---------|-----------
+1       |0.1
+2       |0.3
+5       |0.25
+10      |0.2
+20      |0.15
+
+
+
+a. Calcular e interpretar la media de la variable aleatoria  X: $E(X)$
+b. Calcular $E(X^2)$.
+c. Calcular e interpretar la varianza de la variable $X$.
+
+
+
+

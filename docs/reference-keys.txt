@@ -1,6 +1,6 @@
 introducción
 análisis-univariado
-variables-cuantitativas
+caso-encuesta-a-médicos-y-enfermeros.
 lectura
 exploración-básica
 análisis-univariado-1
