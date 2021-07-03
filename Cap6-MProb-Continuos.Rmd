@@ -336,7 +336,7 @@ Graficando los datos y los modelos candidatos:
 
 ### Ejercicios
 
-### Calculos en R
+### Cálculos en R
 
 -   Supongamos que $X \sim Weibull(\alpha=2,\beta=2)$
 

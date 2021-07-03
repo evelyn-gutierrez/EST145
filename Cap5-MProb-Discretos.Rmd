@@ -136,7 +136,7 @@ Sea $$X \sim Binom(n=20, p=0.1)$$
 
 1. **Calcular la probabilidad de que X sea 1**
 
-Calculo de $P(X=1)$ en R:
+Cálculo de $P(X=1)$ en R:
 
 ```{r}
 dbinom(1, 20, 0.1)
@@ -146,7 +146,7 @@ dbinom(1, 20, 0.1)
 2. **Calcular la probabilidad de que X sea menor igual que 1**
 
 
-Calculo de $P(X \leq 1)$ en R:
+Cálculo de $P(X \leq 1)$ en R:
 
 ```{r}
 pbinom(1, 20, 0.1)
@@ -154,10 +154,10 @@ pbinom(1, 20, 0.1)
     
 
 3. **Calcular la probabilidad de que X sea mayor igual que 1 y menor igual que 10**
-Calculo de $P(1 \leq Y \leq 10)$ en R:
+Cálculo de $P(1 \leq Y \leq 10)$ en R:
 
 ```{r}
-# Calculo de probabilidades para x=1 a x=10
+# Cálculo de probabilidades para x=1 a x=10
 dbinom(1:10, 20, 0.1)
 
 # Suma de probabilidades:
@@ -167,7 +167,7 @@ sum(dbinom(1:10, 20, 0.1))
 
 4. **Calcular la probabilidad de que X sea mayor a 8**
 
-Calculo de $P(X>8)$ en R:
+Cálculo de $P(X>8)$ en R:
 ```{r}
 # P(X>8) = 1-F(8)
 1 - pbinom(8, 20, 0.1)
@@ -546,14 +546,14 @@ Para calcular la probabilidad en un valor de x utilizamos `dpois`.
 `dpois` nos devuelve la función de probabilida
 
 
-Calculo de $f(5)=P(X=5)$:
+Cálculo de $f(5)=P(X=5)$:
 ```{r}
 dpois(5,lambda=2)
 ```
 
 Para calcular la probabilidad acumulada: `ppois`
 
-Calculo de $F(5)=P(X\leq5)$:
+Cálculo de $F(5)=P(X\leq5)$:
 ```{r}
 ppois(5,lambda=2)
 ```

@@ -109,3 +109,5 @@ duración-de-atención
 materiales-adicionales
 modelos-probabilísticos-y-datos-observados
 modelos-de-probabilidad-notables
+medición-de-la-radiactividad.
+cálculos-en-r-2
