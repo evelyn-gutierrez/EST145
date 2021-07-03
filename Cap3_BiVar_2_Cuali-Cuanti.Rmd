@@ -11,7 +11,7 @@ library(summarytools)
 
 En caso de no tenerlas, instalamos las librerías copiando y pegando el siguiente codigo en la consola. 
 
-```{r instalación, eval=FALSE, include=TRUE}
+```{r instalación1, eval=FALSE, include=TRUE}
 install.packages("tidyverse")
 install.packages("summarytools")
 ```
@@ -23,7 +23,7 @@ Luego podemos comenzar con el análisis de datos. Para ello, crear un nuevo scri
 
 Leemos los datos desde SPSS con la librería haven y utilizando el enlace hacia los datos:
 
-```{r lectura, cache=FALSE}
+```{r lectura1, cache=FALSE}
 library(haven)
 enlace<-"http://portal.susalud.gob.pe/wp-content/uploads/archivo/base-de-datos/2015/CUESTIONARIO%2002%20-%20CAPITULOS.sav"
 datossalud = read_sav(enlace)

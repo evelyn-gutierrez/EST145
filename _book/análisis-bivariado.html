@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Análisis bivariado | A Minimal Book Example</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <title>Capítulo 3 Análisis bivariado | Estadística</title>
+  <meta name="description" content="Guías del curso EST145." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Análisis bivariado | A Minimal Book Example" />
+  <meta property="og:title" content="Capítulo 3 Análisis bivariado | Estadística" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="Guías del curso EST145." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Análisis bivariado | A Minimal Book Example" />
+  <meta name="twitter:title" content="Capítulo 3 Análisis bivariado | Estadística" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="Guías del curso EST145." />
   
 
-<meta name="author" content="Yihui Xie" />
+<meta name="author" content="Evelyn Gutierrez" />
 
 
-<meta name="date" content="2021-05-10" />
+<meta name="date" content="2021-07-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,8 @@
   
 <link rel="prev" href="análisis-univariado.html"/>
 <link rel="next" href="references.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -52,28 +53,38 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -82,9 +93,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -131,34 +142,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Uso de R - EST145</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="análisis-univariado.html"><a href="análisis-univariado.html"><i class="fa fa-check"></i><b>2</b> Análisis univariado</a><ul>
-<li class="chapter" data-level="2.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#variables-cuantitativas"><i class="fa fa-check"></i><b>2.1</b> Variables cuantitativas</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="análisis-univariado.html"><a href="análisis-univariado.html"><i class="fa fa-check"></i><b>2</b> Análisis univariado</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#variables-cuantitativas"><i class="fa fa-check"></i><b>2.1</b> Variables cuantitativas</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="análisis-univariado.html"><a href="análisis-univariado.html#lectura"><i class="fa fa-check"></i><b>2.1.1</b> Lectura de datos.</a></li>
 <li class="chapter" data-level="2.1.2" data-path="análisis-univariado.html"><a href="análisis-univariado.html#exploración-básica"><i class="fa fa-check"></i><b>2.1.2</b> Exploración básica</a></li>
 <li class="chapter" data-level="2.1.3" data-path="análisis-univariado.html"><a href="análisis-univariado.html#análisis-univariado-1"><i class="fa fa-check"></i><b>2.1.3</b> Análisis univariado</a></li>
 <li class="chapter" data-level="2.1.4" data-path="análisis-univariado.html"><a href="análisis-univariado.html#ejercicios"><i class="fa fa-check"></i><b>2.1.4</b> Ejercicio</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html"><i class="fa fa-check"></i><b>3</b> Análisis bivariado</a><ul>
-<li class="chapter" data-level="3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#dos-variables-cualitativas"><i class="fa fa-check"></i><b>3.1</b> Dos variables cualitativas</a><ul>
+<li class="chapter" data-level="3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html"><i class="fa fa-check"></i><b>3</b> Análisis bivariado</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#dos-variables-cualitativas"><i class="fa fa-check"></i><b>3.1</b> Dos variables cualitativas</a>
+<ul>
 <li class="chapter" data-level="3.1.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos."><i class="fa fa-check"></i><b>3.1.1</b> Lectura de datos.</a></li>
 <li class="chapter" data-level="3.1.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica."><i class="fa fa-check"></i><b>3.1.2</b> Exploración básica.</a></li>
 <li class="chapter" data-level="3.1.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado."><i class="fa fa-check"></i><b>3.1.3</b> Análisis univariado.</a></li>
 <li class="chapter" data-level="3.1.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado-1"><i class="fa fa-check"></i><b>3.1.4</b> Análisis bivariado</a></li>
 <li class="chapter" data-level="3.1.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio"><i class="fa fa-check"></i><b>3.1.5</b> Ejercicio</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#una-variable-cualitativa-y-otra-cuantitativa"><i class="fa fa-check"></i><b>3.2</b> Una variable cualitativa y otra cuantitativa</a><ul>
+<li class="chapter" data-level="3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#una-variable-cualitativa-y-otra-cuantitativa"><i class="fa fa-check"></i><b>3.2</b> Una variable cualitativa y otra cuantitativa</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#lectura-de-datos.-1"><i class="fa fa-check"></i><b>3.2.1</b> Lectura de datos.</a></li>
 <li class="chapter" data-level="3.2.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#exploración-básica.-1"><i class="fa fa-check"></i><b>3.2.2</b> Exploración básica.</a></li>
 <li class="chapter" data-level="3.2.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-univariado.-1"><i class="fa fa-check"></i><b>3.2.3</b> Análisis univariado.</a></li>
 <li class="chapter" data-level="3.2.4" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#análisis-bivariado."><i class="fa fa-check"></i><b>3.2.4</b> Análisis bivariado.</a></li>
 <li class="chapter" data-level="3.2.5" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#ejercicio-1"><i class="fa fa-check"></i><b>3.2.5</b> Ejercicio</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#variables-cuantitativas."><i class="fa fa-check"></i><b>3.3</b> Variables cuantitativas.</a><ul>
+<li class="chapter" data-level="3.3" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#variables-cuantitativas."><i class="fa fa-check"></i><b>3.3</b> Variables cuantitativas.</a>
+<ul>
 <li class="chapter" data-level="3.3.1" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-1-bmi"><i class="fa fa-check"></i><b>3.3.1</b> Caso 1: BMI</a></li>
 <li class="chapter" data-level="3.3.2" data-path="análisis-bivariado.html"><a href="análisis-bivariado.html#caso-2-arboles"><i class="fa fa-check"></i><b>3.3.2</b> Caso 2: Arboles</a></li>
 </ul></li>
@@ -176,7 +193,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Estadística</a>
           </h1>
         </div>
 
@@ -184,38 +201,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="análisis-bivariado" class="section level1">
-<h1><span class="header-section-number">Chapter 3</span> Análisis bivariado</h1>
-<div id="dos-variables-cualitativas" class="section level2">
+<div id="análisis-bivariado" class="section level1" number="3">
+<h1><span class="header-section-number">Capítulo 3</span> Análisis bivariado</h1>
+<div id="dos-variables-cualitativas" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Dos variables cualitativas</h2>
 <p>Antes de iniciar, nos aseguramos de haber instalado las librerías necesarias.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(haven)</a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">library</span>(vcd)</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">library</span>(DT)</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">library</span>(DescTools)</a></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="análisis-bivariado.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb87-2"><a href="análisis-bivariado.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vcd)</span>
+<span id="cb87-3"><a href="análisis-bivariado.html#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DT)</span>
+<span id="cb87-4"><a href="análisis-bivariado.html#cb87-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DescTools)</span></code></pre></div>
 <p>En caso de no tenerlas, instalamos las librerías copiando y pegando el siguiente codigo en la consola.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="kw">install.packages</span>(<span class="st">&quot;vcd&quot;</span>)</a>
-<a class="sourceLine" id="cb2-3" title="3"><span class="kw">install.packages</span>(<span class="st">&quot;DescTools&quot;</span>)</a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="kw">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="análisis-bivariado.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb88-2"><a href="análisis-bivariado.html#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;vcd&quot;</span>)</span>
+<span id="cb88-3"><a href="análisis-bivariado.html#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;DescTools&quot;</span>)</span>
+<span id="cb88-4"><a href="análisis-bivariado.html#cb88-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;DT&quot;</span>)</span></code></pre></div>
 <p>Luego podemos comenzar con el análisis de datos. Para ello, crear un nuevo script con el nombre de analisisBiva. Copiar y ejecutar cada uno de los códigos en R detallados más adelante.</p>
-<div id="lectura-de-datos." class="section level3">
+<div id="lectura-de-datos." class="section level3" number="3.1.1">
 <h3><span class="header-section-number">3.1.1</span> Lectura de datos.</h3>
 <p>Leemos los datos desde SPSS con la librería haven y utilizando el enlace hacia los datos:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">library</span>(haven)</a></code></pre></div>
-<pre><code>## Warning: package &#39;haven&#39; was built under R version 4.0.5</code></pre>
-<pre><code>## Registered S3 methods overwritten by &#39;tibble&#39;:
-##   method     from  
-##   format.tbl pillar
-##   print.tbl  pillar</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">enlace &lt;-<span class="st"> &quot;http://portal.susalud.gob.pe/wp-content/uploads/archivo/base-de-datos/2015/CUESTIONARIO%2002%20-%20CAPITULOS.sav&quot;</span></a>
-<a class="sourceLine" id="cb6-2" title="2">datossalud =<span class="st"> </span><span class="kw">read_sav</span>(enlace)</a></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="análisis-bivariado.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb89-2"><a href="análisis-bivariado.html#cb89-2" aria-hidden="true" tabindex="-1"></a>enlace <span class="ot">&lt;-</span> <span class="st">&quot;http://portal.susalud.gob.pe/wp-content/uploads/archivo/base-de-datos/2015/CUESTIONARIO%2002%20-%20CAPITULOS.sav&quot;</span></span>
+<span id="cb89-3"><a href="análisis-bivariado.html#cb89-3" aria-hidden="true" tabindex="-1"></a>datossalud <span class="ot">=</span> <span class="fu">read_sav</span>(enlace)</span></code></pre></div>
 </div>
-<div id="exploración-básica." class="section level3">
+<div id="exploración-básica." class="section level3" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> Exploración básica.</h3>
 <p>Exploramos variables que interesan en el análisis.</p>
 <p>Variable <strong>C2P1</strong>: profesión</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="kw">head</span>(datossalud<span class="op">$</span>C2P1)</a></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="análisis-bivariado.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datossalud<span class="sc">$</span>C2P1)</span></code></pre></div>
 <pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: ¿CUÁL ES SU PROFESIÓN?
 ## [1] 2 2 2 2 2 1
 ## 
@@ -224,7 +236,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##      1      Médico
 ##      2 Enfermero/a</code></pre>
 <p>Variable <strong>C2P4</strong>: sexo.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="kw">head</span>(datossalud<span class="op">$</span>C2P4)</a></code></pre></div>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="análisis-bivariado.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datossalud<span class="sc">$</span>C2P4)</span></code></pre></div>
 <pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: SEXO
 ## [1] 2 2 2 2 2 1
 ## 
@@ -233,7 +245,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##      1 Hombre
 ##      2  Mujer</code></pre>
 <p>Variable <strong>C2P7</strong>: Tipo de contrato.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="kw">head</span>(datossalud<span class="op">$</span>C2P7)</a></code></pre></div>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="análisis-bivariado.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datossalud<span class="sc">$</span>C2P7)</span></code></pre></div>
 <pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: ¿QUÉ TIPO DE CONTRATO TIENE CON ESTE ESTABLECIMIENTO DE SALUD?
 ## [1] 5 5 2 2 5 5
 ## 
@@ -254,11 +266,11 @@ install.packages("DT")
 ```
 -->
 <p>Seleccionamos los datos de los médicos con el siguiente código:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1">datostemp &lt;-<span class="st"> </span>datossalud[,<span class="kw">c</span>(<span class="st">&quot;C2P1&quot;</span>,<span class="st">&quot;C2P4&quot;</span>,<span class="st">&quot;C2P7&quot;</span>)]</a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="kw">names</span>(datostemp) =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;profesion&quot;</span>,<span class="st">&quot;sexo&quot;</span>,<span class="st">&quot;contrato&quot;</span>)</a>
-<a class="sourceLine" id="cb13-3" title="3">datos &lt;-<span class="st"> </span>datostemp[datostemp<span class="op">$</span>profesion<span class="op">==</span><span class="dv">1</span>,]</a></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="análisis-bivariado.html#cb96-1" aria-hidden="true" tabindex="-1"></a>datostemp <span class="ot">&lt;-</span> datossalud[,<span class="fu">c</span>(<span class="st">&quot;C2P1&quot;</span>,<span class="st">&quot;C2P4&quot;</span>,<span class="st">&quot;C2P7&quot;</span>)]</span>
+<span id="cb96-2"><a href="análisis-bivariado.html#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(datostemp) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;profesion&quot;</span>,<span class="st">&quot;sexo&quot;</span>,<span class="st">&quot;contrato&quot;</span>)</span>
+<span id="cb96-3"><a href="análisis-bivariado.html#cb96-3" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> datostemp[datostemp<span class="sc">$</span>profesion<span class="sc">==</span><span class="dv">1</span>,]</span></code></pre></div>
 <p>Y finalmente observamos los datos:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="kw">head</span>(datos)</a></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="análisis-bivariado.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span></code></pre></div>
 <pre><code>## # A tibble: 6 x 3
 ##    profesion       sexo                                       contrato
 ##    &lt;dbl+lbl&gt;  &lt;dbl+lbl&gt;                                      &lt;dbl+lbl&gt;
@@ -269,13 +281,13 @@ install.packages("DT")
 ## 5 1 [Médico] 1 [Hombre] 3 [Contrato a plazo fijo (sujeto a modalidad)]
 ## 6 1 [Médico] 1 [Hombre] 5 [Plazo indeterminado o indefinido (D.S.728)]</code></pre>
 </div>
-<div id="análisis-univariado." class="section level3">
+<div id="análisis-univariado." class="section level3" number="3.1.3">
 <h3><span class="header-section-number">3.1.3</span> Análisis univariado.</h3>
 <p>Ahora, realizamos el análisis de cada variable: C2P4(Sexo) y C2P7(Contrato). Observamos la tabla de frecuencias, proporciones, y gráfico de barras para cada variable:</p>
-<div id="variable-sexo" class="section level4">
+<div id="variable-sexo" class="section level4" number="3.1.3.1">
 <h4><span class="header-section-number">3.1.3.1</span> Variable: Sexo</h4>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="co">#contrato</span></a>
-<a class="sourceLine" id="cb16-2" title="2"><span class="kw">head</span>(datos<span class="op">$</span>sexo)</a></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="análisis-bivariado.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co">#contrato</span></span>
+<span id="cb99-2"><a href="análisis-bivariado.html#cb99-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos<span class="sc">$</span>sexo)</span></code></pre></div>
 <pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: SEXO
 ## [1] 1 1 2 1 1 1
 ## 
@@ -283,26 +295,26 @@ install.packages("DT")
 ##  value  label
 ##      1 Hombre
 ##      2  Mujer</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" title="1"><span class="co"># tabla de frecuencias</span></a>
-<a class="sourceLine" id="cb18-2" title="2">tabla_sexo  =<span class="st"> </span><span class="kw">table</span>(datos<span class="op">$</span>sexo)</a>
-<a class="sourceLine" id="cb18-3" title="3">tabla_sexo</a></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="análisis-bivariado.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tabla de frecuencias</span></span>
+<span id="cb101-2"><a href="análisis-bivariado.html#cb101-2" aria-hidden="true" tabindex="-1"></a>tabla_sexo  <span class="ot">=</span> <span class="fu">table</span>(datos<span class="sc">$</span>sexo)</span>
+<span id="cb101-3"><a href="análisis-bivariado.html#cb101-3" aria-hidden="true" tabindex="-1"></a>tabla_sexo</span></code></pre></div>
 <pre><code>## 
 ##    1    2 
 ## 1657  562</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="co"># tabla de frecuencias con proporciones</span></a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="kw">prop.table</span>(tabla_sexo)<span class="op">*</span><span class="dv">100</span></a></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="análisis-bivariado.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tabla de frecuencias con proporciones</span></span>
+<span id="cb103-2"><a href="análisis-bivariado.html#cb103-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(tabla_sexo)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## 
 ##        1        2 
 ## 74.67328 25.32672</code></pre>
 <p>De esta tabla, se observa que hay 74.7% de médicos y solo 25.3% de médicas. Podemos añadir, finalmente, un gráfico, para observar estas diferencias rápidamente.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="kw">barplot</span>(tabla_sexo,</a>
-<a class="sourceLine" id="cb22-2" title="2">           <span class="dt">main=</span><span class="st">&quot;Sexo&quot;</span>)</a></code></pre></div>
-<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-9-1.png" width="50%" /></p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="análisis-bivariado.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(tabla_sexo,</span>
+<span id="cb105-2"><a href="análisis-bivariado.html#cb105-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">main=</span><span class="st">&quot;Sexo&quot;</span>)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-43-1.png" width="50%" /></p>
 </div>
-<div id="variable-contratos" class="section level4">
+<div id="variable-contratos" class="section level4" number="3.1.3.2">
 <h4><span class="header-section-number">3.1.3.2</span> Variable: Contratos</h4>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="co"># muestra de datos</span></a>
-<a class="sourceLine" id="cb23-2" title="2"><span class="kw">head</span>(datos<span class="op">$</span>contrato)</a></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="análisis-bivariado.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># muestra de datos</span></span>
+<span id="cb106-2"><a href="análisis-bivariado.html#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos<span class="sc">$</span>contrato)</span></code></pre></div>
 <pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: ¿QUÉ TIPO DE CONTRATO TIENE CON ESTE ESTABLECIMIENTO DE SALUD?
 ## [1] 5 5 2 5 3 5
 ## 
@@ -314,46 +326,46 @@ install.packages("DT")
 ##      4                             Nombrado, permanente
 ##      5       Plazo indeterminado o indefinido (D.S.728)
 ##      6                                             Otro</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="co"># Tabla de frecuencias</span></a>
-<a class="sourceLine" id="cb25-2" title="2">tabla_contrato =<span class="st"> </span><span class="kw">table</span>(datos<span class="op">$</span>contrato)</a>
-<a class="sourceLine" id="cb25-3" title="3">tabla_contrato</a></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="análisis-bivariado.html#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla de frecuencias</span></span>
+<span id="cb108-2"><a href="análisis-bivariado.html#cb108-2" aria-hidden="true" tabindex="-1"></a>tabla_contrato <span class="ot">=</span> <span class="fu">table</span>(datos<span class="sc">$</span>contrato)</span>
+<span id="cb108-3"><a href="análisis-bivariado.html#cb108-3" aria-hidden="true" tabindex="-1"></a>tabla_contrato</span></code></pre></div>
 <pre><code>## 
 ##   1   2   3   4   5   6 
 ## 158 279 138 881 707  56</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="co"># tabla de frecuencias con proporciones.</span></a>
-<a class="sourceLine" id="cb27-2" title="2"><span class="kw">prop.table</span>(tabla_contrato)<span class="op">*</span><span class="dv">100</span></a></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="análisis-bivariado.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tabla de frecuencias con proporciones.</span></span>
+<span id="cb110-2"><a href="análisis-bivariado.html#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(tabla_contrato)<span class="sc">*</span><span class="dv">100</span></span></code></pre></div>
 <pre><code>## 
 ##         1         2         3         4         5         6 
 ##  7.120324 12.573231  6.219018 39.702569 31.861199  2.523659</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="co"># gráfico de barras</span></a>
-<a class="sourceLine" id="cb29-2" title="2"><span class="kw">barplot</span>(tabla_contrato,</a>
-<a class="sourceLine" id="cb29-3" title="3">           <span class="dt">main=</span><span class="st">&quot;Contrato&quot;</span>)</a></code></pre></div>
-<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-10-1.png" width="50%" /></p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="análisis-bivariado.html#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># gráfico de barras</span></span>
+<span id="cb112-2"><a href="análisis-bivariado.html#cb112-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(tabla_contrato,</span>
+<span id="cb112-3"><a href="análisis-bivariado.html#cb112-3" aria-hidden="true" tabindex="-1"></a>           <span class="at">main=</span><span class="st">&quot;Contrato&quot;</span>)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-44-1.png" width="50%" /></p>
 </div>
-<div id="opción-2-gráficos-en-1" class="section level4">
+<div id="opción-2-gráficos-en-1" class="section level4" number="3.1.3.3">
 <h4><span class="header-section-number">3.1.3.3</span> Opción: 2 gráficos en 1</h4>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1">forma_grafico &lt;-<span class="st"> </span><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</a>
-<a class="sourceLine" id="cb30-2" title="2"><span class="kw">barplot</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(tabla_sexo),</a>
-<a class="sourceLine" id="cb30-3" title="3">        <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">100</span>),</a>
-<a class="sourceLine" id="cb30-4" title="4">        <span class="dt">names.arg =</span> <span class="kw">c</span>(<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>),</a>
-<a class="sourceLine" id="cb30-5" title="5">        <span class="dt">ylab=</span><span class="st">&quot;Porcentaje&quot;</span>)</a>
-<a class="sourceLine" id="cb30-6" title="6"><span class="kw">barplot</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">prop.table</span>(tabla_contrato),</a>
-<a class="sourceLine" id="cb30-7" title="7">        <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">100</span>),<span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">6</span>,</a>
-<a class="sourceLine" id="cb30-8" title="8">        <span class="dt">ylab=</span><span class="st">&quot;Porcentaje&quot;</span>,<span class="dt">xaxt=</span><span class="st">&quot;n&quot;</span>)</a>
-<a class="sourceLine" id="cb30-9" title="9"><span class="kw">legend</span>(<span class="dv">1</span>,<span class="dv">100</span>,<span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Recibos&quot;</span>,<span class="st">&quot;CAS&quot;</span>,<span class="st">&quot;Plazo fijo&quot;</span>,<span class="st">&quot;Nombrado&quot;</span>,<span class="st">&quot;Plazo Indeterminado&quot;</span>,<span class="st">&quot;Otros&quot;</span>),</a>
-<a class="sourceLine" id="cb30-10" title="10">       <span class="dt">col=</span><span class="dv">1</span><span class="op">:</span><span class="dv">6</span>,<span class="dt">bty=</span><span class="st">&quot;n&quot;</span>,<span class="dt">pch=</span><span class="dv">15</span>)</a></code></pre></div>
-<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="análisis-bivariado.html#cb113-1" aria-hidden="true" tabindex="-1"></a>forma_grafico <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb113-2"><a href="análisis-bivariado.html#cb113-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">prop.table</span>(tabla_sexo),</span>
+<span id="cb113-3"><a href="análisis-bivariado.html#cb113-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>),</span>
+<span id="cb113-4"><a href="análisis-bivariado.html#cb113-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">names.arg =</span> <span class="fu">c</span>(<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>),</span>
+<span id="cb113-5"><a href="análisis-bivariado.html#cb113-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab=</span><span class="st">&quot;Porcentaje&quot;</span>)</span>
+<span id="cb113-6"><a href="análisis-bivariado.html#cb113-6" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">prop.table</span>(tabla_contrato),</span>
+<span id="cb113-7"><a href="análisis-bivariado.html#cb113-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">100</span>),<span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb113-8"><a href="análisis-bivariado.html#cb113-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab=</span><span class="st">&quot;Porcentaje&quot;</span>,<span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb113-9"><a href="análisis-bivariado.html#cb113-9" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">1</span>,<span class="dv">100</span>,<span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;Recibos&quot;</span>,<span class="st">&quot;CAS&quot;</span>,<span class="st">&quot;Plazo fijo&quot;</span>,<span class="st">&quot;Nombrado&quot;</span>,<span class="st">&quot;Plazo Indeterminado&quot;</span>,<span class="st">&quot;Otros&quot;</span>),</span>
+<span id="cb113-10"><a href="análisis-bivariado.html#cb113-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,<span class="at">bty=</span><span class="st">&quot;n&quot;</span>,<span class="at">pch=</span><span class="dv">15</span>)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-45-1.png" width="672" /></p>
 <p>¿Qué observo en estos resultados? (Obtener conclusiones a partir de las tablas de proporciones)</p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
-<div id="análisis-bivariado-1" class="section level3">
+<div id="análisis-bivariado-1" class="section level3" number="3.1.4">
 <h3><span class="header-section-number">3.1.4</span> Análisis bivariado</h3>
-<div id="exploración" class="section level4">
+<div id="exploración" class="section level4" number="3.1.4.1">
 <h4><span class="header-section-number">3.1.4.1</span> Exploración</h4>
 <p>Ahora, realizaremos un análisis bivariado utilizando tablas de contingencia:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1">tabla_conti &lt;-<span class="st"> </span><span class="kw">table</span>(datos<span class="op">$</span>sexo,datos<span class="op">$</span>contrato)</a>
-<a class="sourceLine" id="cb31-2" title="2">tabla_conti</a></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="análisis-bivariado.html#cb114-1" aria-hidden="true" tabindex="-1"></a>tabla_conti <span class="ot">&lt;-</span> <span class="fu">table</span>(datos<span class="sc">$</span>sexo,datos<span class="sc">$</span>contrato)</span>
+<span id="cb114-2"><a href="análisis-bivariado.html#cb114-2" aria-hidden="true" tabindex="-1"></a>tabla_conti</span></code></pre></div>
 <pre><code>##    
 ##       1   2   3   4   5   6
 ##   1 128 172  85 684 547  41
@@ -370,20 +382,20 @@ y adicionamos el parámetro margin a la función.</p>
 <li><code>margin=1</code> significa que los porcentajes estan calculados sobre la base de los totales por filas. (Los porcentajes por cada fila suman 100%)</li>
 <li><code>margin=2</code> significa que los porcentajes estan calculados sobre la base de los totales por columnas. (Los porcentajes por cada columna suman 100%)</li>
 </ul>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">tabla1 &lt;-<span class="st"> </span><span class="kw">prop.table</span>(tabla_conti, <span class="dt">margin=</span><span class="dv">1</span>)  <span class="co">#</span></a>
-<a class="sourceLine" id="cb33-2" title="2"><span class="kw">round</span>(tabla1,<span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="análisis-bivariado.html#cb116-1" aria-hidden="true" tabindex="-1"></a>tabla1 <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(tabla_conti, <span class="at">margin=</span><span class="dv">1</span>)  <span class="co">#</span></span>
+<span id="cb116-2"><a href="análisis-bivariado.html#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(tabla1,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##    
 ##        1    2    3    4    5    6
 ##   1 0.08 0.10 0.05 0.41 0.33 0.02
 ##   2 0.05 0.19 0.09 0.35 0.28 0.03</code></pre>
 <p>Interpretación:</p>
 <ul>
-<li>Observamos que 41% de los médicos tienen contrato “Nombrado o permanente” mientras que solo el 35% de las médicas tienen contrato “Nombrado o permanente”.</li>
-<li>Asimismo, se observa que el 10% de los médicos tienen contrato “CAS” y un mayor porcentaje, 19%, de médicas tienen contrato “CAS”.</li>
+<li>Observamos que 41% de los médicos tienen contrato “Nombrado o permanente” mientras que solo el 35% de las médicas tienen contrato “Nombrado o permanente.”</li>
+<li>Asimismo, se observa que el 10% de los médicos tienen contrato “CAS” y un mayor porcentaje, 19%, de médicas tienen contrato “CAS.”</li>
 </ul>
 <p>Ejercicio: Interpretar resultados para el porcentaje de contratos de plazo indeterminado entre hombres y mujeres.</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1">tabla2 &lt;-<span class="st"> </span><span class="kw">prop.table</span>(tabla_conti, <span class="dt">margin=</span><span class="dv">2</span>)  <span class="co">#</span></a>
-<a class="sourceLine" id="cb35-2" title="2"><span class="kw">round</span>(tabla2,<span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="análisis-bivariado.html#cb118-1" aria-hidden="true" tabindex="-1"></a>tabla2 <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(tabla_conti, <span class="at">margin=</span><span class="dv">2</span>)  <span class="co">#</span></span>
+<span id="cb118-2"><a href="análisis-bivariado.html#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(tabla2,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##    
 ##        1    2    3    4    5    6
 ##   1 0.81 0.62 0.62 0.78 0.77 0.73
@@ -399,44 +411,43 @@ y adicionamos el parámetro margin a la función.</p>
 <ul>
 <li>Gráficos de barras.</li>
 </ul>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(tabla_conti,<span class="dv">1</span>),</a>
-<a class="sourceLine" id="cb37-2" title="2">        <span class="dt">beside =</span> T,</a>
-<a class="sourceLine" id="cb37-3" title="3">        <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), </a>
-<a class="sourceLine" id="cb37-4" title="4">        <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;skyblue&quot;</span>),</a>
-<a class="sourceLine" id="cb37-5" title="5">        <span class="dt">ylab =</span> <span class="st">&quot;Proporcion&quot;</span>)</a>
-<a class="sourceLine" id="cb37-6" title="6"></a>
-<a class="sourceLine" id="cb37-7" title="7"><span class="kw">legend</span>( <span class="dv">9</span>, <span class="fl">0.9</span>,</a>
-<a class="sourceLine" id="cb37-8" title="8">       <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>),</a>
-<a class="sourceLine" id="cb37-9" title="9">       <span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;skyblue&quot;</span>),</a>
-<a class="sourceLine" id="cb37-10" title="10">       <span class="dt">bty=</span><span class="st">&quot;n&quot;</span>,</a>
-<a class="sourceLine" id="cb37-11" title="11">       <span class="dt">pch=</span><span class="dv">15</span>)</a>
-<a class="sourceLine" id="cb37-12" title="12"></a>
-<a class="sourceLine" id="cb37-13" title="13"><span class="kw">legend</span>(<span class="dv">2</span>,<span class="dv">1</span>,</a>
-<a class="sourceLine" id="cb37-14" title="14">       <span class="dt">legend=</span><span class="kw">c</span>(<span class="st">&quot;1: Recibos&quot;</span>,</a>
-<a class="sourceLine" id="cb37-15" title="15">                <span class="st">&quot;2: CAS&quot;</span>,</a>
-<a class="sourceLine" id="cb37-16" title="16">                <span class="st">&quot;3: Plazo fijo&quot;</span>,</a>
-<a class="sourceLine" id="cb37-17" title="17">                <span class="st">&quot;4: Nombrado&quot;</span>,</a>
-<a class="sourceLine" id="cb37-18" title="18">                <span class="st">&quot;5: Plazo Indeterminado&quot;</span>,</a>
-<a class="sourceLine" id="cb37-19" title="19">                <span class="st">&quot;6: Otros&quot;</span>),</a>
-<a class="sourceLine" id="cb37-20" title="20">       <span class="dt">bty=</span><span class="st">&quot;n&quot;</span>)</a></code></pre></div>
-<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="análisis-bivariado.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">prop.table</span>(tabla_conti,<span class="dv">1</span>),</span>
+<span id="cb120-2"><a href="análisis-bivariado.html#cb120-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">beside =</span> T,</span>
+<span id="cb120-3"><a href="análisis-bivariado.html#cb120-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>), </span>
+<span id="cb120-4"><a href="análisis-bivariado.html#cb120-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;skyblue&quot;</span>),</span>
+<span id="cb120-5"><a href="análisis-bivariado.html#cb120-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Proporcion&quot;</span>)</span>
+<span id="cb120-6"><a href="análisis-bivariado.html#cb120-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-7"><a href="análisis-bivariado.html#cb120-7" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>( <span class="dv">9</span>, <span class="fl">0.9</span>,</span>
+<span id="cb120-8"><a href="análisis-bivariado.html#cb120-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>),</span>
+<span id="cb120-9"><a href="análisis-bivariado.html#cb120-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">col=</span><span class="fu">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;skyblue&quot;</span>),</span>
+<span id="cb120-10"><a href="análisis-bivariado.html#cb120-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">bty=</span><span class="st">&quot;n&quot;</span>,</span>
+<span id="cb120-11"><a href="análisis-bivariado.html#cb120-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">pch=</span><span class="dv">15</span>)</span>
+<span id="cb120-12"><a href="análisis-bivariado.html#cb120-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-13"><a href="análisis-bivariado.html#cb120-13" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">2</span>,<span class="dv">1</span>,</span>
+<span id="cb120-14"><a href="análisis-bivariado.html#cb120-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;1: Recibos&quot;</span>,</span>
+<span id="cb120-15"><a href="análisis-bivariado.html#cb120-15" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;2: CAS&quot;</span>,</span>
+<span id="cb120-16"><a href="análisis-bivariado.html#cb120-16" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;3: Plazo fijo&quot;</span>,</span>
+<span id="cb120-17"><a href="análisis-bivariado.html#cb120-17" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;4: Nombrado&quot;</span>,</span>
+<span id="cb120-18"><a href="análisis-bivariado.html#cb120-18" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;5: Plazo Indeterminado&quot;</span>,</span>
+<span id="cb120-19"><a href="análisis-bivariado.html#cb120-19" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;6: Otros&quot;</span>),</span>
+<span id="cb120-20"><a href="análisis-bivariado.html#cb120-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">bty=</span><span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 <p>O este otro gráfico de barras acumulado:</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb38-1" title="1"><span class="kw">library</span>(vcd)</a></code></pre></div>
-<pre><code>## Warning: package &#39;vcd&#39; was built under R version 4.0.4</code></pre>
-<pre><code>## Loading required package: grid</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="kw">mosaicplot</span>(<span class="kw">table</span>(datos<span class="op">$</span>contrato,datos<span class="op">$</span>sexo),</a>
-<a class="sourceLine" id="cb41-2" title="2">           <span class="dt">main=</span><span class="st">&quot;&quot;</span>,</a>
-<a class="sourceLine" id="cb41-3" title="3">          <span class="dt">color =</span> <span class="kw">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;skyblue&quot;</span>),</a>
-<a class="sourceLine" id="cb41-4" title="4">          <span class="dt">xlab =</span> <span class="st">&quot;Contratos&quot;</span>, <span class="co"># label for x-axis</span></a>
-<a class="sourceLine" id="cb41-5" title="5">          <span class="dt">ylab =</span> <span class="st">&quot;Sexo&quot;</span> <span class="co"># label for y-axis</span></a>
-<a class="sourceLine" id="cb41-6" title="6">          )</a>
-<a class="sourceLine" id="cb41-7" title="7"></a>
-<a class="sourceLine" id="cb41-8" title="8"><span class="co">#abline(h=mean(datos$sexo==2))</span></a>
-<a class="sourceLine" id="cb41-9" title="9"><span class="kw">abline</span>(<span class="dt">h=</span><span class="fl">0.253</span>, <span class="dt">col=</span><span class="dv">2</span>)</a></code></pre></div>
-<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="análisis-bivariado.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vcd)</span>
+<span id="cb121-2"><a href="análisis-bivariado.html#cb121-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-3"><a href="análisis-bivariado.html#cb121-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mosaicplot</span>(<span class="fu">table</span>(datos<span class="sc">$</span>contrato,datos<span class="sc">$</span>sexo),</span>
+<span id="cb121-4"><a href="análisis-bivariado.html#cb121-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">main=</span><span class="st">&quot;&quot;</span>,</span>
+<span id="cb121-5"><a href="análisis-bivariado.html#cb121-5" aria-hidden="true" tabindex="-1"></a>          <span class="at">color =</span> <span class="fu">c</span>(<span class="st">&quot;darkblue&quot;</span>,<span class="st">&quot;skyblue&quot;</span>),</span>
+<span id="cb121-6"><a href="análisis-bivariado.html#cb121-6" aria-hidden="true" tabindex="-1"></a>          <span class="at">xlab =</span> <span class="st">&quot;Contratos&quot;</span>, <span class="co"># label for x-axis</span></span>
+<span id="cb121-7"><a href="análisis-bivariado.html#cb121-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">ylab =</span> <span class="st">&quot;Sexo&quot;</span> <span class="co"># label for y-axis</span></span>
+<span id="cb121-8"><a href="análisis-bivariado.html#cb121-8" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb121-9"><a href="análisis-bivariado.html#cb121-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb121-10"><a href="análisis-bivariado.html#cb121-10" aria-hidden="true" tabindex="-1"></a><span class="co">#abline(h=mean(datos$sexo==2))</span></span>
+<span id="cb121-11"><a href="análisis-bivariado.html#cb121-11" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">0.253</span>, <span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 <p>¿Qué conclusiones obtiene a partir de este análisis? ¿Hay relación entre el sexo y el tipo de contrato?</p>
 </div>
-<div id="pruebas-de-hipótesis." class="section level4">
+<div id="pruebas-de-hipótesis." class="section level4" number="3.1.4.2">
 <h4><span class="header-section-number">3.1.4.2</span> Pruebas de hipótesis.</h4>
 <p>Evaluamos si existe o no asociación entre el sexo y los tipos de contrato de manera objetiva utilizando una prueba de hipótesis.</p>
 <ol style="list-style-type: decimal">
@@ -451,7 +462,7 @@ y adicionamos el parámetro margin a la función.</p>
 <li><p>Elegimos la prueba de hipótesis: Chi-cuadrado para la independencia.</p></li>
 <li><p>Calculamos el estadístico de prueba y p-valor en R:</p></li>
 </ol>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb42-1" title="1"><span class="kw">chisq.test</span>(datos<span class="op">$</span>sexo, datos<span class="op">$</span>contrato)</a></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="análisis-bivariado.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(datos<span class="sc">$</span>sexo, datos<span class="sc">$</span>contrato)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
@@ -463,15 +474,15 @@ y adicionamos el parámetro margin a la función.</p>
 <li>Conclusión: Con una significancia del 5%, se puede afimar que existe asociación entre la variable sexo y el tipo de contrato</li>
 </ul>
 </div>
-<div id="medidas-de-asociación." class="section level4">
+<div id="medidas-de-asociación." class="section level4" number="3.1.4.3">
 <h4><span class="header-section-number">3.1.4.3</span> Medidas de asociación.</h4>
 <p>Ahora, continuamos analizando la relación entre las variables sexo y tipos de contrato. Esta vez analizamos el grado de asociación entre las variables utilizando para ello dos medidas de asociación muy conocidas.</p>
 <p>Para los calculos en R, necesitaremos la librería DescTools.</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb44-1" title="1"><span class="kw">library</span>(DescTools)</a></code></pre></div>
-<pre><code>## Warning: package &#39;DescTools&#39; was built under R version 4.0.5</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb46-1" title="1"><span class="kw">ContCoef</span>(datos<span class="op">$</span>sexo, datos<span class="op">$</span>contrato)</a></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="análisis-bivariado.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DescTools)</span>
+<span id="cb124-2"><a href="análisis-bivariado.html#cb124-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb124-3"><a href="análisis-bivariado.html#cb124-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ContCoef</span>(datos<span class="sc">$</span>sexo, datos<span class="sc">$</span>contrato)</span></code></pre></div>
 <pre><code>## [1] 0.1451281</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb48-1" title="1"><span class="kw">CramerV</span>(datos<span class="op">$</span>sexo, datos<span class="op">$</span>contrato)</a></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="análisis-bivariado.html#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">CramerV</span>(datos<span class="sc">$</span>sexo, datos<span class="sc">$</span>contrato)</span></code></pre></div>
 <pre><code>## [1] 0.146681</code></pre>
 <p>¿Qué grado de relación existe entre estas dos variables?</p>
 <p>Recordar lo siguiente :</p>
@@ -483,11 +494,11 @@ y adicionamos el parámetro margin a la función.</p>
 </ul>
 </div>
 </div>
-<div id="ejercicio" class="section level3">
+<div id="ejercicio" class="section level3" number="3.1.5">
 <h3><span class="header-section-number">3.1.5</span> Ejercicio</h3>
 <ol style="list-style-type: decimal">
 <li><p>Crear un nuevo script, copiar el código y realizar las modificaciones correspondientes para realizar un análisis de la asociación entre el sexo y el tipo de contrato esta vez para los enfermeros.</p></li>
-<li>Crear un reporte con sus resultados, interpretaciones y conclusiones.</li>
+<li><p>Crear un reporte con sus resultados, interpretaciones y conclusiones.</p></li>
 </ol>
 <ul>
 <li>¿Existe evidencia entre una relación entre el sexo y el tipo de contrato en el grupo de enfermeros?</li>
@@ -497,56 +508,385 @@ y adicionamos el parámetro margin a la función.</p>
 
 </div>
 </div>
-<div id="una-variable-cualitativa-y-otra-cuantitativa" class="section level2">
+<div id="una-variable-cualitativa-y-otra-cuantitativa" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Una variable cualitativa y otra cuantitativa</h2>
-<div id="lectura-de-datos.-1" class="section level3">
+<p>Antes de iniciar, nos aseguramos de haber instalado las librerías necesarias.</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="análisis-bivariado.html#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb128-2"><a href="análisis-bivariado.html#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(summarytools)</span></code></pre></div>
+<p>En caso de no tenerlas, instalamos las librerías copiando y pegando el siguiente codigo en la consola.</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="análisis-bivariado.html#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb129-2"><a href="análisis-bivariado.html#cb129-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;summarytools&quot;</span>)</span></code></pre></div>
+<p>Luego podemos comenzar con el análisis de datos. Para ello, crear un nuevo script y guardarlo con el nombre de analisisBivar. A continuación, copiar y ejecutar cada uno de los códigos detallados más adelante.</p>
+<div id="lectura-de-datos.-1" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Lectura de datos.</h3>
+<p>Leemos los datos desde SPSS con la librería haven y utilizando el enlace hacia los datos:</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="análisis-bivariado.html#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb130-2"><a href="análisis-bivariado.html#cb130-2" aria-hidden="true" tabindex="-1"></a>enlace<span class="ot">&lt;-</span><span class="st">&quot;http://portal.susalud.gob.pe/wp-content/uploads/archivo/base-de-datos/2015/CUESTIONARIO%2002%20-%20CAPITULOS.sav&quot;</span></span>
+<span id="cb130-3"><a href="análisis-bivariado.html#cb130-3" aria-hidden="true" tabindex="-1"></a>datossalud <span class="ot">=</span> <span class="fu">read_sav</span>(enlace)</span></code></pre></div>
 </div>
-<div id="exploración-básica.-1" class="section level3">
+<div id="exploración-básica.-1" class="section level3" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Exploración básica.</h3>
+<p>Exploramos variables que interesan en el análisis.
+La función attr muestra detalles de las variables.</p>
+<p>Observaremos la variable <strong>C2P1</strong>: profesión</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="análisis-bivariado.html#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datossalud<span class="sc">$</span>C2P1)</span></code></pre></div>
+<pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: ¿CUÁL ES SU PROFESIÓN?
+## [1] 2 2 2 2 2 1
+## 
+## Labels:
+##  value       label
+##      1      Médico
+##      2 Enfermero/a</code></pre>
+<p>Variable <strong>C2P4</strong>: sexo.</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="análisis-bivariado.html#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datossalud<span class="sc">$</span>C2P4)</span></code></pre></div>
+<pre><code>## &lt;labelled&lt;double&gt;[6]&gt;: SEXO
+## [1] 2 2 2 2 2 1
+## 
+## Labels:
+##  value  label
+##      1 Hombre
+##      2  Mujer</code></pre>
+<p>Variable <strong>C2P2EDAD</strong>: Tipo de contrato.</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="análisis-bivariado.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datossalud<span class="sc">$</span>C2P2EDAD)</span></code></pre></div>
+<pre><code>## [1] 40 42 27 31 38 67</code></pre>
+<p>Seleccionamos el dataset solo con las variables de interés:</p>
+<!-- Para ello, debemos instalar la librería DT una sola vez, escribiendo lo siguiente en la consola: 
+
+
+```r
+install.packages("DT")
+```
+-->
+<p>Seleccionamos los datos de los médicos y además solo las variables de interés con el siguiente código:</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="análisis-bivariado.html#cb137-1" aria-hidden="true" tabindex="-1"></a>datostemp <span class="ot">&lt;-</span> datossalud[,<span class="fu">c</span>(<span class="st">&quot;C2P1&quot;</span>,<span class="st">&quot;C2P4&quot;</span>,<span class="st">&quot;C2P2EDAD&quot;</span>)]</span>
+<span id="cb137-2"><a href="análisis-bivariado.html#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(datostemp) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;profesion&quot;</span>,<span class="st">&quot;sexo&quot;</span>,<span class="st">&quot;edad&quot;</span>)</span>
+<span id="cb137-3"><a href="análisis-bivariado.html#cb137-3" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> datostemp[datostemp<span class="sc">$</span>profesion<span class="sc">==</span><span class="dv">1</span>,]</span></code></pre></div>
+<p>Y finalmente observamos los datos:</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="análisis-bivariado.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 3
+##    profesion       sexo  edad
+##    &lt;dbl+lbl&gt;  &lt;dbl+lbl&gt; &lt;dbl&gt;
+## 1 1 [Médico] 1 [Hombre]    67
+## 2 1 [Médico] 1 [Hombre]    54
+## 3 1 [Médico] 2 [Mujer]     35
+## 4 1 [Médico] 1 [Hombre]    43
+## 5 1 [Médico] 1 [Hombre]    38
+## 6 1 [Médico] 1 [Hombre]    46</code></pre>
 </div>
-<div id="análisis-univariado.-1" class="section level3">
+<div id="análisis-univariado.-1" class="section level3" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> Análisis univariado.</h3>
-<div id="variable-sexo-1" class="section level4">
+<p>Realizamos el análisis individual de las variables de interés: Sexo y Edad.</p>
+<div id="variable-sexo-1" class="section level4" number="3.2.3.1">
 <h4><span class="header-section-number">3.2.3.1</span> Variable: Sexo</h4>
+<p>Para la variable sexo realizamos una tabla de frecuencias y observamos los resultados.</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="análisis-bivariado.html#cb140-1" aria-hidden="true" tabindex="-1"></a>tabla_sexo  <span class="ot">=</span> <span class="fu">table</span>(datos<span class="sc">$</span>sexo)</span>
+<span id="cb140-2"><a href="análisis-bivariado.html#cb140-2" aria-hidden="true" tabindex="-1"></a>tabla_sexo</span></code></pre></div>
+<pre><code>## 
+##    1    2 
+## 1657  562</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="análisis-bivariado.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(tabla_sexo)</span></code></pre></div>
+<pre><code>## 
+##         1         2 
+## 0.7467328 0.2532672</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="análisis-bivariado.html#cb144-1" aria-hidden="true" tabindex="-1"></a>summarytools<span class="sc">::</span><span class="fu">freq</span>(<span class="fu">as.factor</span>(datos<span class="sc">$</span>sexo))</span></code></pre></div>
+<pre><code>## Frequencies  
+## 
+##               Freq   % Valid   % Valid Cum.   % Total   % Total Cum.
+## ----------- ------ --------- -------------- --------- --------------
+##           1   1657     74.67          74.67     74.67          74.67
+##           2    562     25.33         100.00     25.33         100.00
+##        &lt;NA&gt;      0                               0.00         100.00
+##       Total   2219    100.00         100.00    100.00         100.00</code></pre>
+<p>Interpretación:</p>
+<ul>
+<li>Observamos 25.3% de mujeres y 74.7% de hombres entre los médicos.</li>
+</ul>
 </div>
-<div id="variable-edad" class="section level4">
+<div id="variable-edad" class="section level4" number="3.2.3.2">
 <h4><span class="header-section-number">3.2.3.2</span> Variable: Edad</h4>
+<p>La variable cuantitativa edad la analizamos utilizando medidas de posición central, dispersión y además un gráfico (histograma o gráficos de cajas).</p>
+<ul>
+<li>Medidas de resumen básicas:</li>
+</ul>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="análisis-bivariado.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos<span class="sc">$</span>edad)</span></code></pre></div>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   24.00   37.00   46.00   46.45   56.00   88.00</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="análisis-bivariado.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(datos<span class="sc">$</span>edad)</span></code></pre></div>
+<pre><code>## [1] 11.38578</code></pre>
+<ul>
+<li>Coeficiente de variación:</li>
+</ul>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="análisis-bivariado.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Coeficiente de variación.</span></span>
+<span id="cb150-2"><a href="análisis-bivariado.html#cb150-2" aria-hidden="true" tabindex="-1"></a>cv <span class="ot">=</span> <span class="fu">sd</span>(datos<span class="sc">$</span>edad)<span class="sc">/</span><span class="fu">mean</span>(datos<span class="sc">$</span>edad)</span></code></pre></div>
+<ul>
+<li>Asimetría de fisher para la edad:</li>
+</ul>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="análisis-bivariado.html#cb151-1" aria-hidden="true" tabindex="-1"></a>Fisher.asi <span class="ot">=</span> <span class="cf">function</span>(x) <span class="fu">mean</span>((x <span class="sc">-</span> <span class="fu">mean</span>(x,<span class="at">na.rm=</span>T))<span class="sc">^</span><span class="dv">3</span>,<span class="at">na.rm=</span>T)<span class="sc">/</span><span class="fu">sd</span>(x,<span class="at">na.rm=</span>T)<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb151-2"><a href="análisis-bivariado.html#cb151-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Fisher.asi</span>(datos<span class="sc">$</span>edad)</span></code></pre></div>
+<pre><code>## [1] 0.143489</code></pre>
+<p>Esta vez, utilizaremos un histograma para observar la distribución de la edad de los médicos.</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="análisis-bivariado.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(summarytools)</span>
+<span id="cb153-2"><a href="análisis-bivariado.html#cb153-2" aria-hidden="true" tabindex="-1"></a>histo<span class="ot">&lt;-</span> <span class="fu">hist</span>(datos<span class="sc">$</span>edad, </span>
+<span id="cb153-3"><a href="análisis-bivariado.html#cb153-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">main=</span><span class="st">&quot;Histograma de las edades&quot;</span>, </span>
+<span id="cb153-4"><a href="análisis-bivariado.html#cb153-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">color=</span><span class="st">&#39;yellow&#39;</span>)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/histograma_edad-1.png" width="672" /></p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="análisis-bivariado.html#cb154-1" aria-hidden="true" tabindex="-1"></a>cortes <span class="ot">&lt;-</span> histo<span class="sc">$</span>breaks <span class="co"># Cortes para la variable a partir del histograma</span></span>
+<span id="cb154-2"><a href="análisis-bivariado.html#cb154-2" aria-hidden="true" tabindex="-1"></a>var_cat <span class="ot">&lt;-</span> <span class="fu">cut</span>(datos<span class="sc">$</span>edad,cortes) <span class="co"># categorizada</span></span>
+<span id="cb154-3"><a href="análisis-bivariado.html#cb154-3" aria-hidden="true" tabindex="-1"></a><span class="fu">freq</span>(var_cat) <span class="co"># Tabla de frecuencias</span></span></code></pre></div>
+<pre><code>## Frequencies  
+## var_cat  
+## Type: Factor  
+## 
+##                 Freq   % Valid   % Valid Cum.   % Total   % Total Cum.
+## ------------- ------ --------- -------------- --------- --------------
+##       (20,25]      2     0.090          0.090     0.090          0.090
+##       (25,30]    173     7.796          7.886     7.796          7.886
+##       (30,35]    309    13.925         21.812    13.925         21.812
+##       (35,40]    300    13.520         35.331    13.520         35.331
+##       (40,45]    291    13.114         48.445    13.114         48.445
+##       (45,50]    291    13.114         61.559    13.114         61.559
+##       (50,55]    260    11.717         73.276    11.717         73.276
+##       (55,60]    301    13.565         86.841    13.565         86.841
+##       (60,65]    213     9.599         96.440     9.599         96.440
+##       (65,70]     66     2.974         99.414     2.974         99.414
+##       (70,75]      7     0.315         99.730     0.315         99.730
+##       (75,80]      2     0.090         99.820     0.090         99.820
+##       (80,85]      3     0.135         99.955     0.135         99.955
+##       (85,90]      1     0.045        100.000     0.045        100.000
+##          &lt;NA&gt;      0                              0.000        100.000
+##         Total   2219   100.000        100.000   100.000        100.000</code></pre>
 </div>
 </div>
-<div id="análisis-bivariado." class="section level3">
+<div id="análisis-bivariado." class="section level3" number="3.2.4">
 <h3><span class="header-section-number">3.2.4</span> Análisis bivariado.</h3>
-<div id="exploración-1" class="section level4">
+<div id="exploración-1" class="section level4" number="3.2.4.1">
 <h4><span class="header-section-number">3.2.4.1</span> Exploración</h4>
+<p>Comenzamos observando las diferencias entre los dos grupos: hombres y mujeres. Los gráficos más utilizados son gráficos de cajas (boxplots) o histogramas para observar estas diferencias.</p>
+<ul>
+<li>Comenzamos comparando las ditribuciones con histogramas:</li>
+</ul>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="análisis-bivariado.html#cb156-1" aria-hidden="true" tabindex="-1"></a>config_grafico <span class="ot">&lt;-</span> <span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb156-2"><a href="análisis-bivariado.html#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(datos<span class="sc">$</span>edad[datos<span class="sc">$</span>sexo<span class="sc">==</span><span class="dv">1</span>],</span>
+<span id="cb156-3"><a href="análisis-bivariado.html#cb156-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">prob=</span>T,<span class="at">xlab=</span><span class="st">&quot;Edad (años)&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Densidad&quot;</span>,</span>
+<span id="cb156-4"><a href="análisis-bivariado.html#cb156-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Hombres&quot;</span>,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">90</span>),<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.04</span>))</span>
+<span id="cb156-5"><a href="análisis-bivariado.html#cb156-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(datos<span class="sc">$</span>edad[datos<span class="sc">$</span>sexo<span class="sc">==</span><span class="dv">2</span>],</span>
+<span id="cb156-6"><a href="análisis-bivariado.html#cb156-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">prob=</span>T,<span class="at">xlab=</span><span class="st">&quot;Edad (años)&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Densidad&quot;</span>,</span>
+<span id="cb156-7"><a href="análisis-bivariado.html#cb156-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Mujeres&quot;</span>,<span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">20</span>,<span class="dv">90</span>))</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<ul>
+<li>Una mejor visualización de estas diferencias puede realizarse con un gráfico de cajas o boxplot:</li>
+</ul>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="análisis-bivariado.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(edad<span class="sc">~</span>sexo,</span>
+<span id="cb157-2"><a href="análisis-bivariado.html#cb157-2" aria-hidden="true" tabindex="-1"></a>        datos,</span>
+<span id="cb157-3"><a href="análisis-bivariado.html#cb157-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab=</span><span class="st">&quot;Sexo&quot;</span>,</span>
+<span id="cb157-4"><a href="análisis-bivariado.html#cb157-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab=</span><span class="st">&quot;Edad (anos)&quot;</span>, </span>
+<span id="cb157-5"><a href="análisis-bivariado.html#cb157-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">xaxt=</span><span class="st">&quot;n&quot;</span>)</span>
+<span id="cb157-6"><a href="análisis-bivariado.html#cb157-6" aria-hidden="true" tabindex="-1"></a><span class="fu">axis</span>(<span class="dv">1</span>, <span class="at">at=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,</span>
+<span id="cb157-7"><a href="análisis-bivariado.html#cb157-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Hombre&quot;</span>,<span class="st">&quot;Mujer&quot;</span>))</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-61-1.png" width="70%" /></p>
+<p>¿Qué observo en estos resultados? ¿Es sencillo comparar la tendencia central, dispersión y asimetría a partir de este gráfico? ¿Podemos responder las siguientes preguntas?</p>
+<ul>
+<li>¿Quién tiene mayor edad en general?</li>
+<li>¿Quién tiene mayor dispersión en sus datos?</li>
+</ul>
+<p>Para una comparación cuantitativa adicional a los gráficos, veremos los resultados de las medidas de resumen por cada grupo:</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="análisis-bivariado.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(datos<span class="sc">$</span>edad,datos<span class="sc">$</span>sexo,summary)</span></code></pre></div>
+<pre><code>## datos$sexo: 1
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   24.00   38.00   48.00   47.77   57.00   88.00 
+## -------------------------------------------------------------- 
+## datos$sexo: 2
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##   25.00   34.00   40.00   42.56   51.00   68.00</code></pre>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="análisis-bivariado.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(datos<span class="sc">$</span>edad,datos<span class="sc">$</span>sexo,IQR)</span></code></pre></div>
+<pre><code>## datos$sexo: 1
+## [1] 19
+## -------------------------------------------------------------- 
+## datos$sexo: 2
+## [1] 17</code></pre>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="análisis-bivariado.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(datos<span class="sc">$</span>edad,datos<span class="sc">$</span>sexo,Fisher.asi) </span></code></pre></div>
+<pre><code>## datos$sexo: 1
+## [1] 0.05708801
+## -------------------------------------------------------------- 
+## datos$sexo: 2
+## [1] 0.4042966</code></pre>
+<p>Interpretación:</p>
+<ul>
+<li><p>Las médicas son, en general, más jóvenes que los médicos La mediana de las edades para las mujeres (<span class="math inline">\(Me_{M}=\)</span> 40) es menor a la de los médicos (<span class="math inline">\(Me_{H}=\)</span> 48).</p></li>
+<li><p>Se observa una ligera diferencia en la dispersión de las edades de los hombres(<span class="math inline">\(RIC_{M}=\)</span> 19) y médicas (<span class="math inline">\(RIC_{M}=\)</span> 17).</p></li>
+<li><p>Hay mayor asimetría con cola a la derecha para las edades de las médicas ((<span class="math inline">\(CA_{F_M}=\)</span> 0.06) que para los médicos(<span class="math inline">\(CA_{F_H}=\)</span> 0.4).</p></li>
+<li><p>Conclusión: se evidencia asociación entre el sexo y la edad de los médicos.</p></li>
+</ul>
+<p>Otros gráficos que se pueden observar para realizar esta comparación son los siguientes:</p>
+<ul>
+<li>Comparación con gráficos de densidad.</li>
+</ul>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="análisis-bivariado.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(datos<span class="sc">$</span>edad[datos<span class="sc">$</span>sexo<span class="sc">==</span><span class="dv">1</span>]),</span>
+<span id="cb164-2"><a href="análisis-bivariado.html#cb164-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Edad&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Densidad&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>,<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.05</span>))</span>
+<span id="cb164-3"><a href="análisis-bivariado.html#cb164-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">density</span>(datos<span class="sc">$</span>edad[datos<span class="sc">$</span>sexo<span class="sc">==</span><span class="dv">2</span>]),<span class="at">col=</span><span class="dv">2</span>)</span>
+<span id="cb164-4"><a href="análisis-bivariado.html#cb164-4" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="dv">60</span>,<span class="fl">0.05</span>,<span class="at">legend=</span><span class="fu">c</span>(<span class="st">&quot;Hombres&quot;</span>,<span class="st">&quot;Mujeres&quot;</span>),</span>
+<span id="cb164-5"><a href="análisis-bivariado.html#cb164-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">col=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="at">lty=</span><span class="dv">1</span>,<span class="at">bty=</span><span class="st">&quot;n&quot;</span>)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/fx_densidad_por_grupos-1.png" width="672" /></p>
+<ul>
+<li>Comparación de las funciones de distribución de los grupos.</li>
+</ul>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="análisis-bivariado.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">ecdf</span>(datos<span class="sc">$</span>edad[datos<span class="sc">$</span>sexo<span class="sc">==</span><span class="dv">1</span>]),</span>
+<span id="cb165-2"><a href="análisis-bivariado.html#cb165-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb165-3"><a href="análisis-bivariado.html#cb165-3" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(<span class="fu">ecdf</span>(datos<span class="sc">$</span>edad[datos<span class="sc">$</span>sexo<span class="sc">==</span><span class="dv">2</span>]),</span>
+<span id="cb165-4"><a href="análisis-bivariado.html#cb165-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">col=</span><span class="dv">2</span>)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/Fx_dist_acumulada-1.png" width="672" /></p>
 </div>
 </div>
-<div id="ejercicio-1" class="section level3">
+<div id="ejercicio-1" class="section level3" number="3.2.5">
 <h3><span class="header-section-number">3.2.5</span> Ejercicio</h3>
+<ol style="list-style-type: decimal">
+<li><p>Crear un nuevo script y modificar los códigos para realizar un análisis de la asociación entre el sexo y las edades de los <strong>enfermeros(as)</strong>. Escoger un gráfico para la comparación de los grupos e interpretar las médidas de resumen comparando por sexo.</p></li>
+<li><p>Crear un reporte con sus resultados y conclusiones. Sus conclusiones deben responder a las siguientes preguntas:</p></li>
+</ol>
+<ul>
+<li>¿Son diferentes las edades entre los enfermeros y enferemeras? (Observar y comparar boxplots, histogramas o densidades)</li>
+<li>¿Qué grupo tiene mayor edad? (Comparar medidas de posición central)</li>
+<li>¿Qué grupo tiene mayor dispersión de edades? (Comparar medidas de dispersión)</li>
+<li>¿Quién tiene mayor asimetría y hacia que lado? (Comparar coeficiente de asimetría de Fisher)</li>
+<li>¿Existe evidencia entre una relación entre el sexo y la edad en el grupo de enfermeros? (<strong>Opcional</strong>: Realizar prueba de hipótesis y concluir)</li>
+</ul>
 
 </div>
 </div>
-<div id="variables-cuantitativas." class="section level2">
+<div id="variables-cuantitativas." class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Variables cuantitativas.</h2>
-<div id="caso-1-bmi" class="section level3">
+<ul>
+<li>Librerías</li>
+</ul>
+<p>Revisamos si tenemos todas la librerías necesarias con estos comandos en la consola:</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="análisis-bivariado.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
+<span id="cb166-2"><a href="análisis-bivariado.html#cb166-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb166-3"><a href="análisis-bivariado.html#cb166-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<p>En caso de no tenerlos instalados, utilizamos estas líneas de código en la consola:</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="análisis-bivariado.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;performance&quot;</span>, <span class="at">dependencies=</span><span class="cn">TRUE</span>)</span>
+<span id="cb167-2"><a href="análisis-bivariado.html#cb167-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;see&quot;</span>, <span class="at">dependencies=</span><span class="cn">TRUE</span>)</span>
+<span id="cb167-3"><a href="análisis-bivariado.html#cb167-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;skimr&quot;</span>, <span class="at">dependencies=</span><span class="cn">TRUE</span>)</span>
+<span id="cb167-4"><a href="análisis-bivariado.html#cb167-4" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>, <span class="at">dependencies=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div id="caso-1-bmi" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Caso 1: BMI</h3>
-<div id="lectura-de-datos" class="section level4">
+<p>En este caso, utilizaremos los datos acerca de indice de masa corporal índice de masa corporal (IMC)<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p><span class="math inline">\(IMC = {Peso(kg)}/{Talla(m)^2}\)</span></p>
+<p>Este indicador se usa para medir obesidad en las personas. Carrillo et.al (2018) analizaron datos de un grupo familias en el norte el Perú para analizar si hay relación entre el IMC de los padres y el IMC de los hijos.</p>
+<p>El dataset que utilizaremos es un subconjunto de los datos del estudio.</p>
+<div id="lectura-de-datos" class="section level4" number="3.3.1.1">
 <h4><span class="header-section-number">3.3.1.1</span> Lectura de datos</h4>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="análisis-bivariado.html#cb168-1" aria-hidden="true" tabindex="-1"></a>databmi <span class="ot">=</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://egutierreza.netlify.app/uploads/databmi.csv&quot;</span>)</span>
+<span id="cb168-2"><a href="análisis-bivariado.html#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(databmi)</span></code></pre></div>
+<pre><code>## [1] &quot;bmi&quot;       &quot;bmi.papa&quot;  &quot;bmi.mama&quot;  &quot;edad.papa&quot; &quot;edad.mama&quot; &quot;edad&quot;</code></pre>
+<p>Observemos que los datos que tenemos son el IMC (BMI en inglés) y edad de una persona y sus padres.</p>
+<p>Comenzamos realizando una exploración de cada variable con el siguiente comando.</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="análisis-bivariado.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb170-2"><a href="análisis-bivariado.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(databmi)</span></code></pre></div>
+<p>Ejercicio:</p>
+<ul>
+<li>¿Qué conclusiones obtiene a partir de el análisis univariado a cada variable del dataset? Interpretar las medidas de tendencia central y desviación para cada variable.</li>
+</ul>
 </div>
-<div id="exploración-bivariada" class="section level4">
+<div id="exploración-bivariada" class="section level4" number="3.3.1.2">
 <h4><span class="header-section-number">3.3.1.2</span> Exploración bivariada</h4>
+<p>Para realizar una exploración entre variables cuantitativas, veremos los gráficos de dispersión y las correlaciones entre todos los pares de variables:</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="análisis-bivariado.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráficos de disepersión</span></span>
+<span id="cb171-2"><a href="análisis-bivariado.html#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(databmi)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="análisis-bivariado.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matrix de correlaciones</span></span>
+<span id="cb172-2"><a href="análisis-bivariado.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(databmi)</span></code></pre></div>
+<pre><code>##                  bmi    bmi.papa    bmi.mama   edad.papa  edad.mama        edad
+## bmi       1.00000000  0.22829796  0.25430493  0.08375241  0.1533664  0.20557922
+## bmi.papa  0.22829796  1.00000000  0.08127217 -0.35633830 -0.2374230 -0.23220622
+## bmi.mama  0.25430493  0.08127217  1.00000000 -0.12954055 -0.1579986 -0.08774887
+## edad.papa 0.08375241 -0.35633830 -0.12954055  1.00000000  0.7910062  0.68414693
+## edad.mama 0.15336643 -0.23742304 -0.15799864  0.79100622  1.0000000  0.68763701
+## edad      0.20557922 -0.23220622 -0.08774887  0.68414693  0.6876370  1.00000000</code></pre>
+<p>Interpretación:</p>
+<ul>
+<li>Se observa correlación moderada alta entre las variables de edades de los padres e hijo.</li>
+<li>Las variables de bmi del padre y madre tienen correlación baja con el bmi del hijo, 0.23 y 0.25 respectivamente.</li>
+</ul>
+<p>En específico, observamos la relación entre el IMC de una persona y su padre:</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="análisis-bivariado.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(databmi<span class="sc">$</span>bmi.papa,databmi<span class="sc">$</span>bmi,</span>
+<span id="cb174-2"><a href="análisis-bivariado.html#cb174-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">&quot;Indice de masa corporal (padre)&quot;</span>,</span>
+<span id="cb174-3"><a href="análisis-bivariado.html#cb174-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab=</span><span class="st">&quot;Indice de masa corporal (hijo)&quot;</span>,</span>
+<span id="cb174-4"><a href="análisis-bivariado.html#cb174-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">main=</span><span class="st">&quot;Diagrama de dispersión&quot;</span>)</span>
+<span id="cb174-5"><a href="análisis-bivariado.html#cb174-5" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">c</span>(<span class="dv">18</span>,<span class="fl">0.1</span>),<span class="at">lty=</span><span class="dv">2</span>, <span class="at">col=</span><span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb174-6"><a href="análisis-bivariado.html#cb174-6" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">c</span>(<span class="dv">22</span>,<span class="fl">0.3</span>),<span class="at">lty=</span><span class="dv">3</span>, <span class="at">col=</span><span class="st">&quot;green&quot;</span>)</span>
+<span id="cb174-7"><a href="análisis-bivariado.html#cb174-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fu">c</span>(<span class="dv">20</span>,<span class="fl">0.12</span>),<span class="at">lty=</span><span class="dv">4</span>, <span class="at">col=</span><span class="st">&quot;orange&quot;</span>)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/explora_bivar-1.png" width="672" /></p>
+<p>Observemos que se han graficado 3 posibles líneas que pasan entre los puntos del gráfico de dispersión.</p>
+<p>Estas líneas representan los posibles modelos que podemos usar para este conjunto de datos.</p>
+<p>¿Cuál de estos modelos es el mejor?
+El modelo con el que se obtenga la menor suma de cuadrados de los errores.</p>
+<!--$$ $\sum{i=1}^{n}{\_i^2} = \sum_{i=1}^{n}(Y_i-\hat{Y})^2} $$-->
 </div>
 </div>
-<div id="caso-2-arboles" class="section level3">
+<div id="caso-2-arboles" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Caso 2: Arboles</h3>
-<div id="cargar-datos" class="section level4">
+<div id="cargar-datos" class="section level4" number="3.3.2.1">
 <h4><span class="header-section-number">3.3.2.1</span> Cargar datos</h4>
+<p>En esta data, tenemos los siguiente datos de arboles:</p>
+<ul>
+<li>Diámetro: pulgadas</li>
+<li>Altura en pies.</li>
+<li>Volumen en pies cúbicos.</li>
+</ul>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="análisis-bivariado.html#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb175-2"><a href="análisis-bivariado.html#cb175-2" aria-hidden="true" tabindex="-1"></a>data_arboles <span class="ot">&lt;-</span> trees</span>
+<span id="cb175-3"><a href="análisis-bivariado.html#cb175-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data_arboles) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;diametro&quot;</span>,<span class="st">&quot;altura&quot;</span>,<span class="st">&quot;volumen&quot;</span>)</span>
+<span id="cb175-4"><a href="análisis-bivariado.html#cb175-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data_arboles)</span></code></pre></div>
+<pre><code>##   diametro altura volumen
+## 1      8.3     70    10.3
+## 2      8.6     65    10.3
+## 3      8.8     63    10.2
+## 4     10.5     72    16.4
+## 5     10.7     81    18.8
+## 6     10.8     83    19.7</code></pre>
+<p>Realizamos un análisis exploratorio univariado para cada variable.</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="análisis-bivariado.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb177-2"><a href="análisis-bivariado.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">skim</span>(data_arboles)</span></code></pre></div>
 </div>
-<div id="exploración-bivariada-1" class="section level4">
+<div id="exploración-bivariada-1" class="section level4" number="3.3.2.2">
 <h4><span class="header-section-number">3.3.2.2</span> Exploración bivariada</h4>
+<p>Ahora, exploramos las relaciones entre pares de variables.</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="análisis-bivariado.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matriz de correlaciones:</span></span>
+<span id="cb178-2"><a href="análisis-bivariado.html#cb178-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(data_arboles)</span></code></pre></div>
+<pre><code>##           diametro    altura   volumen
+## diametro 1.0000000 0.5192801 0.9671194
+## altura   0.5192801 1.0000000 0.5982497
+## volumen  0.9671194 0.5982497 1.0000000</code></pre>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="análisis-bivariado.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de dispersión para pares de variables.</span></span>
+<span id="cb180-2"><a href="análisis-bivariado.html#cb180-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pairs</span>(data_arboles)</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
+<p>¿Qué tipo de relaciones observamos entre las variables?
+¿Entre qué variables encontramos alta correlación?</p>
+<ul>
+<li>Observamos relaciones lineales positivas entre las variables.</li>
+</ul>
+<p>Otra forma de ver un gráfico de dispersión:</p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="análisis-bivariado.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb181-2"><a href="análisis-bivariado.html#cb181-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data_arboles, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> diametro, <span class="at">y =</span> volumen)) <span class="sc">+</span></span>
+<span id="cb181-3"><a href="análisis-bivariado.html#cb181-3" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;firebrick&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb181-4"><a href="análisis-bivariado.html#cb181-4" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Diagrama de dispersión&quot;</span>, <span class="at">x =</span> <span class="st">&quot;Diámetro&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Volumen&quot;</span>) <span class="sc">+</span></span>
+<span id="cb181-5"><a href="análisis-bivariado.html#cb181-5" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb181-6"><a href="análisis-bivariado.html#cb181-6" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code></pre></div>
+<p><img src="EstadisticaR_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
+<p>Correlación:</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="análisis-bivariado.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(data_arboles<span class="sc">$</span>diametro,data_arboles<span class="sc">$</span>volumen)</span></code></pre></div>
+<pre><code>## [1] 0.9671194</code></pre>
+<p>¿Existe una alta correlación entre estas variables?</p>
 
 </div>
 </div>
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="https://onlinelibrary.wiley.com/doi/full/10.1111/tmi.13052" class="uri">https://onlinelibrary.wiley.com/doi/full/10.1111/tmi.13052</a><a href="análisis-bivariado.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
